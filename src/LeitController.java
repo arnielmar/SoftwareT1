@@ -1,7 +1,4 @@
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 public class LeitController {
@@ -20,4 +17,10 @@ public class LeitController {
     public DatePicker dayTripDate;
     public Spinner dayTripPeople;
     public Button dayTripSearch;
+    public Tab packageSearchButton;
+    public ChoiceBox packageFromComboBox;
+    public ComboBox packageToComboBox;
+    public DatePicker packageDepartureDate;
+    public DatePicker packageReturningDate;
+    public Spinner packagePeople;
 }
