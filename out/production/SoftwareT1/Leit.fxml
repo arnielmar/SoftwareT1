@@ -2,8 +2,9 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" minHeight="-Infinity" minWidth="-Infinity" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeitController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeitController">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -17,17 +18,42 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="212.0" prefWidth="285.0">
                      <children>
-                        <ComboBox layoutX="56.0" layoutY="108.0" prefWidth="150.0" promptText="From" />
-                        <ComboBox layoutX="288.0" layoutY="108.0" prefWidth="150.0" promptText="To" />
-                        <DatePicker layoutX="37.0" layoutY="189.0" />
-                        <DatePicker layoutX="269.0" layoutY="189.0" />
+                        <ComboBox fx:id="flightFromCombobox" layoutX="56.0" layoutY="122.0" prefWidth="150.0" />
+                        <ComboBox fx:id="flightToComboBox" layoutX="288.0" layoutY="122.0" prefWidth="150.0" />
+                        <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" prefHeight="27.0" prefWidth="150.0" promptText="Departure Date" />
+                        <DatePicker fx:id="flightReturningDate" layoutX="288.0" layoutY="190.0" prefHeight="27.0" prefWidth="150.0" promptText="Returning Date" />
+                        <RadioButton layoutX="56.0" layoutY="54.0" mnemonicParsing="false" selected="true" text="Round Way" />
+                        <RadioButton layoutX="164.0" layoutY="54.0" mnemonicParsing="false" text="One Way" />
+                        <Button fx:id="flugSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" text="Search" />
+                        <Spinner fx:id="flightPeople" layoutX="56.0" layoutY="267.0" prefHeight="27.0" prefWidth="150.0" />
+                        <Label layoutX="193.0" layoutY="14.0" text="Search for flights">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label layoutX="56.0" layoutY="93.0" text="From" />
+                        <Label layoutX="288.0" layoutY="93.0" text="To" />
+                        <Label layoutX="56.0" layoutY="241.0" text="Persons" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
           <Tab text="Hotels">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane fx:id="hotelSearchButton" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="hotelComboBox" layoutX="56.0" layoutY="122.0" prefHeight="25.0" prefWidth="150.0" promptText="placeholder" />
+                        <DatePicker fx:id="hotelArrivalDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" promptText="Arrival Date" />
+                        <DatePicker fx:id="hotelDepartureDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" promptText="Departure Date" />
+                        <Spinner fx:id="hotelPeople" editable="true" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
+                        <Label layoutX="55.0" layoutY="93.0" text="City" />
+                        <Label layoutX="56.0" layoutY="241.0" text="Persons" />
+                        <Label layoutX="193.0" layoutY="14.0" text="Search for hotels">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="381.0" layoutY="294.0" mnemonicParsing="false" text="Search" />
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Day Trips">
