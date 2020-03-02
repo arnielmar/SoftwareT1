@@ -39,7 +39,21 @@
           </Tab>
           <Tab text="Hotels">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane fx:id="hotelSearchButton" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="hotelComboBox" layoutX="56.0" layoutY="122.0" prefHeight="25.0" prefWidth="150.0" promptText="placeholder" />
+                        <DatePicker fx:id="hotelArrivalDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" promptText="Arrival Date" />
+                        <DatePicker fx:id="hotelDepartureDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" promptText="Departure Date" />
+                        <Spinner fx:id="hotelPeople" editable="true" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
+                        <Label layoutX="55.0" layoutY="93.0" text="City" />
+                        <Label layoutX="56.0" layoutY="241.0" text="Persons" />
+                        <Label layoutX="193.0" layoutY="14.0" text="Search for hotels">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="381.0" layoutY="294.0" mnemonicParsing="false" text="Search" />
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Day Trips">
