@@ -1,51 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TabPane?>
 
-<GridPane alignment="center" hgap="10" minHeight="-Infinity" minWidth="-Infinity" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeitController">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
-   <children>
-      <TabPane prefHeight="419.0" prefWidth="523.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Flights">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="212.0" prefWidth="285.0">
-                     <children>
-                        <ComboBox layoutX="56.0" layoutY="108.0" prefWidth="150.0" promptText="From" />
-                        <ComboBox layoutX="288.0" layoutY="108.0" prefWidth="150.0" promptText="To" />
-                        <DatePicker layoutX="37.0" layoutY="189.0" />
-                        <DatePicker layoutX="269.0" layoutY="189.0" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Hotels">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-            <Tab text="Day Trips">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Packages">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Orders">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </children>
-</GridPane>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="548.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeitController">
+   <tabs>
+      <fx:include fx:id="flightTab" source="FlightTab.fxml" />
+      <fx:include fx:id="hotelTab" source="HotelTab.fxml" />
+      <fx:include fx:id="dayTripTab" source="DayTripTab.fxml" />
+      <fx:include fx:id="packageTab" source="PackageTab.fxml" />
+   </tabs>
+</TabPane>
