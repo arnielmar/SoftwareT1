@@ -23,9 +23,14 @@ public class Orders {
         for ( i = 0; i < 10; i++ )
         {
             tmpstring[0] = ""+i;
-            LocalDate tmpDate = LocalDate.of(i,i,i);
+            LocalDate tmpDate = LocalDate.now();
             Flight tmpFlight = new Flight( ""+i, ""+i, tmpDate, i, tmpstring);
             addFlight(tmpFlight);
+        }
+        for ( i = 0; i < 10; i++ )
+        {
+            Flight tmpFlight = Flights.get(i);
+            System.out.println(tmpFlight.getArrivalLoc());
         }
     }
 
