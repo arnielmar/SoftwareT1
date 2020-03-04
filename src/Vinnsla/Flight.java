@@ -1,3 +1,5 @@
+package Vinnsla;
+
 import java.util.Date;
 
 public class Flight {
@@ -9,13 +11,13 @@ public class Flight {
 
     /**
      *
-     * @param depart
+     * @param depart //departure location
      * @param arrival
      * @param date
      * @param nr
-     * @param seat
+     * @param seats
      */
-    void init (String depart, String arrival, Date date, int nr, String[] seats )
+    public void Flight (String depart, String arrival, Date date, int nr, String[] seats )
     {
         this.departureLoc = depart;
         this.arrivalLoc = arrival;
