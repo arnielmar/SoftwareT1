@@ -7,6 +7,7 @@ public class FlightTabController {
     public DatePicker flightReturningDate;
     public RadioButton flightRoundWay;
     public RadioButton flightOneWay;
+    public ToggleGroup radio;               // tengir radioButtons saman
     public Button flightSearchButton;
     public Spinner flightPersons;
 }
