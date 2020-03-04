@@ -23,7 +23,7 @@ public class Orders {
         for ( i = 0; i < 10; i++ )
         {
             tmpstring[0] = ""+i;
-            LocalDate tmpDate = new LocalDate((i,i,i);
+            LocalDate tmpDate = LocalDate.of(i,i,i);
             Flight tmpFlight = new Flight( ""+i, ""+i, tmpDate, i, tmpstring);
             addFlight(tmpFlight);
         }
