@@ -1,9 +1,15 @@
 
+import javafx.fxml.FXML;
+
 import javafx.scene.control.*;
 
 public class LeitController {
-    public Tab flightTab;
-    public Tab hotelTab;
-    public Tab dayTripTab;
-    public Tab packageTab;
+    @FXML
+    private Tab flightTab;
+    @FXML
+    private Tab hotelTab;
+    @FXML
+    private Tab dayTripTab;
+    @FXML
+    private Tab packageTab;
 }
