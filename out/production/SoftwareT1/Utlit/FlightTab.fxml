@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Spinner?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Tab text="Flight" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FlightTabController">
+<Tab text="Flight" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FlightTabController">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
@@ -18,8 +12,11 @@
                 <ComboBox fx:id="flightToCombo" layoutX="288.0" layoutY="122.0" prefWidth="150.0" />
                 <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
                 <DatePicker fx:id="flightReturningDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
-                <RadioButton fx:id="flightRoundWay" layoutX="56.0" layoutY="54.0" mnemonicParsing="false" text="Round Way" />
-                <RadioButton fx:id="flightOneWay" layoutX="164.0" layoutY="54.0" mnemonicParsing="false" text="One Way" />
+                <RadioButton fx:id="flightRoundWay" layoutX="56.0" layoutY="54.0" mnemonicParsing="false" selected="true" text="Round Way">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radio" />
+               </toggleGroup></RadioButton>
+                <RadioButton fx:id="flightOneWay" layoutX="164.0" layoutY="54.0" mnemonicParsing="false" text="One Way" toggleGroup="$radio" />
                 <Button fx:id="flightSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" text="Search" />
                 <Spinner fx:id="flightPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
                 <Label layoutX="193.0" layoutY="15.0" text="Search for Flights">
