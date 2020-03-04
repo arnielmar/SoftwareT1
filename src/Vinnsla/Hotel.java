@@ -1,12 +1,12 @@
 package Vinnsla;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 
 public class Hotel {
     private String location;
-    private Date arrivalDate;
-    private Date departDate;
+    private LocalDate arrivalDate;
+    private LocalDate departDate;
     private int customerNumber;
     private String roomType;
 
@@ -18,7 +18,7 @@ public class Hotel {
      * @param number
      * @param type
      */
-    public void Hotel(String loc, Date arrive, Date depart, int number, String type){
+    public void Hotel(String loc, LocalDate arrive, LocalDate depart, int number, String type){
         this.location = loc;
         this. arrivalDate = arrive;
         this.departDate = depart;
@@ -30,11 +30,11 @@ public class Hotel {
         return location;
     }
 
-    public Date getArrivalDate() {
+    public LocalDate getArrivalDate() {
         return arrivalDate;
     }
 
-    public Date getDepartDate() {
+    public LocalDate getDepartDate() {
         return departDate;
     }
 

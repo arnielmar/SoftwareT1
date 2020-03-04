@@ -2,7 +2,6 @@ package Vinnsla;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class DayTrip {
     private String location;
