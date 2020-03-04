@@ -1,3 +1,4 @@
+import Vinnsla.Orders;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -29,5 +30,7 @@ public class FlightTabController {
      * @param actionEvent - Atburðurinn þegar klikkað er á takka
      */
     public void leitaHandler(ActionEvent actionEvent) {
+        Orders orders = new Orders();
+        orders.makeDummyFlights();
     }
 }
