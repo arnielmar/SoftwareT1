@@ -1,13 +1,14 @@
 package Vinnsla;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Flight {
     private String departureLoc;
     private String arrivalLoc;
-    private Date flightDate;
+    private LocalDate flightDate;
     private int passengerNumber;
     private String[] seats;
+
 
     /**
      *
@@ -17,7 +18,7 @@ public class Flight {
      * @param nr
      * @param seats
      */
-    public void Flight (String depart, String arrival, Date date, int nr, String[] seats )
+    public Flight ( String depart, String arrival, LocalDate date, int nr, String[] seats )
     {
         this.departureLoc = depart;
         this.arrivalLoc = arrival;
@@ -34,7 +35,7 @@ public class Flight {
         return arrivalLoc;
     }
 
-    public Date getFlightDate() {
+    public LocalDate getFlightDate() {
         return flightDate;
     }
 
