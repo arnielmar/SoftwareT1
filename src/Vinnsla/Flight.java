@@ -9,6 +9,7 @@ public class Flight {
     private int passengerNumber;
     private String[] seats;
 
+
     /**
      *
      * @param depart //departure location
@@ -17,7 +18,7 @@ public class Flight {
      * @param nr
      * @param seats
      */
-    public void Flight (String depart, String arrival, LocalDate date, int nr, String[] seats )
+    public Flight ( String depart, String arrival, LocalDate date, int nr, String[] seats )
     {
         this.departureLoc = depart;
         this.arrivalLoc = arrival;
