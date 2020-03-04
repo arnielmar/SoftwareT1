@@ -6,6 +6,13 @@ public class Package {
     private Hotel hotel;
     private DayTrip dayTrip;
 
+    /**
+     *
+     * @param flightTo
+     * @param flightFrom
+     * @param hotel
+     * @param dayTrip
+     */
     public Package(Flight flightTo, Flight flightFrom, Hotel hotel, DayTrip dayTrip) {
         this.flightTo = flightTo;
         this.flightFrom = flightFrom;
