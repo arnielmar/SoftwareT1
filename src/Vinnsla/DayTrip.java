@@ -1,11 +1,13 @@
 package Vinnsla;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class DayTrip {
     private String location;
-    private Date date;
-    private Date time;          // eitthvað annað en Date samt
+    private LocalDate date;
+    private LocalDateTime time;
     private int length;
     private int noOfPersons;
     private String type;
@@ -20,7 +22,7 @@ public class DayTrip {
      * @param noOfPersons - Fjöldi manns
      * @param type - Tegund day trip
      */
-    public DayTrip(String location, Date date, Date time, int length, int noOfPersons, String type) {
+    public DayTrip(String location, LocalDate date, LocalDateTime time, int length, int noOfPersons, String type) {
         this.location = location;
         this.date = date;
         this.time = time;
@@ -33,11 +35,11 @@ public class DayTrip {
         return location;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public Date getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 
