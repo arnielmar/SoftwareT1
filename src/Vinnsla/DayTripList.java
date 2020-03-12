@@ -2,6 +2,8 @@ package Vinnsla;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DayTripList {
@@ -49,5 +51,20 @@ public class DayTripList {
      */
     public void addDayTrip(DayTrip dayTrip) {
         dayTrips.add(dayTrip);
+    }
+
+    /**
+     * Leitar að day trips á staðsetningu dest á dagsetningu date
+     * með lengd length fyrir noOfPeople manns eftir tegund herbergis.
+     * Skilar ArrayList<D1>.
+     *
+     * @param dest - Áfangastaður
+     * @param date - Dagsetning day trips
+     * @param length - Lengd day trips
+     * @param noOfPeople - Fjöldi manns
+     * @param tegund - Tegund herbergis
+     */
+    public void searchHotels(String dest, LocalDate date, int length, int noOfPeople, String tegund) {
+        //TODO
     }
 }

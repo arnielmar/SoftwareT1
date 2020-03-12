@@ -2,6 +2,8 @@ package Vinnsla;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class PackageList {
@@ -49,5 +51,20 @@ public class PackageList {
      */
     public void addPackage(Package pack) {
         packages.add(pack);
+    }
+
+    /**
+     * Leitar að pökkum á staðsetningu dest frá staðsetningu depart
+     * frá dagsetningu from til dagsetningu to fyrir noOfPeople manns.
+     * Skilar ArrayList<Package>.
+     *
+     * @param depart - Brottfararstaður
+     * @param dest - Áfangastaður
+     * @param from - Dagsetning komu
+     * @param to - Dagsetning brottfararar
+     * @param noOfPeople - Fjöldi manns
+     */
+    public void searchPackages(String depart, String dest, LocalDate from, LocalDate to, int noOfPeople) {
+        //TODO
     }
 }

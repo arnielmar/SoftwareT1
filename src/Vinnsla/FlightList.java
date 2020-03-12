@@ -2,7 +2,8 @@ package Vinnsla;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import java.util.ArrayList;
+
+import java.time.LocalDate;
 
 public class FlightList {
     private ObservableList<Flight> flights;
@@ -49,5 +50,35 @@ public class FlightList {
      */
     public void addFlight(Flight flight) {
         flights.add(flight);
+    }
+
+    /**
+     * Leitar að flugum frá depart til dest á dagsetningu from,
+     * og einnig að flugum frá dest til depart á dagsetningu to
+     * fyrir noOfPeople manns.
+     * Skilar ArrayList<F1>.
+     *
+     * @param dest - Áfangastaður
+     * @param depart - Brottfararstaður
+     * @param from - Dagsetning brottfarar
+     * @param to - Dagsetning komu
+     * @param noOfPeople - Fjöldi manns
+     */
+    public void searchFlightsRoundWay(String dest, String depart, LocalDate from, LocalDate to, int noOfPeople) {
+        //TODO
+    }
+
+    /**
+     * Leitar að flugum frá depart til dest á dagsetningu date
+     * fyrir noOfPeople manns.
+     * Skilar ArrayList<F1>.
+     *
+     * @param dest - Áfangastaður
+     * @param depart - Brottfararstaður
+     * @param date - Dagsetning brottfarar
+     * @param noOfPeople - Fjöldi manns
+     */
+    public void searchFlightsOneWay(String dest, String depart, LocalDate date, int noOfPeople) {
+        //TODO
     }
 }

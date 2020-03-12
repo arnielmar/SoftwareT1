@@ -2,6 +2,8 @@ package Vinnsla;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class HotelList {
@@ -49,5 +51,20 @@ public class HotelList {
      */
     public void addHotel(Hotel hotel) {
         hotels.add(hotel);
+    }
+
+    /**
+     * Leitar að hótelum á staðsetningu dest frá dagsetningu from
+     * til dagsetningu to fyrir noOfPeople manns eftir tegund herbergis.
+     * Skilar ArrayList<H1>.
+     *
+     * @param dest - Áfangastaður
+     * @param from - Dagsetning komu
+     * @param to - Dagsetning brottfararar
+     * @param noOfPeople - Fjöldi manns
+     * @param tegund - Tegund herbergis
+     */
+    public void searchHotels(String dest, LocalDate from, LocalDate to, int noOfPeople, String tegund) {
+        //TODO
     }
 }
