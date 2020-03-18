@@ -1,5 +1,6 @@
 package Utlit;
 
+import Vinnsla.FlightList;
 import Vinnsla.Orders;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,11 +34,13 @@ public class FlightTabController implements Initializable {
     @FXML
     private Spinner flightPersons;
 
+    private FlightList flightList;      // tenging við gögn með lista af flugum
+
     private String depart;              // brottfararstaður
     private String destination;         // áfangastaður
     private boolean oneWay;             // oneway eða round trip
-    private LocalDate from;             // dagsetning frá
-    private LocalDate to;               // dagsetning til
+    private LocalDate dateFrom;         // dagsetning frá
+    private LocalDate dateTo;           // dagsetning til
     private int noOfPeople;             // fjöldi manns
 
     /**
@@ -49,6 +52,8 @@ public class FlightTabController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setjaStadi();
+        setjaSpinner();
+        setjaDagsetningar();
     }
 
     /**
@@ -66,14 +71,47 @@ public class FlightTabController implements Initializable {
     }
 
     /**
-     * Bregst við því þegar leitað er að flugi.
+     * Stillir spinner-inn. Upphafsgildi er 1,
+     * min gildi er 1 og max gildi er 250.
      *
-     * @param actionEvent - Atburðurinn þegar klikkað er á takka
+     */
+    private void setjaSpinner() {
+        SpinnerValueFactory.IntegerSpinnerValueFactory intSpin;
+        intSpin = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 250, 1, 1);
+        flightPersons.setValueFactory(intSpin);
+    }
+
+    /**
+     * Stillir dagsetningar á Date Pickers á daginn í dag.
+     *
+     */
+    private void setjaDagsetningar() {
+        flightDepartureDate.setValue(LocalDate.now());
+        flightReturningDate.setValue(LocalDate.now());
+    }
+
+    /**
+     * Bregst við því þegar leitað er að flugi.
+     * Nær í fjölda manns úr spinnernum, athugar hvort leitað
+     * sé að one way eða round trip og kallar á samsvarandi aðferð
+     * í FlightList sem leitar að flugum.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á leitartakka
      */
     @FXML
     private void leitaHandler(ActionEvent actionEvent) {
-        Orders orders = new Orders();
-        orders.makeDummyFlights();
+        noOfPeople = (int) flightPersons.getValue();
+        System.out.println(noOfPeople);
+        // ef aðeins er leitað að einu flugi
+        if (oneWay) {
+            //flightList.searchFlightsOneWay(destination, depart, dateFrom, noOfPeople);
+            System.out.println("Leitaði að oneway flugi");
+        } else {
+            //flightList.searchFlightsRoundWay(destination, depart, dateFrom, dateTo, noOfPeople);
+            System.out.println("Leitaði að round way flugi");
+        }
+        /*Orders orders = new Orders();
+        orders.makeDummyFlights();*/
     }
 
     /**
@@ -84,8 +122,9 @@ public class FlightTabController implements Initializable {
      */
     @FXML
     private void flightFromComboHandler(ActionEvent actionEvent) {
-        ComboBox cb = (ComboBox)actionEvent.getSource();
+        ComboBox cb = (ComboBox) actionEvent.getSource();
         depart = (String)cb.getSelectionModel().getSelectedItem();
+        System.out.println(depart);
     }
 
     /**
@@ -98,12 +137,14 @@ public class FlightTabController implements Initializable {
     private void flightToComboHandler(ActionEvent actionEvent) {
         ComboBox cb = (ComboBox)actionEvent.getSource();
         destination = (String)cb.getSelectionModel().getSelectedItem();
+        System.out.println(destination);
     }
 
     /**
      * Atburðahandler fyrir radio buttons.
      * Tilviksbreytan oneWay sett false ef round trip er valið,
      * true annars. Round trip hefur id=1, one way hefur id=2.
+     * Disable-ar líka Date Picker fyrir heimkomu ef oneWay er true.
      *
      * @param actionEvent - atburðurinn sem varð til við að ýta á radio button
      */
@@ -112,10 +153,34 @@ public class FlightTabController implements Initializable {
         int id = Integer.valueOf(((RadioButton) actionEvent.getSource()).getId());
         if (id == 1) {
             oneWay = false;
+            flightReturningDate.setDisable(false);
             System.out.println(oneWay);
         } else {
             oneWay = true;
+            flightReturningDate.setDisable(true);
             System.out.println(oneWay);
         }
+    }
+
+    /**
+     * Atburðahandler fyrir dagsetningu brottfarar.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að velja dagsetningu
+     */
+    @FXML
+    private void flightDepartureDateHandler(ActionEvent actionEvent) {
+        dateFrom = flightDepartureDate.getValue();
+        System.out.println(dateFrom);
+    }
+
+    /**
+     * Atburðahandler fyrir dagsetningu heimkomu.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að velja dagsetningu
+     */
+    @FXML
+    private void flightReturningDateHandler(ActionEvent actionEvent) {
+        dateTo = flightReturningDate.getValue();
+        System.out.println(dateTo);
     }
 }

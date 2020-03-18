@@ -10,8 +10,8 @@
             <children>
                 <ComboBox fx:id="flightFromCombo" layoutX="56.0" layoutY="122.0" onAction="#flightFromComboHandler" prefWidth="150.0" />
                 <ComboBox fx:id="flightToCombo" layoutX="288.0" layoutY="122.0" onAction="#flightToComboHandler" prefWidth="150.0" />
-                <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
-                <DatePicker fx:id="flightReturningDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
+                <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" onAction="#flightDepartureDateHandler" prefHeight="25.0" prefWidth="150.0" />
+                <DatePicker fx:id="flightReturningDate" layoutX="288.0" layoutY="190.0" onAction="#flightReturningDateHandler" prefHeight="25.0" prefWidth="150.0" />
                 <RadioButton id="1" fx:id="flightRoundWay" layoutX="56.0" layoutY="54.0" mnemonicParsing="false" onAction="#radioButtonsHandler" selected="true" text="Round Way">
                <toggleGroup>
                   <ToggleGroup fx:id="radio" />
