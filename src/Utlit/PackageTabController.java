@@ -1,11 +1,10 @@
 package Utlit;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
 
 public class PackageTabController {
     @FXML
@@ -20,4 +19,17 @@ public class PackageTabController {
     private Button packageSearchButton;
     @FXML
     private Spinner packagePersons;
+
+    @FXML
+    public void initialize(){
+        ObservableList<String> listDest = FXCollections.observableArrayList("Reykjavík","Danmörk","Akureyri");
+        packageFromCombo.setItems(listDest);
+        packageFromCombo.getSelectionModel().selectFirst();
+        packageToCombo.setItems(listDest);
+        packageToCombo.getSelectionModel().selectFirst();
+
+        SpinnerValueFactory.IntegerSpinnerValueFactory intSpin;
+        intSpin = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 250, 1, 1);
+        packagePersons.setValueFactory(intSpin);
+    }
 }
