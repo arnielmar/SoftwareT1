@@ -4,12 +4,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Tab text="Flight" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FlightTabController">
+<Tab text="Flight" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.FlightTabController">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
-                <ComboBox fx:id="flightFromCombo" layoutX="56.0" layoutY="122.0" prefWidth="150.0" />
-                <ComboBox fx:id="flightToCombo" layoutX="288.0" layoutY="122.0" prefWidth="150.0" />
+                <ComboBox fx:id="flightFromCombo" layoutX="56.0" layoutY="122.0" onAction="#flightFromComboHandler" prefWidth="150.0" />
+                <ComboBox fx:id="flightToCombo" layoutX="288.0" layoutY="122.0" onAction="#flightToComboHandler" prefWidth="150.0" />
                 <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
                 <DatePicker fx:id="flightReturningDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
                 <RadioButton fx:id="flightRoundWay" layoutX="56.0" layoutY="54.0" mnemonicParsing="false" selected="true" text="Round Way">
