@@ -55,7 +55,7 @@ public class FlightTabController implements Initializable {
      * Upphafsstillir comboboxin með áfangastöðum.
      *
      */
-    public void setjaStadi() {
+    private void setjaStadi() {
         ObservableList<String> stadir = FXCollections.observableArrayList();    // búa til lista
         stadir.add("Reykjavík");    // bæta í lista
         stadir.add("París");
@@ -70,7 +70,8 @@ public class FlightTabController implements Initializable {
      *
      * @param actionEvent - Atburðurinn þegar klikkað er á takka
      */
-    public void leitaHandler(ActionEvent actionEvent) {
+    @FXML
+    private void leitaHandler(ActionEvent actionEvent) {
         Orders orders = new Orders();
         orders.makeDummyFlights();
     }
@@ -78,9 +79,11 @@ public class FlightTabController implements Initializable {
     /**
      * Atburðahandler fyrir flight from combobox.
      * Finnur hvaða staður er valinn í comboboxi.
+     *
      * @param actionEvent - atburðurinn sem varð til við að velja stak í comboboxi
      */
-    public void flightFromComboHandler(ActionEvent actionEvent) {
+    @FXML
+    private void flightFromComboHandler(ActionEvent actionEvent) {
         ComboBox cb = (ComboBox)actionEvent.getSource();
         depart = (String)cb.getSelectionModel().getSelectedItem();
     }
@@ -88,10 +91,31 @@ public class FlightTabController implements Initializable {
     /**
      * Atburðahandler fyrir flight to combobox.
      * Finnur hvaða staður er valinn í comboboxi.
+     *
      * @param actionEvent - atburðurinn sem varð til við að velja stak í comboboxi
      */
-    public void flightToComboHandler(ActionEvent actionEvent) {
+    @FXML
+    private void flightToComboHandler(ActionEvent actionEvent) {
         ComboBox cb = (ComboBox)actionEvent.getSource();
         destination = (String)cb.getSelectionModel().getSelectedItem();
+    }
+
+    /**
+     * Atburðahandler fyrir radio buttons.
+     * Tilviksbreytan oneWay sett false ef round trip er valið,
+     * true annars. Round trip hefur id=1, one way hefur id=2.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að ýta á radio button
+     */
+    @FXML
+    private void radioButtonsHandler(ActionEvent actionEvent) {
+        int id = Integer.valueOf(((RadioButton) actionEvent.getSource()).getId());
+        if (id == 1) {
+            oneWay = false;
+            System.out.println(oneWay);
+        } else {
+            oneWay = true;
+            System.out.println(oneWay);
+        }
     }
 }
