@@ -18,8 +18,7 @@ public class Flight {
      * @param nr
      * @param seats
      */
-    public Flight ( String depart, String arrival, LocalDate date, int nr, String[] seats )
-    {
+    public Flight (String depart, String arrival, LocalDate date, int nr, String[] seats) {
         this.departureLoc = depart;
         this.arrivalLoc = arrival;
         this.flightDate = date;
@@ -45,5 +44,10 @@ public class Flight {
 
     public String[] getSeats() {
         return seats;
+    }
+
+    @Override
+    public String toString() {
+        return "From " + departureLoc + " to " + arrivalLoc + " on " + flightDate;
     }
 }
