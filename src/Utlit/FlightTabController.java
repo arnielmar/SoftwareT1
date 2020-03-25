@@ -49,8 +49,9 @@ public class FlightTabController implements Initializable {
      * @param location - ónotað
      * @param resources - ónotað
      */
+
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle rs) {
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
@@ -67,7 +68,7 @@ public class FlightTabController implements Initializable {
         flightFromCombo.setItems(stadir);   // setja lista í combobox
         flightFromCombo.getSelectionModel().select(0);  // setja fyrsta stak sem upphafsgildi
         flightToCombo.setItems(stadir);
-        flightToCombo.getSelectionModel().select(0);
+        flightToCombo.getSelectionModel().select(1);
     }
 
     /**
@@ -182,5 +183,13 @@ public class FlightTabController implements Initializable {
     private void flightReturningDateHandler(ActionEvent actionEvent) {
         dateTo = flightReturningDate.getValue();
         System.out.println(dateTo);
+    }
+
+    public String getFromCombo() {
+        return depart;
+    }
+
+    public int getSpinner() {
+        return noOfPeople;
     }
 }

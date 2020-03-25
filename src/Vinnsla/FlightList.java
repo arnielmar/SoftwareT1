@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import java.time.LocalDate;
 
 public class FlightList {
-    private ObservableList<Flight> flights;
+    private ObservableList<mockupFlight> flights;
 
     /**
      * Smíðar nýjan Observable List af Flight hlutum.
@@ -21,8 +21,8 @@ public class FlightList {
      * @param index - nr. flugs
      * @return Flight - flug nr. index í lista
      */
-    public Flight getFlight(int index) {
-        return (Flight)flights.get(index);
+    public mockupFlight getFlight(int index) {
+        return (mockupFlight)flights.get(index);
     }
 
     /**
@@ -30,7 +30,7 @@ public class FlightList {
      *
      * @return - lista af Flight hlutum
      */
-    public ObservableList<Flight> getAllFlights() {
+    public ObservableList<mockupFlight> getAllFlights() {
         return flights;
     }
 
@@ -48,7 +48,7 @@ public class FlightList {
      *
      * @param flight - Flight hlutur sem bæta á við í lista
      */
-    public void addFlight(Flight flight) {
+    public void addFlight(mockupFlight flight) {
         flights.add(flight);
     }
 
@@ -66,6 +66,12 @@ public class FlightList {
      */
     public void searchFlightsRoundWay(String dest, String depart, LocalDate from, LocalDate to, int noOfPeople) {
         //TODO
+        mockupFlights mFlights = new mockupFlights();
+        ObservableList<mockupFlight> flights2;
+        flights = FXCollections.observableArrayList(mFlights.search(depart, dest, from, noOfPeople));
+        flights2 = FXCollections.observableArrayList(mFlights.search(dest, depart, to, noOfPeople));
+        flights.addAll(flights2);
+
     }
 
     /**
@@ -80,5 +86,7 @@ public class FlightList {
      */
     public void searchFlightsOneWay(String dest, String depart, LocalDate date, int noOfPeople) {
         //TODO
+        mockupFlights mFlights = new mockupFlights();
+        flights = FXCollections.observableArrayList(mFlights.search(depart, dest, date, noOfPeople));
     }
 }

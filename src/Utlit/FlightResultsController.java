@@ -2,6 +2,7 @@ package Utlit;
 
 import Vinnsla.Flight;
 import Vinnsla.FlightList;
+import Vinnsla.mockupFlight;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -20,7 +21,7 @@ public class FlightResultsController implements Initializable {
     @FXML
     private AnchorPane flightResultsWindow;
     @FXML
-    private ListView<Flight> flightsList;
+    private ListView<mockupFlight> flightsList;
 
     private FlightList flightsGogn;
     private int virkurIndex = 0;
@@ -29,10 +30,10 @@ public class FlightResultsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         flightsGogn = new FlightList();
         flightsList.setItems(flightsGogn.getAllFlights());
-        MultipleSelectionModel<Flight> lsr = flightsList.getSelectionModel();
-        lsr.selectedItemProperty().addListener(new ChangeListener<Flight>() {
+        MultipleSelectionModel<mockupFlight> lsr = flightsList.getSelectionModel();
+        lsr.selectedItemProperty().addListener(new ChangeListener<mockupFlight>() {
             @Override
-            public void changed(ObservableValue<? extends Flight> observable, Flight oldValue, Flight newValue) {
+            public void changed(ObservableValue<? extends mockupFlight> observable, mockupFlight oldValue, mockupFlight newValue) {
                 virkurIndex = lsr.getSelectedIndex();
             }
         });
