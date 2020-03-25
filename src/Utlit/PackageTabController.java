@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.*;
 
+import java.time.LocalDate;
+
 public class PackageTabController {
     @FXML
     private ComboBox packageFromCombo;
@@ -31,5 +33,7 @@ public class PackageTabController {
         SpinnerValueFactory.IntegerSpinnerValueFactory intSpin;
         intSpin = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 250, 1, 1);
         packagePersons.setValueFactory(intSpin);
+        packageDepartureDate.setValue(LocalDate.now());
+        packageReturningDate.setValue(LocalDate.now());
     }
 }
