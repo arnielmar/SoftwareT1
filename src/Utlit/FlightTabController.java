@@ -14,7 +14,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class FlightTabController implements Initializable {
+public class FlightTabController {
     @FXML
     private ComboBox<String> flightFromCombo;
     @FXML
@@ -49,8 +49,7 @@ public class FlightTabController implements Initializable {
      * @param location - ónotað
      * @param resources - ónotað
      */
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() {
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
