@@ -5,17 +5,13 @@ import Vinnsla.FlightList;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.layout.AnchorPane;
 
-import java.awt.*;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class FlightResultsController implements Initializable {
+public class FlightResultsController {
 
     @FXML
     private AnchorPane flightResultsWindow;
@@ -25,8 +21,12 @@ public class FlightResultsController implements Initializable {
     private FlightList flightsGogn;
     private int virkurIndex = 0;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    /**
+     * Upphafsstillir lista af flugum og setur í ListView hlut.
+     * Setur change listener á ListView hlutinn.
+     *
+     */
+    public void initialize() {
         flightsGogn = new FlightList();
         flightsList.setItems(flightsGogn.getAllFlights());
         MultipleSelectionModel<Flight> lsr = flightsList.getSelectionModel();
