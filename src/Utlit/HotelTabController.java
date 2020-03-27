@@ -41,7 +41,7 @@ public class HotelTabController {
      * Bregst við leit af hóteli.
      *
      * @param actionEvent - Atburðurinn þegar klikkað er á leitartakka
-     */
+     */ 
     public void leitaHandler(ActionEvent actionEvent) {
         Date from = java.sql.Date.valueOf(hotelFromDate.getValue());
         Date to = java.sql.Date.valueOf(hotelToDate.getValue());
