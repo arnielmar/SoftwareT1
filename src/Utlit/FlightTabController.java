@@ -6,10 +6,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import java.time.LocalDate;
 
-public class FlightTabController {
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
+public class FlightTabController implements Initializable {
     @FXML
     private ComboBox<String> flightFromCombo;
     @FXML
@@ -29,7 +33,9 @@ public class FlightTabController {
     @FXML
     private Spinner flightPersons;
 
-    private FlightList flightList;      // tenging við gögn með lista af flugum
+    //private FlightList flightList;                  // tenging við gögn með lista af flugum
+    @FXML
+    FlightResultsController flightResults;  // tenging við controller fyrir niðurstöður
 
     private String depart;              // brottfararstaður
     private String destination;         // áfangastaður
@@ -41,10 +47,9 @@ public class FlightTabController {
     /**
      * Upphafsstillir síðu. Upphafsstillir comboboxin.
      *
-     * @param location - ónotað
-     * @param resources - ónotað
      */
-    public void initialize() {
+    public void initialize(URL location, ResourceBundle resource) {
+        //flightList = new FlightList();
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
@@ -98,10 +103,10 @@ public class FlightTabController {
         System.out.println(noOfPeople);
         // ef aðeins er leitað að einu flugi
         if (oneWay) {
-            //flightList.searchFlightsOneWay(destination, depart, dateFrom, noOfPeople);
+            flightResults.searchFlightsOneWay(destination, depart, dateFrom, noOfPeople);
             System.out.println("Leitaði að oneway flugi");
         } else {
-            //flightList.searchFlightsRoundWay(destination, depart, dateFrom, dateTo, noOfPeople);
+            flightResults.searchFlightsRoundWay(destination, depart, dateFrom, dateTo, noOfPeople);
             System.out.println("Leitaði að round way flugi");
         }
         /*Orders orders = new Orders();

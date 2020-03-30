@@ -4,9 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class FlightList {
     private ObservableList<Flight> flights;
+    private ListOfFlights listOfFlights = new ListOfFlights();
 
     /**
      * Smíðar nýjan Observable List af Flight hlutum.
@@ -65,7 +67,16 @@ public class FlightList {
      * @param noOfPeople - Fjöldi manns
      */
     public void searchFlightsRoundWay(String depart, String dest, LocalDate from, LocalDate to, int noOfPeople) {
-        //TODO
+        flights.removeAll();
+        ArrayList<Flight> allFlights = listOfFlights.getListiAfFlugum();
+        for (Flight flight : allFlights) {
+            if (flight.getDepartureLoc() == depart &&
+                flight.getArrivalLoc() == dest &&
+                flight.getFlightDate() == from &&
+                flight.getCapacity() >= noOfPeople) {
+                flights.add(flight);
+            }
+        }
     }
 
     /**
@@ -79,6 +90,15 @@ public class FlightList {
      * @param noOfPeople - Fjöldi manns
      */
     public void searchFlightsOneWay(String depart, String dest, LocalDate date, int noOfPeople) {
-        //TODO
+        flights.removeAll();
+        ArrayList<Flight> allFlights = listOfFlights.getListiAfFlugum();
+        for (Flight flight : allFlights) {
+            if (flight.getDepartureLoc() == depart &&
+                    flight.getArrivalLoc() == dest &&
+                    flight.getFlightDate() == date &&
+                    flight.getCapacity() >= noOfPeople) {
+                flights.add(flight);
+            }
+        }
     }
 }

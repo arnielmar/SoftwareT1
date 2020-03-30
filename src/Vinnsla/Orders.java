@@ -24,7 +24,7 @@ public class Orders {
         {
             tmpstring[0] = ""+i;
             LocalDate tmpDate = LocalDate.now();
-            Flight tmpFlight = new Flight( ""+i, ""+i, tmpDate, i, tmpstring);
+            Flight tmpFlight = new Flight( ""+i, ""+i, tmpDate, i);
             addFlight(tmpFlight);
         }
         for ( i = 0; i < 10; i++ )
