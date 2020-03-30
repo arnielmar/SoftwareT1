@@ -1,5 +1,6 @@
 package Utlit;
 
+import Vinnsla.Flight;
 import Vinnsla.FlightList;
 import Vinnsla.Orders;
 import javafx.collections.FXCollections;
@@ -8,12 +9,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class FlightTabController implements Initializable {
+public class FlightTabController {
+    @FXML
+    private AnchorPane flightSearchWindow;
     @FXML
     private ComboBox<String> flightFromCombo;
     @FXML
@@ -33,7 +37,7 @@ public class FlightTabController implements Initializable {
     @FXML
     private Spinner flightPersons;
 
-    //private FlightList flightList;                  // tenging við gögn með lista af flugum
+    private FlightList flightList;                  // tenging við gögn með lista af flugum
 
     private String depart;              // brottfararstaður
     private String destination;         // áfangastaður
@@ -46,8 +50,8 @@ public class FlightTabController implements Initializable {
      * Upphafsstillir síðu. Upphafsstillir comboboxin.
      *
      */
-    public void initialize(URL location, ResourceBundle resource) {
-        //flightList = new FlightList();
+    public void initialize() {
+        flightList = new FlightList();
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
@@ -97,6 +101,7 @@ public class FlightTabController implements Initializable {
      */
     @FXML
     private void leitaHandler(ActionEvent actionEvent) {
+        flightSearchWindow.setVisible(false);
         noOfPeople = (int) flightPersons.getValue();
         System.out.println(noOfPeople);
         // ef aðeins er leitað að einu flugi

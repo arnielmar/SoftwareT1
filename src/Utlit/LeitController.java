@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LeitController implements Initializable {
+public class LeitController {
     @FXML
     private Tab flightTab;
     @FXML
@@ -18,10 +18,6 @@ public class LeitController implements Initializable {
     @FXML
     private Tab packageTab;
 
-    @FXML
-    private FlightTabController flightTabController;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() {
     }
 }

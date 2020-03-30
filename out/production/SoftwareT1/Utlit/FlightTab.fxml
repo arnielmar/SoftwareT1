@@ -6,7 +6,7 @@
 
 <Tab text="Flight" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.FlightTabController">
     <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane fx:id="flightSearchWindow" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
                 <ComboBox fx:id="flightFromCombo" layoutX="56.0" layoutY="122.0" onAction="#flightFromComboHandler" prefWidth="150.0" />
                 <ComboBox fx:id="flightToCombo" layoutX="288.0" layoutY="122.0" onAction="#flightToComboHandler" prefWidth="150.0" />
@@ -29,4 +29,12 @@
                 <Label layoutX="56.0" layoutY="241.0" text="Persons" />
             </children></AnchorPane>
     </content>
+   <graphic>
+      <AnchorPane fx:id="flightResultWindow" prefHeight="180.0" prefWidth="200.0" visible="false">
+         <children>
+            <ListView fx:id="flightListView" layoutX="100.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="flightBackButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Til baka" />
+         </children>
+      </AnchorPane>
+   </graphic>
 </Tab>
