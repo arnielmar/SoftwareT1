@@ -14,7 +14,7 @@
                 <DatePicker fx:id="hotelToDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
                 <Button fx:id="hotelSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitaHandler" text="Search" />
                 <Spinner fx:id="hotelPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
-                <Label layoutX="193.0" layoutY="15.0" text="Search for Hotels">
+                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" text="Search for Hotels">
                     <font>
                         <Font size="18.0" />
                     </font>
