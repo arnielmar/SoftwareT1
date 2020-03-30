@@ -34,8 +34,6 @@ public class FlightTabController implements Initializable {
     private Spinner flightPersons;
 
     //private FlightList flightList;                  // tenging við gögn með lista af flugum
-    @FXML
-    FlightResultsController flightResults;  // tenging við controller fyrir niðurstöður
 
     private String depart;              // brottfararstaður
     private String destination;         // áfangastaður
@@ -103,10 +101,8 @@ public class FlightTabController implements Initializable {
         System.out.println(noOfPeople);
         // ef aðeins er leitað að einu flugi
         if (oneWay) {
-            flightResults.searchFlightsOneWay(destination, depart, dateFrom, noOfPeople);
             System.out.println("Leitaði að oneway flugi");
         } else {
-            flightResults.searchFlightsRoundWay(destination, depart, dateFrom, dateTo, noOfPeople);
             System.out.println("Leitaði að round way flugi");
         }
         /*Orders orders = new Orders();
