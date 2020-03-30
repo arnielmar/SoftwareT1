@@ -4,8 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane fx:id="flightResultsWindow" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.FlightResultsController">
+<AnchorPane fx:id="flightResultsWindow" prefHeight="400.0" prefWidth="600.0" visible="false" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.FlightResultsController">
    <children>
       <Label layoutX="250.0" layoutY="15.0" text="Flight Results">
          <font>

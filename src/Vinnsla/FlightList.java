@@ -64,7 +64,7 @@ public class FlightList {
      * @param to - Dagsetning komu
      * @param noOfPeople - Fjöldi manns
      */
-    public void searchFlightsRoundWay(String dest, String depart, LocalDate from, LocalDate to, int noOfPeople) {
+    public void searchFlightsRoundWay(String depart, String dest, LocalDate from, LocalDate to, int noOfPeople) {
         //TODO
     }
 
@@ -78,7 +78,7 @@ public class FlightList {
      * @param date - Dagsetning brottfarar
      * @param noOfPeople - Fjöldi manns
      */
-    public void searchFlightsOneWay(String dest, String depart, LocalDate date, int noOfPeople) {
+    public void searchFlightsOneWay(String depart, String dest, LocalDate date, int noOfPeople) {
         //TODO
     }
 }

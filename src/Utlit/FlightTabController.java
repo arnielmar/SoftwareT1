@@ -104,8 +104,8 @@ public class FlightTabController {
             //flightList.searchFlightsRoundWay(destination, depart, dateFrom, dateTo, noOfPeople);
             System.out.println("Leitaði að round way flugi");
         }
-        Orders orders = new Orders();
-        orders.makeDummyFlights();
+        /*Orders orders = new Orders();
+        orders.makeDummyFlights();*/
     }
 
     /**

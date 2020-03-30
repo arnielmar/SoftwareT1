@@ -5,6 +5,7 @@ import Vinnsla.FlightList;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MultipleSelectionModel;
@@ -51,5 +52,11 @@ public class FlightResultsController {
         flightResultsWindow.setVisible(true);
 
         p.setContent(flightResultsWindow);
+
+        Dialog d = new Dialog();
+
+        d.setDialogPane(p);
+        d.setHeaderText("Flug sem passa við leit");
+        d.setTitle("Leitarniðurstöður");
     }
 }
