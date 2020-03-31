@@ -2,22 +2,32 @@ package Utlit;
 
 import Vinnsla.Flight;
 import Vinnsla.FlightList;
-import Vinnsla.Orders;
+import Vinnsla.ListOfFlights;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 
-import java.net.URL;
 import java.time.LocalDate;
-import java.util.ResourceBundle;
 
 public class FlightTabController {
     @FXML
-    private AnchorPane flightSearchWindow;
+    private Button flightBackButton;
+    @FXML
+    private Label resultLabel;
+    @FXML
+    private ListView flightListView;
+    @FXML
+    private Label searchLabel;
+    @FXML
+    private Label fromLabel;
+    @FXML
+    private Label toLabel;
+    @FXML
+    private Label personsLabel;
     @FXML
     private ComboBox<String> flightFromCombo;
     @FXML
@@ -31,13 +41,14 @@ public class FlightTabController {
     @FXML
     private RadioButton flightOneWay;
     @FXML
-    private ToggleGroup radio;               // tengir radioButtons saman
+    private ToggleGroup radio;          // tengir radioButtons saman
     @FXML
     private Button flightSearchButton;
     @FXML
     private Spinner flightPersons;
 
-    private FlightList flightList;                  // tenging við gögn með lista af flugum
+    private FlightList flightList;      // tenging við gögn með lista af flugum
+    private int virkurIndex = 0;        // heldur utan um hvaða stak í lista er valið
 
     private String depart;              // brottfararstaður
     private String destination;         // áfangastaður
@@ -51,10 +62,10 @@ public class FlightTabController {
      *
      */
     public void initialize() {
-        flightList = new FlightList();
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
+        setjaLista();
     }
 
     /**
@@ -91,6 +102,22 @@ public class FlightTabController {
         flightReturningDate.setValue(LocalDate.now());
     }
 
+    private void setjaLista() {
+        flightList = new FlightList();
+        ListOfFlights listOfFlights = new ListOfFlights();
+        ObservableList<Flight> listi = FXCollections.observableArrayList(listOfFlights.getListiAfFlugum());
+        //flightList.addFlight(listi.get(0));
+        //flightList.addFlight(listi.get(1));
+        flightListView.setItems(flightList.getAllFlights());
+        MultipleSelectionModel<Flight> lsr = flightListView.getSelectionModel();
+        lsr.selectedItemProperty().addListener(new ChangeListener<Flight>() {
+            @Override
+            public void changed(ObservableValue<? extends Flight> observable, Flight oldValue, Flight newValue) {
+                virkurIndex = lsr.getSelectedIndex();
+            }
+        });
+    }
+
     /**
      * Bregst við því þegar leitað er að flugi.
      * Nær í fjölda manns úr spinnernum, athugar hvort leitað
@@ -101,7 +128,6 @@ public class FlightTabController {
      */
     @FXML
     private void leitaHandler(ActionEvent actionEvent) {
-        flightSearchWindow.setVisible(false);
         noOfPeople = (int) flightPersons.getValue();
         System.out.println(noOfPeople);
         // ef aðeins er leitað að einu flugi
@@ -112,6 +138,19 @@ public class FlightTabController {
         }
         /*Orders orders = new Orders();
         orders.makeDummyFlights();*/
+        virkjaLeit(false);
+        virkjaNidurstodur(true);
+    }
+
+    /**
+     * Felur niðurstöður og sýnir leitarglugga aftur.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á til baka takka
+     */
+    @FXML
+    private void tilBakaHandler(ActionEvent actionEvent) {
+        virkjaNidurstodur(false);
+        virkjaLeit(true);
     }
 
     /**
@@ -182,5 +221,38 @@ public class FlightTabController {
     private void flightReturningDateHandler(ActionEvent actionEvent) {
         dateTo = flightReturningDate.getValue();
         System.out.println(dateTo);
+    }
+
+    /**
+     * Gerir viðmótshluti fyrir leit sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     *
+     * @param gildi - true ef á að virkja, annars false
+     */
+    private void virkjaLeit(boolean gildi) {
+        searchLabel.setVisible(gildi);
+        fromLabel.setVisible(gildi);
+        toLabel.setVisible(gildi);
+        personsLabel.setVisible(gildi);
+        flightRoundWay.setVisible(gildi);
+        flightOneWay.setVisible(gildi);
+        flightFromCombo.setVisible(gildi);
+        flightToCombo.setVisible(gildi);
+        flightDepartureDate.setVisible(gildi);
+        flightReturningDate.setVisible(gildi);
+        flightPersons.setVisible(gildi);
+        flightSearchButton.setVisible(gildi);
+    }
+
+    /**
+     * Gerir viðmótshluti fyrir niðurstöður sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     *
+     * @param gildi - true ef á að virkja, annars false
+     */
+    private void virkjaNidurstodur(boolean gildi) {
+        flightListView.setVisible(gildi);
+        resultLabel.setVisible(gildi);
+        flightBackButton.setVisible(gildi);
     }
 }

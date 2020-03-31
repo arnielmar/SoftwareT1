@@ -46,12 +46,29 @@ public class FlightList {
     }
 
     /**
+     * Eyðir öllum flugum úr lista.
+     *
+     */
+    public void deleteAllFlights() {
+        flights.removeAll();
+    }
+
+    /**
      * Bætir flugi flight við á lista.
      *
      * @param flight - Flight hlutur sem bæta á við í lista
      */
     public void addFlight(Flight flight) {
         flights.add(flight);
+    }
+
+    /**
+     * Bætir öllum flugum á listi við listann af flugum.
+     *
+     * @param listi - listi af flugum
+     */
+    public void addFlights(ObservableList<Flight> listi) {
+        flights.addAll(listi);
     }
 
     /**
