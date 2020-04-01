@@ -20,7 +20,7 @@ public class Hotel {
      */
     public void Hotel(String loc, LocalDate arrive, LocalDate depart, int number, String type){
         this.location = loc;
-        this. arrivalDate = arrive;
+        this.arrivalDate = arrive;
         this.departDate = depart;
         this.customerNumber = number;
         this.roomType = type;
