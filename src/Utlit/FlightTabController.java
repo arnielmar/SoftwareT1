@@ -44,22 +44,23 @@ public class FlightTabController {
     @FXML
     private RadioButton flightOneWay;
     @FXML
-    private ToggleGroup radio;          // tengir radioButtons saman
+    private ToggleGroup radio;              // tengir radioButtons saman
     @FXML
     private Button flightSearchButton;
     @FXML
     private Spinner flightPersons;
 
-    private FlightList flightList;      // tenging við gögn með lista af flugum
-    private int virkurIndexOne = 0;     // heldur utan um hvaða stak í lista 1 er valið
-    private int virkurIndexTwo = 0;     // heldur utan um hvaða stak í lista 2 er valið
+    private FlightList flightList;          // tenging við gögn með lista af flugum
+    private ListOfFlights listOfFlights;    // tenging við mock gagnagrunn af flugum
+    private int virkurIndexOne = 0;         // heldur utan um hvaða stak í lista 1 er valið
+    private int virkurIndexTwo = 0;         // heldur utan um hvaða stak í lista 2 er valið
 
-    private String depart;              // brottfararstaður
-    private String destination;         // áfangastaður
-    private boolean oneWay;             // oneway eða round trip
-    private LocalDate dateFrom;         // dagsetning frá
-    private LocalDate dateTo;           // dagsetning til
-    private int noOfPeople;             // fjöldi manns
+    private String depart;                  // brottfararstaður
+    private String destination;             // áfangastaður
+    private boolean oneWay;                 // oneway eða round trip
+    private LocalDate dateFrom;             // dagsetning frá
+    private LocalDate dateTo;               // dagsetning til
+    private int noOfPeople;                 // fjöldi manns
 
     /**
      * Upphafsstillir síðu. Upphafsstillir comboboxin.
@@ -67,6 +68,7 @@ public class FlightTabController {
      */
     public void initialize() {
         flightList = new FlightList();
+        listOfFlights = new ListOfFlights();
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
@@ -78,9 +80,10 @@ public class FlightTabController {
      *
      */
     private void setjaStadi() {
-        ObservableList<String> stadir = FXCollections.observableArrayList();    // búa til lista
-        stadir.add("Reykjavík");    // bæta í lista
-        stadir.add("París");
+        ArrayList<String> places = listOfFlights.getPlaces();
+        ObservableList<String> stadir = FXCollections.observableArrayList(places);    // búa til lista
+        //stadir.add("Reykjavík");    // bæta í lista
+        //stadir.add("París");
         flightFromCombo.setItems(stadir);   // setja lista í combobox
         flightFromCombo.getSelectionModel().select(0);  // setja fyrsta stak sem upphafsgildi
         depart = flightFromCombo.getSelectionModel().getSelectedItem();
@@ -113,7 +116,7 @@ public class FlightTabController {
 
     private void setjaLista() {
         ListOfFlights listOfFlights = new ListOfFlights();
-        ObservableList<Flight> listi = FXCollections.observableArrayList(listOfFlights.getListiAfFlugum());
+        ObservableList<Flight> listi = FXCollections.observableArrayList(listOfFlights.getListOfFlights());
         flightListViewOne.setItems(listi);
         flightListViewTwo.setItems(listi);
         MultipleSelectionModel<Flight> lsr = flightListViewOne.getSelectionModel();
@@ -148,16 +151,16 @@ public class FlightTabController {
         noOfPeople = (int) flightPersons.getValue();
         System.out.println(noOfPeople);
         if (oneWay) {   // leit að einu flugi
-            ArrayList<Flight> results = flightList.searchFlightsOneWay(depart, destination, dateFrom, noOfPeople);
+            ArrayList<Flight> results = flightList.searchFlights(depart, destination, dateFrom, noOfPeople);
             ObservableList<Flight> listResults = FXCollections.observableArrayList(results);
             flightListViewOne.setItems(listResults);
             virkurIndexOne = 0;
             virkjaNidurstodur(true, false);
             System.out.println("Leitaði að oneway flugi");
         } else {    // leit að tveimur flugum
-            ArrayList<Flight> fromResults = flightList.searchFlightsOneWay(depart, destination, dateFrom, noOfPeople);
+            ArrayList<Flight> fromResults = flightList.searchFlights(depart, destination, dateFrom, noOfPeople);
             ObservableList<Flight> fromListResults = FXCollections.observableArrayList(fromResults);
-            ArrayList<Flight> toResults = flightList.searchFlightsOneWay(destination, depart, dateTo, noOfPeople);
+            ArrayList<Flight> toResults = flightList.searchFlights(destination, depart, dateTo, noOfPeople);
             ObservableList<Flight> toListResults = FXCollections.observableArrayList(toResults);
             flightListViewOne.setItems(fromListResults);
             flightListViewTwo.setItems(toListResults);

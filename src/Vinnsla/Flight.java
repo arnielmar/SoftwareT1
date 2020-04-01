@@ -10,11 +10,12 @@ public class Flight {
 
 
     /**
+     * Smiður fyrir Flight hlut.
      *
-     * @param depart
-     * @param arrival
-     * @param date
-     * @param nr
+     * @param depart - Brottfararstaður
+     * @param arrival - Áfangastaður
+     * @param date - Dagsetning flugs
+     * @param nr - Fjöldi lausra sæta
      */
     public Flight (String depart, String arrival, LocalDate date, int nr) {
         this.departureLoc = depart;
@@ -41,6 +42,6 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "From " + departureLoc + " to " + arrivalLoc + " on " + flightDate;
+        return "Frá " + departureLoc + " til " + arrivalLoc + " á " + flightDate;
     }
 }
