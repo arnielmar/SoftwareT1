@@ -8,25 +8,33 @@
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
+            <ListView fx:id="flightListViewTwo" layoutX="290.0" layoutY="50.0" prefHeight="200.0" prefWidth="245.0" visible="false" />
+            <Button fx:id="flightBackButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Til baka" visible="false" />
+            <Label fx:id="resultLabel" layoutX="185.0" layoutY="15.0" text="Niðurstöður leitar af flugum" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="flightListViewOne" layoutX="15.0" layoutY="50.0" prefHeight="200.0" prefWidth="245.0" visible="false" />
                 <ComboBox fx:id="flightFromCombo" layoutX="56.0" layoutY="122.0" onAction="#flightFromComboHandler" prefWidth="150.0" />
                 <ComboBox fx:id="flightToCombo" layoutX="288.0" layoutY="122.0" onAction="#flightToComboHandler" prefWidth="150.0" />
-                <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
-                <DatePicker fx:id="flightReturningDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
-                <RadioButton fx:id="flightRoundWay" layoutX="56.0" layoutY="54.0" mnemonicParsing="false" selected="true" text="Round Way">
+                <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" onAction="#flightDepartureDateHandler" prefHeight="25.0" prefWidth="150.0" />
+                <DatePicker fx:id="flightReturningDate" layoutX="288.0" layoutY="190.0" onAction="#flightReturningDateHandler" prefHeight="25.0" prefWidth="150.0" />
+                <RadioButton id="1" fx:id="flightRoundWay" layoutX="56.0" layoutY="54.0" mnemonicParsing="false" onAction="#radioButtonsHandler" selected="true" text="Round Way">
                <toggleGroup>
                   <ToggleGroup fx:id="radio" />
                </toggleGroup></RadioButton>
-                <RadioButton fx:id="flightOneWay" layoutX="164.0" layoutY="54.0" mnemonicParsing="false" text="One Way" toggleGroup="$radio" />
+                <RadioButton id="2" fx:id="flightOneWay" layoutX="164.0" layoutY="54.0" mnemonicParsing="false" onAction="#radioButtonsHandler" text="One Way" toggleGroup="$radio" />
                 <Button fx:id="flightSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitaHandler" text="Search" />
                 <Spinner fx:id="flightPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
-                <Label layoutX="193.0" layoutY="15.0" text="Search for Flights">
+                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" text="Search for Flights">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label layoutX="56.0" layoutY="93.0" text="From" />
-                <Label layoutX="288.0" layoutY="93.0" text="To" />
-                <Label layoutX="56.0" layoutY="241.0" text="Persons" />
+                <Label fx:id="fromLabel" layoutX="56.0" layoutY="93.0" text="From" />
+                <Label fx:id="toLabel" layoutX="288.0" layoutY="93.0" text="To" />
+                <Label fx:id="personsLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
             </children></AnchorPane>
     </content>
 </Tab>

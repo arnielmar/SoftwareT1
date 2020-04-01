@@ -4,15 +4,25 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
+/**
+ * Geymir lista af flugum og hefur aðferð til að leita
+ * að flugum í gagnagrunni.
+ *
+ */
 public class FlightList {
     private ObservableList<Flight> flights;
+    private ListOfFlights listOfFlights;
 
     /**
-     * Smíðar nýjan Observable List af Flight hlutum.
+     * Smíðar nýjan Observable List af Flight hlutum
+     * og tengist við gagnagrunn af flugum.
+     *
      */
     public FlightList() {
         this.flights = FXCollections.observableArrayList();
+        listOfFlights = new ListOfFlights();
     }
 
     /**
@@ -44,6 +54,14 @@ public class FlightList {
     }
 
     /**
+     * Eyðir öllum flugum úr lista.
+     *
+     */
+    public void deleteAllFlights() {
+        flights.removeAll();
+    }
+
+    /**
      * Bætir flugi flight við á lista.
      *
      * @param flight - Flight hlutur sem bæta á við í lista
@@ -53,32 +71,36 @@ public class FlightList {
     }
 
     /**
-     * Leitar að flugum frá depart til dest á dagsetningu from,
-     * og einnig að flugum frá dest til depart á dagsetningu to
-     * fyrir noOfPeople manns.
-     * Skilar ArrayList<F1>.
+     * Bætir öllum flugum á listi við listann af flugum.
      *
-     * @param dest - Áfangastaður
-     * @param depart - Brottfararstaður
-     * @param from - Dagsetning brottfarar
-     * @param to - Dagsetning komu
-     * @param noOfPeople - Fjöldi manns
+     * @param listi - listi af flugum
      */
-    public void searchFlightsRoundWay(String dest, String depart, LocalDate from, LocalDate to, int noOfPeople) {
-        //TODO
+    public void addFlights(ObservableList<Flight> listi) {
+        flights.addAll(listi);
     }
 
     /**
      * Leitar að flugum frá depart til dest á dagsetningu date
      * fyrir noOfPeople manns.
-     * Skilar ArrayList<F1>.
      *
      * @param dest - Áfangastaður
      * @param depart - Brottfararstaður
      * @param date - Dagsetning brottfarar
      * @param noOfPeople - Fjöldi manns
+     * @return - ArrayList<Flight> results - listi af flugum sem passa við leit
      */
-    public void searchFlightsOneWay(String dest, String depart, LocalDate date, int noOfPeople) {
-        //TODO
+    public ArrayList<Flight> searchFlights(String depart, String dest, LocalDate date, int noOfPeople) {
+        ArrayList<Flight> allFlights = listOfFlights.getListOfFlights();
+        ArrayList<Flight> results = new ArrayList<>();
+        for (Flight flight : allFlights) {
+            if (flight.getDepartureLoc() == depart &&
+                    flight.getArrivalLoc() == dest &&
+                    flight.getFlightDate().equals(date) &&
+                    flight.getCapacity() >= noOfPeople) {
+                            results.add(flight);
+            }
+
+        }
+        return results;
     }
 }
