@@ -24,6 +24,8 @@ import java.util.ArrayList;
 public class FlightTabController {
     // viðmótshlutir fyrir niðurstöður
     @FXML
+    private Button pantaFlugUtButton;
+    @FXML
     private Button flightBackButton;
     @FXML
     private Label resultLabel;
@@ -201,6 +203,14 @@ public class FlightTabController {
     }
 
     /**
+     * Pantar flug.
+     * @param actionEvent - atburðurinn þegar klikkað er á panta takka
+     */
+    @FXML
+    private void pantaFlugUtHandler(ActionEvent actionEvent) {
+    }
+
+    /**
      * Atburðahandler fyrir flight from combobox.
      * Finnur hvaða staður er valinn í comboboxi.
      *
@@ -304,5 +314,6 @@ public class FlightTabController {
         flightListViewTwo.setVisible(roundWay);
         resultLabel.setVisible(gildi);
         flightBackButton.setVisible(gildi);
+        pantaFlugUtButton.setVisible(gildi);
     }
 }

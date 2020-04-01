@@ -3,11 +3,12 @@
 <?import javafx.scene.control.TabPane?>
 
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="548.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeitController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="548.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.LeitController">
    <tabs>
       <fx:include fx:id="flightTab" source="FlightTab.fxml" />
       <fx:include fx:id="hotelTab" source="HotelTab.fxml" />
       <fx:include fx:id="dayTripTab" source="DayTripTab.fxml" />
       <fx:include fx:id="packageTab" source="PackageTab.fxml" />
+      <fx:include fx:id="orderTab" source="OrderTab.fxml" />
    </tabs>
 </TabPane>
