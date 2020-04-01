@@ -67,22 +67,22 @@ public class PackageList {
      * @param noOfPeople - Fjöldi manns
      */
     public void searchPackages(String depart, String dest, LocalDate from, LocalDate to, int noOfPeople) {
+
+        //Passa að allt uppfyllist
+
         // Byrja á því að leita af listum fyrir flug frá og til, daytrip og Hótel.
         FlightList Flug= new FlightList();
         Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
-        ObservableList<Flight> FlugL = Flug.getAllFlights();
         HotelList Hotl= new HotelList();
         // Hotl.searchHotels(dest,from,to,noOfPeople, "Hvað með Tegund?");
-        ObservableList<Hotel> HotlL = Hotl.getAllHotels();
         DayTripList Dagferd = new DayTripList();
         // Dagferd.searchHotels(dest,from,"hvernig ætti maður að finna lengd",noOfPeople, " hvað með Tegund?");
-        ObservableList<DayTrip> DagL = Dagferd.getAllDayTrips();
 
         // hér er svo sett up lengdina af öllum þremur listum og minnsta af þeim
-        int Flugfjoldi = FlugL.size();
-        int Hotelfjoldi = HotlL.size();
-        int Dagferdfjoldi = DagL.size();
-        int Minfjoldi = min(Flugfjoldi,min(Hotelfjoldi,Dagferdfjoldi));
+        int Flugfjoldi = Flug.getAllFlights().size();
+        int Hotelfjoldi = Hotl.getAllHotels().size();
+        int Dagferdfjoldi = Dagferd.getAllDayTrips().size();
+        int Minfjoldi = min(Flugfjoldi,min(Hotelfjoldi,min(Dagferdfjoldi,5)));
 
         // Hér er svo sett up pakkar til að sýna.
         for (int i = 0; i < Minfjoldi; i++) {
