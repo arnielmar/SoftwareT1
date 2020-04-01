@@ -106,16 +106,18 @@ public class FlightList {
      * @param date - Dagsetning brottfarar
      * @param noOfPeople - Fjöldi manns
      */
-    public void searchFlightsOneWay(String depart, String dest, LocalDate date, int noOfPeople) {
-        flights.removeAll();
+    public ArrayList<Flight> searchFlightsOneWay(String depart, String dest, LocalDate date, int noOfPeople) {
         ArrayList<Flight> allFlights = listOfFlights.getListiAfFlugum();
+        ArrayList<Flight> results = new ArrayList<>();
         for (Flight flight : allFlights) {
             if (flight.getDepartureLoc() == depart &&
                     flight.getArrivalLoc() == dest &&
-                    flight.getFlightDate() == date &&
+                    flight.getFlightDate().equals(date) &&
                     flight.getCapacity() >= noOfPeople) {
-                flights.add(flight);
+                            results.add(flight);
             }
+
         }
+        return results;
     }
 }

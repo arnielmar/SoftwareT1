@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class FlightTabController {
     @FXML
@@ -19,7 +20,9 @@ public class FlightTabController {
     @FXML
     private Label resultLabel;
     @FXML
-    private ListView flightListView;
+    private ListView flightListViewOne;
+    @FXML
+    private ListView flightListViewTwo;
     @FXML
     private Label searchLabel;
     @FXML
@@ -48,7 +51,8 @@ public class FlightTabController {
     private Spinner flightPersons;
 
     private FlightList flightList;      // tenging við gögn með lista af flugum
-    private int virkurIndex = 0;        // heldur utan um hvaða stak í lista er valið
+    private int virkurIndexOne = 0;     // heldur utan um hvaða stak í lista 1 er valið
+    private int virkurIndexTwo = 0;     // heldur utan um hvaða stak í lista 2 er valið
 
     private String depart;              // brottfararstaður
     private String destination;         // áfangastaður
@@ -62,6 +66,7 @@ public class FlightTabController {
      *
      */
     public void initialize() {
+        flightList = new FlightList();
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
@@ -78,8 +83,10 @@ public class FlightTabController {
         stadir.add("París");
         flightFromCombo.setItems(stadir);   // setja lista í combobox
         flightFromCombo.getSelectionModel().select(0);  // setja fyrsta stak sem upphafsgildi
+        depart = flightFromCombo.getSelectionModel().getSelectedItem();
         flightToCombo.setItems(stadir);
-        flightToCombo.getSelectionModel().select(0);
+        flightToCombo.getSelectionModel().select(1);
+        destination = flightToCombo.getSelectionModel().getSelectedItem();
     }
 
     /**
@@ -99,21 +106,30 @@ public class FlightTabController {
      */
     private void setjaDagsetningar() {
         flightDepartureDate.setValue(LocalDate.now());
+        dateFrom = flightDepartureDate.getValue();
         flightReturningDate.setValue(LocalDate.now());
+        dateTo = flightReturningDate.getValue();
     }
 
     private void setjaLista() {
-        flightList = new FlightList();
         ListOfFlights listOfFlights = new ListOfFlights();
         ObservableList<Flight> listi = FXCollections.observableArrayList(listOfFlights.getListiAfFlugum());
-        //flightList.addFlight(listi.get(0));
-        //flightList.addFlight(listi.get(1));
-        flightListView.setItems(flightList.getAllFlights());
-        MultipleSelectionModel<Flight> lsr = flightListView.getSelectionModel();
+        flightListViewOne.setItems(listi);
+        flightListViewTwo.setItems(listi);
+        MultipleSelectionModel<Flight> lsr = flightListViewOne.getSelectionModel();
         lsr.selectedItemProperty().addListener(new ChangeListener<Flight>() {
             @Override
             public void changed(ObservableValue<? extends Flight> observable, Flight oldValue, Flight newValue) {
-                virkurIndex = lsr.getSelectedIndex();
+                virkurIndexOne = lsr.getSelectedIndex();
+                System.out.println("virkurIndexOne = " + virkurIndexOne);
+            }
+        });
+        MultipleSelectionModel<Flight> lsm = flightListViewTwo.getSelectionModel();
+        lsm.selectedItemProperty().addListener(new ChangeListener<Flight>() {
+            @Override
+            public void changed(ObservableValue<? extends Flight> observable, Flight oldValue, Flight newValue) {
+                virkurIndexTwo = lsm.getSelectedIndex();
+                System.out.println("virkurIndexTwo = " + virkurIndexTwo);
             }
         });
     }
@@ -128,18 +144,28 @@ public class FlightTabController {
      */
     @FXML
     private void leitaHandler(ActionEvent actionEvent) {
+        virkjaLeit(false);
         noOfPeople = (int) flightPersons.getValue();
         System.out.println(noOfPeople);
-        // ef aðeins er leitað að einu flugi
-        if (oneWay) {
+        if (oneWay) {   // leit að einu flugi
+            ArrayList<Flight> results = flightList.searchFlightsOneWay(depart, destination, dateFrom, noOfPeople);
+            ObservableList<Flight> listResults = FXCollections.observableArrayList(results);
+            flightListViewOne.setItems(listResults);
+            virkurIndexOne = 0;
+            virkjaNidurstodur(true, false);
             System.out.println("Leitaði að oneway flugi");
-        } else {
+        } else {    // leit að tveimur flugum
+            ArrayList<Flight> fromResults = flightList.searchFlightsOneWay(depart, destination, dateFrom, noOfPeople);
+            ObservableList<Flight> fromListResults = FXCollections.observableArrayList(fromResults);
+            ArrayList<Flight> toResults = flightList.searchFlightsOneWay(destination, depart, dateTo, noOfPeople);
+            ObservableList<Flight> toListResults = FXCollections.observableArrayList(toResults);
+            flightListViewOne.setItems(fromListResults);
+            flightListViewTwo.setItems(toListResults);
+            virkurIndexOne = 0;
+            virkurIndexTwo = 0;
+            virkjaNidurstodur(true, true);
             System.out.println("Leitaði að round way flugi");
         }
-        /*Orders orders = new Orders();
-        orders.makeDummyFlights();*/
-        virkjaLeit(false);
-        virkjaNidurstodur(true);
     }
 
     /**
@@ -149,7 +175,7 @@ public class FlightTabController {
      */
     @FXML
     private void tilBakaHandler(ActionEvent actionEvent) {
-        virkjaNidurstodur(false);
+        virkjaNidurstodur(false, false);
         virkjaLeit(true);
     }
 
@@ -247,11 +273,14 @@ public class FlightTabController {
     /**
      * Gerir viðmótshluti fyrir niðurstöður sýnilega ef gildi er true,
      * en felur viðmótshluti annars.
+     * Sýnir einnig lista fyrir heimkomu flug ef roundWay er true.
      *
      * @param gildi - true ef á að virkja, annars false
+     * @param roundWay - true ef á að virkja lista tvö
      */
-    private void virkjaNidurstodur(boolean gildi) {
-        flightListView.setVisible(gildi);
+    private void virkjaNidurstodur(boolean gildi, boolean roundWay) {
+        flightListViewOne.setVisible(gildi);
+        flightListViewTwo.setVisible(roundWay);
         resultLabel.setVisible(gildi);
         flightBackButton.setVisible(gildi);
     }
