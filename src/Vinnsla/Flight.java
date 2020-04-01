@@ -2,29 +2,30 @@ package Vinnsla;
 
 import java.time.LocalDate;
 
+/**
+ * Mock Object af Flight hlutum.
+ *
+ */
 public class Flight {
     private String departureLoc;
     private String arrivalLoc;
     private LocalDate flightDate;
-    private int passengerNumber;
-    private String[] seats;
+    private int capacity;
 
 
     /**
+     * Smiður fyrir Flight hlut.
      *
-     * @param depart //departure location
-     * @param arrival
-     * @param date
-     * @param nr
-     * @param seats
+     * @param depart - Brottfararstaður
+     * @param arrival - Áfangastaður
+     * @param date - Dagsetning flugs
+     * @param nr - Fjöldi lausra sæta
      */
-    public Flight ( String depart, String arrival, LocalDate date, int nr, String[] seats )
-    {
+    public Flight (String depart, String arrival, LocalDate date, int nr) {
         this.departureLoc = depart;
         this.arrivalLoc = arrival;
         this.flightDate = date;
-        this.passengerNumber = nr;
-        this.seats = seats;
+        this.capacity = nr;
     }
 
     public String getDepartureLoc() {
@@ -39,11 +40,12 @@ public class Flight {
         return flightDate;
     }
 
-    public int getPassengerNumber() {
-        return passengerNumber;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public String[] getSeats() {
-        return seats;
+    @Override
+    public String toString() {
+        return "Frá " + departureLoc + " til " + arrivalLoc + " á " + flightDate;
     }
 }
