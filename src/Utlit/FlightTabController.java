@@ -14,7 +14,15 @@ import javafx.scene.control.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Controller klasi fyrir flug gluggann.
+ * Birtir leitarglugga og leyfir notanda að leita.
+ * Birtir niðurstöður þegar notandi er búinn að leita og
+ * leyfir notanda að fara til baka í leit.
+ *
+ */
 public class FlightTabController {
+    // viðmótshlutir fyrir niðurstöður
     @FXML
     private Button flightBackButton;
     @FXML
@@ -23,6 +31,8 @@ public class FlightTabController {
     private ListView flightListViewOne;
     @FXML
     private ListView flightListViewTwo;
+
+    // viðmótshlutir fyrir leit
     @FXML
     private Label searchLabel;
     @FXML
@@ -44,7 +54,7 @@ public class FlightTabController {
     @FXML
     private RadioButton flightOneWay;
     @FXML
-    private ToggleGroup radio;              // tengir radioButtons saman
+    private ToggleGroup radio;
     @FXML
     private Button flightSearchButton;
     @FXML
@@ -63,7 +73,9 @@ public class FlightTabController {
     private int noOfPeople;                 // fjöldi manns
 
     /**
-     * Upphafsstillir síðu. Upphafsstillir comboboxin.
+     * Upphafsstillir gluggann fyrir flugleit.
+     * Setur áfangastaði í comboboxin, upphafsstillir spinnerinn,
+     * upphafsstillir dagatölin og listana með niðurstöðum.
      *
      */
     public void initialize() {
@@ -80,10 +92,8 @@ public class FlightTabController {
      *
      */
     private void setjaStadi() {
-        ArrayList<String> places = listOfFlights.getPlaces();
+        ArrayList<String> places = listOfFlights.getPlaces();   // ná í áfangastaði úr gagnagrunn
         ObservableList<String> stadir = FXCollections.observableArrayList(places);    // búa til lista
-        //stadir.add("Reykjavík");    // bæta í lista
-        //stadir.add("París");
         flightFromCombo.setItems(stadir);   // setja lista í combobox
         flightFromCombo.getSelectionModel().select(0);  // setja fyrsta stak sem upphafsgildi
         depart = flightFromCombo.getSelectionModel().getSelectedItem();
@@ -104,7 +114,7 @@ public class FlightTabController {
     }
 
     /**
-     * Stillir dagsetningar á Date Pickers á daginn í dag.
+     * Upphafsstillir dagsetningar á Date Pickers á daginn í dag.
      *
      */
     private void setjaDagsetningar() {
@@ -114,6 +124,12 @@ public class FlightTabController {
         dateTo = flightReturningDate.getValue();
     }
 
+    /**
+     * Upphafsstillir listana fyrir niðurstöður og setur
+     * change-listener á þá til að halda utan um hvaða stak
+     * í listunum er valið.
+     *
+     */
     private void setjaLista() {
         ListOfFlights listOfFlights = new ListOfFlights();
         ObservableList<Flight> listi = FXCollections.observableArrayList(listOfFlights.getListOfFlights());
@@ -140,8 +156,10 @@ public class FlightTabController {
     /**
      * Bregst við því þegar leitað er að flugi.
      * Nær í fjölda manns úr spinnernum, athugar hvort leitað
-     * sé að one way eða round trip og kallar á samsvarandi aðferð
+     * sé að one way eða round trip og kallar á leitaraðferð
      * í FlightList sem leitar að flugum.
+     * Afvirkjar leitarglugga og virkjar glugga fyrir niðurstöður og
+     * setur svo niðurstöður í ListViewOne og ListViewTwo.
      *
      * @param actionEvent - atburðurinn þegar klikkað er á leitartakka
      */

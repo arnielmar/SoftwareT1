@@ -2,6 +2,10 @@ package Vinnsla;
 
 import java.time.LocalDate;
 
+/**
+ * Mock Object af Flight hlutum.
+ *
+ */
 public class Flight {
     private String departureLoc;
     private String arrivalLoc;

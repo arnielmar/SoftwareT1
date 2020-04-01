@@ -12,6 +12,10 @@ public class ListOfFlights {
 
     ArrayList<Flight> listOfFlights;
 
+    /**
+     * Smíðar mock gagnagrunn með 10 Flight hlutum.
+     *
+     */
     public ListOfFlights() {
         listOfFlights = new ArrayList<Flight>();
         Flight flight1 = new Flight("Reykjavík", "París", LocalDate.now(), 100);
@@ -36,10 +40,20 @@ public class ListOfFlights {
         listOfFlights.add(flight10);
     }
 
+    /**
+     * Getter sem skilar öllum gagngagrunni af flugum.
+     *
+     * @return - ArrayList<Flight> - listi með gagnagrunninum af flugum
+     */
     public ArrayList<Flight> getListOfFlights() {
         return listOfFlights;
     }
 
+    /**
+     * Getter sem skilar öllum áfangastöðum.
+     *
+     * @return - ArrayList<String> - listi með öllum áfangastöðunum
+     */
     public ArrayList<String> getPlaces() {
         ArrayList<String> places = new ArrayList<String>(Arrays.asList("Reykjavík", "París", "London", "Copenhagen"));
         return places;

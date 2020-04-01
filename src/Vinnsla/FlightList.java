@@ -6,12 +6,19 @@ import javafx.collections.ObservableList;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Geymir lista af flugum og hefur aðferð til að leita
+ * að flugum í gagnagrunni.
+ *
+ */
 public class FlightList {
     private ObservableList<Flight> flights;
     private ListOfFlights listOfFlights;
 
     /**
-     * Smíðar nýjan Observable List af Flight hlutum.
+     * Smíðar nýjan Observable List af Flight hlutum
+     * og tengist við gagnagrunn af flugum.
+     *
      */
     public FlightList() {
         this.flights = FXCollections.observableArrayList();
@@ -80,7 +87,7 @@ public class FlightList {
      * @param depart - Brottfararstaður
      * @param date - Dagsetning brottfarar
      * @param noOfPeople - Fjöldi manns
-     * @return ArrayList<Flight> results - listi af flugum sem passa við leit
+     * @return - ArrayList<Flight> results - listi af flugum sem passa við leit
      */
     public ArrayList<Flight> searchFlights(String depart, String dest, LocalDate date, int noOfPeople) {
         ArrayList<Flight> allFlights = listOfFlights.getListOfFlights();
