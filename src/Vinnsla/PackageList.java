@@ -40,10 +40,10 @@ public class PackageList {
     /**
      * Eyðir pakka nr. index úr lista.
      *
-     * @param index - nr. pakka
+     * @param p - pakkin sem á að fjarlægja
      */
-    public void deletePackage(int index) {
-        packages.remove(index);
+    public void deletePackage(Package p) {
+        packages.remove(p);
     }
 
     /**
@@ -71,26 +71,33 @@ public class PackageList {
         //Passa að allt uppfyllist
 
         // Byrja á því að leita af listum fyrir flug frá og til, daytrip og Hótel.
-        FlightList Flug= new FlightList();
-        Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
+        //FlightList Flug= new FlightList();
+        //Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
+
+
+        FlightList flightList= new FlightList();
+        ArrayList<Flight> fromResults = flightList.searchFlights(depart, dest, from, noOfPeople);
+        ArrayList<Flight> toResults = flightList.searchFlights(dest, depart, to, noOfPeople);
+
         HotelList Hotl= new HotelList();
         // Hotl.searchHotels(dest,from,to,noOfPeople, "Hvað með Tegund?");
         DayTripList Dagferd = new DayTripList();
-        // Dagferd.searchHotels(dest,from,"hvernig ætti maður að finna lengd",noOfPeople, " hvað með Tegund?");
+        // Dagferd.searchDayTrip(dest,from,"hvernig ætti maður að finna lengd",noOfPeople, " hvað með Tegund?");
 
         // hér er svo sett up lengdina af öllum þremur listum og minnsta af þeim
-        int Flugfjoldi = Flug.getAllFlights().size();
+        int Flugfjoldifrom = fromResults.size();
+        int Flugfjoldito = toResults.size();
         int Hotelfjoldi = Hotl.getAllHotels().size();
         int Dagferdfjoldi = Dagferd.getAllDayTrips().size();
-        int Minfjoldi = min(Flugfjoldi,min(Hotelfjoldi,min(Dagferdfjoldi,5)));
+        int Minfjoldi = min(Flugfjoldifrom,min(Flugfjoldito,min(Hotelfjoldi,min(Dagferdfjoldi,5))));
 
         // Hér er svo sett up pakkar til að sýna.
         for (int i = 0; i < Minfjoldi; i++) {
-            int Fr = new java.util.Random().nextInt(Flugfjoldi);
+            int fr1 = new java.util.Random().nextInt(Flugfjoldifrom);
+            int fr2 = new java.util.Random().nextInt(Flugfjoldito);
             int Hr = new java.util.Random().nextInt(Hotelfjoldi);
             int Dr = new java.util.Random().nextInt(Dagferdfjoldi);
-            // Vantar að vita hvernig ég les úr searchflightroundway fyrir fluginn hér að neðan
-            Package P = new Package(Flug.getFlight(Fr),Flug.getFlight(Fr),Hotl.getHotel(Hr),Dagferd.getDayTrip(Dr));
+            Package P = new Package(fromResults.get(fr1),toResults.get(fr2),Hotl.getHotel(Hr),Dagferd.getDayTrip(Dr));
             packages.add(P);
         }
 
