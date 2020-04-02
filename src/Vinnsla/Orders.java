@@ -1,20 +1,20 @@
 package Vinnsla;
 
 import java.time.LocalDate;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class Orders {
-    private Vector<Flight> Flights;
+    private ArrayList<Flight> flights;
     //todo daytours[]
     //todo hotels[]
 
     public Orders(  ) {
-        Flights = new Vector<Flight>();
+        flights = new ArrayList<Flight>();
     }
 
 
     public void addFlight(Flight flight) {
-        Flights.add(flight);
+        flights.add(flight);
     }
 
     public void makeDummyFlights() {
@@ -29,7 +29,7 @@ public class Orders {
         }
         for ( i = 0; i < 10; i++ )
         {
-            Flight tmpFlight = Flights.get(i);
+            Flight tmpFlight = flights.get(i);
             System.out.println(tmpFlight.getArrivalLoc());
         }
     }
