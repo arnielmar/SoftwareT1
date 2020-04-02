@@ -38,14 +38,11 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-<<<<<<< HEAD
                 <Label layoutX="56.0" layoutY="93.0" text="Place" />
             <Label layoutX="288.0" layoutY="93.0" text="Type" />
                 <Label layoutX="56.0" layoutY="241.0" text="Persons" />
-=======
                 <Label fx:id="locationLabel" layoutX="56.0" layoutY="93.0" text="Place" />
                 <Label fx:id="personLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
->>>>>>> HotelController
             </children></AnchorPane>
     </content>
 </Tab>

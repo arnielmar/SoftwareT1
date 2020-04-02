@@ -2,24 +2,19 @@ package Vinnsla;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class Orders {
-<<<<<<< HEAD
     private ArrayList<Flight> flights;
-=======
     private Vector<Flight> Flights;
     private Vector<Hotel> Hotels;
->>>>>>> HotelController
     //todo daytours[]
     //todo hotels[]
 
-    public Orders(  ) {
-<<<<<<< HEAD
+    public Orders() {
         flights = new ArrayList<Flight>();
-=======
         Flights = new Vector<Flight>();
         Hotels = new Vector<Hotel>();
->>>>>>> HotelController
     }
 
 
