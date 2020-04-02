@@ -8,15 +8,17 @@
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
-            <Button fx:id="pantaFlugUtButton" layoutX="250.0" layoutY="260.0" mnemonicParsing="false" onAction="#pantaFlugUtHandler" text="Order" visible="false" />
-            <ListView fx:id="flightListViewTwo" layoutX="290.0" layoutY="50.0" prefHeight="200.0" prefWidth="245.0" visible="false" />
+            <Button fx:id="pantaFlugUtButton" layoutX="250.0" layoutY="270.0" mnemonicParsing="false" onAction="#pantaFlugUtHandler" text="Order" visible="false" />
+            <Label fx:id="flightBackLabel" layoutX="380.0" layoutY="40.0" text="Flight back" visible="false" />
+            <ListView fx:id="flightListViewTwo" layoutX="290.0" layoutY="60.0" prefHeight="200.0" prefWidth="245.0" visible="false" />
             <Button fx:id="flightBackButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Back" visible="false" />
-            <Label fx:id="resultLabel" layoutX="185.0" layoutY="15.0" text="Results" visible="false">
+            <Label fx:id="resultLabel" layoutX="245.0" layoutY="15.0" text="Results" visible="false">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ListView fx:id="flightListViewOne" layoutX="15.0" layoutY="50.0" prefHeight="200.0" prefWidth="245.0" visible="false" />
+            <Label fx:id="flightOutLabel" layoutX="110.0" layoutY="40.0" text="Flight out" visible="false" />
+            <ListView fx:id="flightListViewOne" layoutX="15.0" layoutY="60.0" prefHeight="200.0" prefWidth="245.0" visible="false" />
                 <ComboBox fx:id="flightFromCombo" layoutX="56.0" layoutY="122.0" onAction="#flightFromComboHandler" prefWidth="150.0" />
                 <ComboBox fx:id="flightToCombo" layoutX="288.0" layoutY="122.0" onAction="#flightToComboHandler" prefWidth="150.0" />
                 <DatePicker fx:id="flightDepartureDate" layoutX="56.0" layoutY="190.0" onAction="#flightDepartureDateHandler" prefHeight="25.0" prefWidth="150.0" />
