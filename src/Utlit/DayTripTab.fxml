@@ -8,8 +8,8 @@
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
-                <ComboBox fx:id="dayTripCombo" layoutX="56.0" layoutY="122.0" prefWidth="150.0" />
-                <DatePicker fx:id="dayTripDate" layoutX="288.0" layoutY="122.0" prefHeight="25.0" prefWidth="150.0" />
+                <ComboBox fx:id="dayTripCombo" layoutX="56.0" layoutY="122.0" onAction="#dayTripComboHandler" prefWidth="150.0" />
+                <DatePicker fx:id="dayTripDate" layoutX="288.0" layoutY="122.0" onAction="#dayTripDateHandler" prefHeight="25.0" prefWidth="150.0" />
                 <Button fx:id="dayTripSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitHandler" text="Search" />
                 <Spinner fx:id="dayTripPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
                 <Label fx:id="dayTripHeader" layoutX="193.0" layoutY="15.0" text="Search for Day Trips">
@@ -19,6 +19,8 @@
                 </Label>
                 <Label fx:id="dayTripPlaceLabel" layoutX="56.0" layoutY="93.0" text="Place" />
                 <Label fx:id="dayTripPerLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
+            <ListView fx:id="dayTripListView" layoutX="120.0" layoutY="50.0" prefHeight="200.0" prefWidth="300.0" visible="false" />
+            <Button fx:id="dayTripBook" layoutX="320.0" layoutY="294.0" mnemonicParsing="false" onAction="#bokunhandler" text="Panta" visible="false" />
             </children></AnchorPane>
     </content>
 </Tab>

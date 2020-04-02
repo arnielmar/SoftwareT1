@@ -69,7 +69,7 @@ public class PackageList {
     public void searchPackages(String depart, String dest, LocalDate from, LocalDate to, int noOfPeople) {
         // Byrja á því að leita af listum fyrir flug frá og til, daytrip og Hótel.
         FlightList Flug= new FlightList();
-        Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
+        //Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
         ObservableList<Flight> FlugL = Flug.getAllFlights();
         HotelList Hotl= new HotelList();
         // Hotl.searchHotels(dest,from,to,noOfPeople, "Hvað með Tegund?");
