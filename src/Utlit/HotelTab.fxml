@@ -8,7 +8,7 @@
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
-            <ComboBox layoutX="288.0" layoutY="122.0" prefWidth="150.0" />
+
                 <ListView fx:id="hotelListViewTwo" layoutX="380.0" layoutY="70.0" prefHeight="200.0" prefWidth="155.0" visible="false" />
                 <Button fx:id="hotelBackButton" layoutX="380.0" layoutY="294.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Til baka" visible="false" />
                 <Button fx:id="hotelBuyButton" layoutX="478.0" layoutY="294.0" mnemonicParsing="false" onAction="#pantaHandler" text="Panta" visible="false" />
@@ -38,9 +38,7 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label layoutX="56.0" layoutY="93.0" text="Place" />
-            <Label layoutX="288.0" layoutY="93.0" text="Type" />
-                <Label layoutX="56.0" layoutY="241.0" text="Persons" />
+
                 <Label fx:id="locationLabel" layoutX="56.0" layoutY="93.0" text="Place" />
                 <Label fx:id="personLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
             </children></AnchorPane>
