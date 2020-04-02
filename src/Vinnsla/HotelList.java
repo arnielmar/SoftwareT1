@@ -8,12 +8,16 @@ import java.util.ArrayList;
 
 public class HotelList {
     private ObservableList<Hotel> hotels;
+    private ArrayList<Hotel> orderedHotels;
+    private ArrayList<String> orderedRoomTypes;
 
     /**
      * Smíðar nýjan Observable List af Hotel hlutum.
      */
     public HotelList() {
         this.hotels = FXCollections.observableArrayList();
+        this.orderedHotels = new ArrayList<Hotel>();
+        this.orderedRoomTypes = new ArrayList<String>();
     }
 
     /**
@@ -62,9 +66,44 @@ public class HotelList {
      * @param from - Dagsetning komu
      * @param to - Dagsetning brottfararar
      * @param noOfPeople - Fjöldi manns
-     * @param tegund - Tegund herbergis
      */
-    public void searchHotels(String dest, LocalDate from, LocalDate to, int noOfPeople, String tegund) {
-        //TODO
+    public static ArrayList<Hotel> searchHotels(String dest, LocalDate from, LocalDate to, int noOfPeople) {
+        ArrayList<Hotel> allHotels = ListOfHotels.getListOfHotels();
+        ArrayList<Hotel> results = new ArrayList<Hotel>();
+        for(Hotel h :allHotels){
+            if(h.getLocation().equals(dest) &&
+                    h.getArrivalDate().equals(from) &&
+                    h.getDepartDate().equals(to) &&
+                    h.getCustomerNumber() >= noOfPeople){
+                results.add(h);
+            }
+        }
+        return results;
+    }
+
+    /**
+     * Bætir hóteli við
+     * @param h
+     * @param s
+     */
+    public void addOrderedHotel(Hotel h, String s){
+        orderedHotels.add(h);
+        orderedRoomTypes.add(s);
+    }
+
+    /**
+     *
+     * @return - lista af pöntuðum hótelum
+     */
+    public ObservableList<Hotel> getOrderedHotels(){
+        return FXCollections.observableArrayList(orderedHotels);
+    }
+
+    /**
+     *
+     * @return - lista af pöntuðum hótelherbergjum
+     */
+    public ObservableList<String> getOrderedRoomTypes(){
+        return FXCollections.observableArrayList(orderedRoomTypes);
     }
 }

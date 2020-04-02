@@ -8,6 +8,25 @@
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
+                <ListView fx:id="hotelListViewTwo" layoutX="380.0" layoutY="70.0" prefHeight="200.0" prefWidth="155.0" visible="false" />
+                <Button fx:id="hotelBackButton" layoutX="380.0" layoutY="294.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Til baka" visible="false" />
+                <Button fx:id="hotelBuyButton" layoutX="478.0" layoutY="294.0" mnemonicParsing="false" onAction="#pantaHandler" text="Panta" visible="false" />
+                <Label fx:id="resultLabel" layoutX="185.0" layoutY="15.0" text="Niðurstöður leitar af hótelum" visible="false">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="resultHotelLabel" layoutX="20.0" layoutY="50.0" text="Hótel" visible="false">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="resultRoomLabel" layoutX="385.0" layoutY="50.0" text="Laus Herbergi" visible="false">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <ListView fx:id="hotelListViewOne" layoutX="15.0" layoutY="70.0" prefHeight="200.0" prefWidth="335.0" visible="false" />
                 <ComboBox fx:id="hotelCombo" layoutX="56.0" layoutY="122.0" prefWidth="150.0" />
                 <DatePicker fx:id="hotelFromDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
                 <DatePicker fx:id="hotelToDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
@@ -18,8 +37,8 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label layoutX="56.0" layoutY="93.0" text="Place" />
-                <Label layoutX="56.0" layoutY="241.0" text="Persons" />
+                <Label fx:id="locationLabel" layoutX="56.0" layoutY="93.0" text="Place" />
+                <Label fx:id="personLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
             </children></AnchorPane>
     </content>
 </Tab>

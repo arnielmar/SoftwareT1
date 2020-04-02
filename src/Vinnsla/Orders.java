@@ -47,8 +47,8 @@ public class Orders {
         {
             tmpstring[0] = ""+i;
             LocalDate tmpDate = LocalDate.now();
-            Hotel tmpHotel = new Hotel( "Reykjavík " + i, tmpDate, tmpDate, i, "penthouse");
-            addHotel(tmpHotel);
+            //Hotel tmpHotel = new Hotel( "Reykjavík " + i, tmpDate, tmpDate, i, "penthouse");
+            //addHotel(tmpHotel);
         }
         for ( i = 0; i < 10; i++ )
         {
