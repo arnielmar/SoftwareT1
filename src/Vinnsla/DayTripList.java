@@ -4,16 +4,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+/**
+ * Geymir lista af DayTrips og hefur aðferð til að leita í gangagrunni að DayTrip.
+ */
 public class DayTripList {
     private ObservableList<DayTrip> dayTrips;
+    private ListOfDayTrips listOfDayTrips;
 
     /**
      * Smíðar nýjan Observable List af DayTrip hlutum.
      */
     public DayTripList() {
         this.dayTrips = FXCollections.observableArrayList();
+        listOfDayTrips = new ListOfDayTrips();
     }
 
     /**
@@ -55,16 +61,45 @@ public class DayTripList {
 
     /**
      * Leitar að day trips á staðsetningu dest á dagsetningu date
-     * með lengd length fyrir noOfPeople manns eftir tegund herbergis.
-     * Skilar ArrayList<D1>.
+     * fyrir noOfPeople manns (með pláss fyrir noOfPeople manns í dayTrip-inu).
+     * Skilar ArrayList<DayTrip>.
      *
      * @param dest - Áfangastaður
      * @param date - Dagsetning day trips
-     * @param length - Lengd day trips
      * @param noOfPeople - Fjöldi manns
-     * @param tegund - Tegund herbergis
      */
-    public void searchHotels(String dest, LocalDate date, int length, int noOfPeople, String tegund) {
-        //TODO
+    public ArrayList<DayTrip> searchDayTrips(String dest, LocalDate date, int noOfPeople) {
+        // TODO
+        // Láta gylfa vita þegar búinn
+        ArrayList<DayTrip> allDT = listOfDayTrips.getListofDayTrips();
+        ArrayList<DayTrip> results = new ArrayList<DayTrip>();
+
+        int i;
+        for (i = 0; i < allDT.size(); i++)
+        {
+            if (allDT.get(i).getLocation().equals(dest) &&
+                    compareDaTandD(allDT.get(i).getDateAndTime(), date) &&
+                    noOfPeople <= allDT.get(i).getNoOfPersons())
+            {
+                results.add(allDT.get(i));
+            }
+        }
+
+        return results;
+    }
+
+    /**
+     *
+     * @param DaT   LocalDateTime
+     * @param D     LocalDate
+     * @return  true if same date false else
+     */
+    private boolean compareDaTandD(LocalDateTime DaT, LocalDate D)
+    {
+        if (DaT.getYear() == D.getYear() && DaT.getDayOfYear() == D.getDayOfYear())
+        {
+            return true;
+        }
+        return false;
     }
 }
