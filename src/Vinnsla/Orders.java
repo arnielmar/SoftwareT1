@@ -4,17 +4,31 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Orders {
+<<<<<<< HEAD
     private ArrayList<Flight> flights;
+=======
+    private Vector<Flight> Flights;
+    private Vector<Hotel> Hotels;
+>>>>>>> HotelController
     //todo daytours[]
     //todo hotels[]
 
     public Orders(  ) {
+<<<<<<< HEAD
         flights = new ArrayList<Flight>();
+=======
+        Flights = new Vector<Flight>();
+        Hotels = new Vector<Hotel>();
+>>>>>>> HotelController
     }
 
 
     public void addFlight(Flight flight) {
         flights.add(flight);
+    }
+
+    public void addHotel(Hotel hotel){
+        Hotels.add(hotel);
     }
 
     public void makeDummyFlights() {
@@ -31,6 +45,23 @@ public class Orders {
         {
             Flight tmpFlight = flights.get(i);
             System.out.println(tmpFlight.getArrivalLoc());
+        }
+    }
+
+    public void makeDummyHotels() {
+        String[] tmpstring = new String[1];
+        int i;
+        for ( i = 0; i < 10; i++ )
+        {
+            tmpstring[0] = ""+i;
+            LocalDate tmpDate = LocalDate.now();
+            //Hotel tmpHotel = new Hotel( "Reykjavík " + i, tmpDate, tmpDate, i, "penthouse");
+            //addHotel(tmpHotel);
+        }
+        for ( i = 0; i < 10; i++ )
+        {
+            Hotel tmpHotel = Hotels.get(i);
+            System.out.println(tmpHotel.getLocation());
         }
     }
 
