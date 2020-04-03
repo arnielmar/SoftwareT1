@@ -143,7 +143,7 @@ public class DayTripTabController {
     }
 
     public void bokunhandler(ActionEvent actionEvent) {
-        try {
+       /* try {
             System.out.println("1");
             FXMLLoader loader = new FXMLLoader();
             System.out.println("2");
@@ -156,7 +156,7 @@ public class DayTripTabController {
             System.out.println("5");
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void leitarVidmot(boolean b)

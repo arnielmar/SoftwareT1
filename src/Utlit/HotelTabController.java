@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -51,6 +52,7 @@ public class HotelTabController {
     private Button hotelSearchButton;
     @FXML
     private Spinner hotelPersons;
+    private LeitController parentController;
 
 
     private HotelList hotelList;            //hotelList er klasi sem listi af hótelum og er notaður fyrir aðgerðir
@@ -76,6 +78,10 @@ public class HotelTabController {
         setjaSpinner();
         setjaDagsetningar();
         setjaLista();
+    }
+
+    public void setParentController(LeitController parentController) {
+        this.parentController = parentController;
     }
 
     /**
@@ -156,7 +162,6 @@ public class HotelTabController {
                     }
                     ObservableList<String> typeList = FXCollections.observableArrayList(theTypes);
                     hotelListViewTwo.setItems(typeList);
-                    //System.out.println("virkur1 = " + virkur1);
             }
         });
 
@@ -165,7 +170,6 @@ public class HotelTabController {
                 @Override
                 public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                     virkur2 = lsm.getSelectedIndex();
-                    //System.out.println("virkur2 = " + virkur2);
                 }
             });
     }
@@ -214,12 +218,12 @@ public class HotelTabController {
 
     /**
      * Þegar smellt er á panta, þá er völdu hóteli og herbergi bætt í pöntuð hótel.
+     * pöntuð hótel eru svo sett í listview í orders
      * @param actionEvent
      */
-    public void pantaHandler(ActionEvent actionEvent){
-        //System.out.print("pantað");
+    public void pantaHandler(ActionEvent actionEvent) throws IOException {
         Hotel orderedHotel = results.get(virkur1);
-        //System.out.print(orderedHotel.getHotelName() + types[virkur2]);
         hotelList.addOrderedHotel(orderedHotel, types[virkur2]);
+        parentController.setjaHotel(hotelList.getOrderedHotels());
     }
 }
