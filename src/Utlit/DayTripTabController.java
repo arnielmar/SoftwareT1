@@ -7,7 +7,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -138,7 +143,20 @@ public class DayTripTabController {
     }
 
     public void bokunhandler(ActionEvent actionEvent) {
-        System.out.println("You just booked " + dayTripListView.getSelectionModel().getSelectedItem().toString());
+        try {
+            System.out.println("1");
+            FXMLLoader loader = new FXMLLoader();
+            System.out.println("2");
+            Tab t = loader.load(getClass().getResource("./OrderTab.fxml").openStream());
+            System.out.println("3");
+
+            OrderTabController orderController = (OrderTabController) loader.getController();
+            System.out.println("4");
+            orderController.printTest("It works!");
+            System.out.println("5");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void leitarVidmot(boolean b)

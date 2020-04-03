@@ -23,4 +23,14 @@ public class OrderTabController {
 
     private void setjaLista() {
     }
+
+    public OrderTabController getOrderController()
+    {
+        return this;
+    }
+
+    public void printTest(String text)
+    {
+        System.out.println(text);
+    }
 }
