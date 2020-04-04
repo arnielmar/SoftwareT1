@@ -29,6 +29,11 @@ public class OrderTabController {
     public void setjaInnHotel(ObservableList<Hotel> hotel){
         ordersListViewHotels.setItems(hotel);
     }
+
+    public void setjaInnDayTrips(ObservableList<DayTrip> dayTrip){
+        ordersListViewDayTrips.setItems(dayTrip);
+    }
+
     private void setjaLista() {
     }
 

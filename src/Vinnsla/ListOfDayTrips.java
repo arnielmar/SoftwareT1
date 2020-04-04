@@ -23,7 +23,7 @@ public class ListOfDayTrips {
             DayTrip dt1 = new DayTrip("Reykjavík", LocalDateTime.now(), 3, 4, "History");
             DayTrip dt2 = new DayTrip("París", LocalDateTime.of(2020, 5, 28, 12, 00), 6, 4, "Activity");
             DayTrip dt3 = new DayTrip("London", LocalDateTime.now(), 2, 6, "Gourmet");
-            DayTrip dt4 = new DayTrip("Reykjavík", LocalDateTime.now(), 6, 10, "History");
+            DayTrip dt4 = new DayTrip("Reykjavík", LocalDateTime.now(), 6, 10, "Gourmet");
             DayTrip dt5 = new DayTrip("Copenhagen", LocalDateTime.of(2020, 5, 28, 12, 00), 10, 2, "Activity");
             DayTrip dt6 = new DayTrip("París", LocalDateTime.now(), 5, 1, "Gourmet");
             DayTrip dt7 = new DayTrip("London", LocalDateTime.of(2020, 5, 28, 12, 00), 4, 5, "History");

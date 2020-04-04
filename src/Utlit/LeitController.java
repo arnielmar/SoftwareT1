@@ -1,5 +1,6 @@
 package Utlit;
 
+import Vinnsla.DayTrip;
 import Vinnsla.Hotel;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,6 +14,8 @@ public class LeitController {
     private FlightTabController flightTabController;
     @FXML
     private HotelTabController hotelTabController;
+    @FXML
+    private DayTripTabController dayTripTabController;
     @FXML
     private PackageTabController packageTabController;
     @FXML
@@ -31,8 +34,14 @@ public class LeitController {
 
     public void initialize() {
         hotelTabController.setParentController(this);
+        dayTripTabController.setParentController(this);
     }
     public void setjaHotel(ObservableList<Hotel> hotel){
         orderTabController.setjaInnHotel(hotel);
+    }
+
+    public void setjaDayTrips(ObservableList<DayTrip> dayTrips)
+    {
+        orderTabController.setjaInnDayTrips(dayTrips);
     }
 }
