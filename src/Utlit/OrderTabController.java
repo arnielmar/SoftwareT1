@@ -21,9 +21,8 @@ public class OrderTabController {
     @FXML
     private ListView<Package> ordersListViewPackages;
 
-
-    public void initialize() {
-        setjaLista();
+    public void setjaInnFlights(ObservableList<Flight> flights) {
+        ordersListViewFlights.setItems(flights);
     }
 
     public void setjaInnHotel(ObservableList<Hotel> hotel){
@@ -33,8 +32,4 @@ public class OrderTabController {
     public void setjaInnDayTrips(ObservableList<DayTrip> dayTrip){
         ordersListViewDayTrips.setItems(dayTrip);
     }
-
-    private void setjaLista() {
-    }
-
 }
