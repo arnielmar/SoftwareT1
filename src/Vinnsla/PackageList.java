@@ -78,20 +78,16 @@ public class PackageList {
         FlightList flightList= new FlightList();
         ArrayList<Flight> fromResults = flightList.searchFlights(depart, dest, from, noOfPeople);
         ArrayList<Flight> toResults = flightList.searchFlights(dest, depart, to, noOfPeople);
-
-        FlightList Flug= new FlightList();
-        //Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
-        ObservableList<Flight> FlugL = Flug.getAllFlights();
         HotelList Hotl= new HotelList();
-        // Hotl.searchHotels(dest,from,to,noOfPeople, "Hvað með Tegund?");
+        ArrayList<Hotel> hotelz=  Hotl.searchHotels(dest,from,to,noOfPeople);
         DayTripList Dagferd = new DayTripList();
-        // Dagferd.searchDayTrip(dest,from,"hvernig ætti maður að finna lengd",noOfPeople, " hvað með Tegund?");
+        ArrayList<DayTrip> dagferd = Dagferd.searchDayTrips(dest,from,noOfPeople);
 
         // hér er svo sett up lengdina af öllum þremur listum og minnsta af þeim
         int Flugfjoldifrom = fromResults.size();
         int Flugfjoldito = toResults.size();
-        int Hotelfjoldi = Hotl.getAllHotels().size();
-        int Dagferdfjoldi = Dagferd.getAllDayTrips().size();
+        int Hotelfjoldi = hotelz.size();
+        int Dagferdfjoldi = dagferd.size();
         int Minfjoldi = min(Flugfjoldifrom,min(Flugfjoldito,min(Hotelfjoldi,min(Dagferdfjoldi,5))));
 
         // Hér er svo sett up pakkar til að sýna.
@@ -100,7 +96,7 @@ public class PackageList {
             int fr2 = new java.util.Random().nextInt(Flugfjoldito);
             int Hr = new java.util.Random().nextInt(Hotelfjoldi);
             int Dr = new java.util.Random().nextInt(Dagferdfjoldi);
-            Package P = new Package(fromResults.get(fr1),toResults.get(fr2),Hotl.getHotel(Hr),Dagferd.getDayTrip(Dr));
+            Package P = new Package(fromResults.get(fr1),toResults.get(fr2),hotelz.get(Hr),dagferd.get(Dr));
             packages.add(P);
         }
 

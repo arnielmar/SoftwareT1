@@ -20,7 +20,7 @@ public class ListOfFlights {
         listOfFlights = new ArrayList<Flight>();
         Flight flight1 = new Flight("Reykjavík", "París", LocalDate.now(), 100);
         Flight flight2 = new Flight("París", "Reykjavík", LocalDate.now(), 50);
-        Flight flight3 = new Flight("París", "Reykjavík", LocalDate.of(2020, 4, 28), 2);
+        Flight flight3 = new Flight("París", "Reykjavík", LocalDate.of(2020, 4, 25), 2);
         Flight flight4 = new Flight("Reykjavík", "London", LocalDate.now(), 5);
         Flight flight5 = new Flight("London", "Reykjavík", LocalDate.of(2020, 5, 14), 36);
         Flight flight6 = new Flight("London", "París", LocalDate.now(), 80);

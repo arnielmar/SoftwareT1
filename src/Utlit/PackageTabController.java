@@ -25,6 +25,8 @@ public class PackageTabController {
     @FXML
     private ListView packageListView;
     @FXML
+    private ListView packageListView2;
+    @FXML
     private Label resultsLabel;
 
     //Leitar hlutirnir
@@ -128,7 +130,17 @@ public class PackageTabController {
             @Override
             public void changed(ObservableValue<? extends Package> observable, Package oldValue, Package newValue) {
                 virkurIndex = lsr.getSelectedIndex();
+
                 System.out.println("virkurIndexOne = " + virkurIndex);
+
+                ArrayList<String> theTypes = new ArrayList<String>();
+                Package p = (Package) packageListView.getItems().get(virkurIndex);
+                theTypes.add(""+ p.getFlightFrom());
+                theTypes.add(""+ p.getFlightTo());
+                theTypes.add(""+ p.getHotel());
+                theTypes.add(""+ p.getDayTrip());
+                ObservableList<String> typeList = FXCollections.observableArrayList(theTypes);
+                packageListView2.setItems(typeList);
             }
         });
     }
@@ -139,6 +151,7 @@ public class PackageTabController {
         noOfPeople = (int) packagePersons.getValue();
         packagelist.searchPackages(depart,destination,dateFrom,dateTo,noOfPeople);
         packageListView.setItems(packagelist.getAllPackages());
+        setjaLista();
         virkurIndex = 0;
         virkjaNidurstodur(true);
     }
@@ -191,6 +204,7 @@ public class PackageTabController {
 
     private void virkjaNidurstodur(boolean gildi) {
         packageListView.setVisible(gildi);
+        packageListView2.setVisible(gildi);
         resultsLabel.setVisible(gildi);
         packageBackButton.setVisible(gildi);
     }

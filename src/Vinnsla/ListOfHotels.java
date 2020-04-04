@@ -18,17 +18,17 @@ public class ListOfHotels {
     public ListOfHotels() {
         listOfHotels = new ArrayList<Hotel>();
         String[] types = {"penthouse", "single", "double"};
-        Hotel hotel1 = new Hotel("The Mandala Hotel", "London", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 2, types);
+        Hotel hotel1 = new Hotel("The Mandala Hotel", "London", LocalDate.now(), LocalDate.of(2020,4,25), 2, types);
         //Hotel hotel2 = new Hotel("The Mandala Hotel", "London", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 1, "single");
         types = new String[]{"single", "double"};
-        Hotel hotel3 = new Hotel("Radisson Hotel", "Reykjavík", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 2, types);
+        Hotel hotel3 = new Hotel("Radisson Hotel", "Reykjavík", LocalDate.now(), LocalDate.of(2020,4,25), 2, types);
         Hotel hotel4 = new Hotel("Fosshótel", "Reykjavík", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 2, types);
         types = new String[]{"single", "penthouse"};
-        Hotel hotel5 = new Hotel("Le Pirois", "París", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 2, types);
+        Hotel hotel5 = new Hotel("Le Pirois", "París", LocalDate.now(), LocalDate.of(2020,4,25), 2, types);
         types = new String[]{"single", "double"};
         Hotel hotel6 = new Hotel("Grand Hotel Saint Michel", "París", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 1, types);
         //Hotel hotel7 = new Hotel("Grand Hotel Saint Michel", "París", LocalDate.now(), LocalDate.of(2020,4,25), 2, types);
-        Hotel hotel8 = new Hotel("Absalon Hotel", "Copenhagen", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 1, types);
+        Hotel hotel8 = new Hotel("Absalon Hotel", "Copenhagen", LocalDate.now(), LocalDate.of(2020,4,25), 1, types);
         Hotel hotel9 = new Hotel("Copenhagen Marriott Hotel", "Copenhagen", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 2, types);
         Hotel hotel10 = new Hotel("Lux Eleven Berlin-Mitte", "London", LocalDate.of(2020,4,17), LocalDate.of(2020,4,25), 1, types);
         listOfHotels.add(hotel1);

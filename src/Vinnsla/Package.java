@@ -35,4 +35,9 @@ public class Package {
     public DayTrip getDayTrip() {
         return dayTrip;
     }
+
+    @Override
+    public String toString() {
+        return ""+flightTo+" til "+flightFrom.getFlightDate();
+    }
 }
