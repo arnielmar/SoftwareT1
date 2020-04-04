@@ -1,0 +1,35 @@
+package Utlit;
+
+import Vinnsla.DayTrip;
+import Vinnsla.Flight;
+import Vinnsla.Hotel;
+import Vinnsla.Package;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Tab;
+
+public class OrderTabController {
+    @FXML
+    private ListView<Flight> ordersListViewFlights;
+    @FXML
+    private ListView<Hotel> ordersListViewHotels;
+    @FXML
+    private ListView<DayTrip> ordersListViewDayTrips;
+    @FXML
+    private ListView<Package> ordersListViewPackages;
+
+
+    public void initialize() {
+        setjaLista();
+    }
+
+    public void setjaInnHotel(ObservableList<Hotel> hotel){
+        ordersListViewHotels.setItems(hotel);
+    }
+    private void setjaLista() {
+    }
+
+}

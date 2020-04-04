@@ -9,5 +9,6 @@
       <fx:include fx:id="hotelTab" source="HotelTab.fxml" />
       <fx:include fx:id="dayTripTab" source="DayTripTab.fxml" />
       <fx:include fx:id="packageTab" source="PackageTab.fxml" />
+      <fx:include fx:id="orderTab" source="OrderTab.fxml" />
    </tabs>
 </TabPane>

@@ -79,6 +79,9 @@ public class PackageList {
         ArrayList<Flight> fromResults = flightList.searchFlights(depart, dest, from, noOfPeople);
         ArrayList<Flight> toResults = flightList.searchFlights(dest, depart, to, noOfPeople);
 
+        FlightList Flug= new FlightList();
+        //Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
+        ObservableList<Flight> FlugL = Flug.getAllFlights();
         HotelList Hotl= new HotelList();
         // Hotl.searchHotels(dest,from,to,noOfPeople, "Hvað með Tegund?");
         DayTripList Dagferd = new DayTripList();
