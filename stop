@@ -1,0 +1,580 @@
+[33mcommit 406c1abe13c98feb88b90bed8ed0e34079588a27[m[33m ([m[1;36mHEAD -> [m[1;32mhkhDT[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Fri Apr 3 13:47:10 2020 +0000
+
+    tenging milli daytrip og order
+
+[33mcommit cd3ffec03532c4569c00dd5643a8292d543e60a4[m
+Merge: d7ed922 a13c181
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Thu Apr 2 16:32:52 2020 +0000
+
+    Merge branch 'hkhDT'
+
+[33mcommit d7ed9222f824b835a092d445c0ee3d5ea9229a3b[m
+Merge: dd5bc07 7a980d9
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Thu Apr 2 16:32:28 2020 +0000
+
+    ekkert
+
+[33mcommit a13c18126c5ff2aae97cac41b7e3777680334a7e[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Thu Apr 2 16:26:55 2020 +0000
+
+    dunno
+
+[33mcommit 488b320b4d2d5a000feb8ba450fcdc7371c500e7[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Thu Apr 2 16:26:33 2020 +0000
+
+    leit virkar n'una
+
+[33mcommit 7a980d9c7abd4b413fe65ec516d05483781fc43f[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Thu Apr 2 14:53:57 2020 +0000
+
+    hótelútlit lagað
+
+[33mcommit 0e054da987910a93d608f457e30486f67d4d19ea[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Apr 2 14:44:51 2020 +0000
+
+    Lagaði merge-vandamál
+
+[33mcommit 1992872dbc5a9c8507abb1f8ff53b8dd3c4d8ec0[m
+Merge: 591f834 6a0a210
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Apr 2 14:38:01 2020 +0000
+
+    commit
+
+[33mcommit 591f834e3e7c4822e495fff8d1ebcb632b9d1efc[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Apr 2 14:36:03 2020 +0000
+
+    commit
+
+[33mcommit 6a0a21033ff01a834a18b080f1dcb7857c70bd91[m
+Merge: 95f77db 2220f23
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Thu Apr 2 14:27:46 2020 +0000
+
+    merged successfully
+
+[33mcommit 2220f23a873e30eb5edc1fd90ddc7c04146056ba[m[33m ([m[1;31morigin/HotelController[m[33m)[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Thu Apr 2 14:20:01 2020 +0000
+
+    searchresult screen works
+
+[33mcommit 95f77db52f16a37ea6aa9a2c78e1905d9aa5566c[m
+Merge: 3373a33 79f8689
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Apr 2 13:11:37 2020 +0000
+
+    Merge branch 'aeh25'
+    
+    # Conflicts:
+    #       out/production/SoftwareT1/Utlit/FlightTabController$1.class
+    #       out/production/SoftwareT1/Utlit/FlightTabController$2.class
+    #       out/production/SoftwareT1/Utlit/FlightTabController.class
+    #       out/production/SoftwareT1/Vinnsla/Orders.class
+
+[33mcommit 79f8689e05421fbc4205d124566b72353d2d8610[m[33m ([m[1;31morigin/aeh25[m[33m)[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Apr 2 13:01:23 2020 +0000
+
+    Útlit fyrir orders
+
+[33mcommit 2f0875b749ae492c05b60d9c4f11bc62cdbda6c3[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Apr 2 12:59:14 2020 +0000
+
+    Utlit fyrir orders
+
+[33mcommit 9e7e4bbf1a66bd5c2e136c9af4e2a798020c4381[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 17:53:00 2020 +0000
+
+    Orders útlit, aeh25
+
+[33mcommit 3ab0a8dc3c20ed62c78e755aeb43e4be8474eed8[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 17:17:51 2020 +0000
+
+    Byrja á orders, aeh25
+
+[33mcommit d078d23f761d8fbfaf0ba2f2d0156cd3a92fb502[m
+Merge: 4a3bc1b dd5bc07
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Apr 1 16:04:44 2020 +0000
+
+    Merge branch 'master' into hkhDT
+
+[33mcommit dd5bc0725237ef82f63dc1f440cc1dc801ec7260[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Apr 1 16:04:28 2020 +0000
+
+    ekkert
+
+[33mcommit 4a3bc1bbb11fd489dd23861af436134dfb7ff8ce[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Apr 1 16:00:48 2020 +0000
+
+    visible
+
+[33mcommit a061c5dc763dd9db7d1b075f64d901d605260570[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Wed Apr 1 14:47:25 2020 +0000
+
+    hotels in progress
+
+[33mcommit a09a372a08a29c472363331b7ff47ddc22b9cd7a[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 14:39:44 2020 +0000
+
+    commit, aeh25
+
+[33mcommit 327d3263bfc479a3020dce70a4646b775a7e183d[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Wed Apr 1 14:35:53 2020 +0000
+
+    hotels in progress
+
+[33mcommit 3373a334be0498e58170ee04056b837b916f6aa6[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 14:33:04 2020 +0000
+
+    commit
+
+[33mcommit 13df0e69687a28e9a8dbdf5b3c8cedaeb314ff8c[m
+Merge: 425c658 14a5477
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 14:26:43 2020 +0000
+
+    merge
+
+[33mcommit 425c658ddb37a42d882b2a2dc649744101a2717d[m
+Merge: 9f23699 7ab98b4
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 14:23:06 2020 +0000
+
+    Merge branch 'aeh25'
+
+[33mcommit 7ab98b43c501f2105a288468cee969f44f5796d1[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 14:19:13 2020 +0000
+
+    Ennþá snyrtilegra, aeh25
+
+[33mcommit bf7f3461af93179d67bdf4517a7b6c40ffb0278c[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 14:04:44 2020 +0000
+
+    Búinn að gera aðeins snyrtilegra, aeh25
+
+[33mcommit 003386eb8ce638a259cdf834914dd8c1535b91c9[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Apr 1 13:42:46 2020 +0000
+
+    Leit að flugum og að birta niðurstöður er tilbúið
+
+[33mcommit dfd6069b97d7b77e1db2af1efbdee32e41fcc0f4[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Tue Mar 31 17:57:37 2020 +0000
+
+    View fyrir niðurstöður komið, aeh25
+
+[33mcommit fd500133bf1367ced7d0df49471e05bda520ce5e[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 30 16:48:14 2020 +0000
+
+    Byrjunarreitur á niðurstöður
+
+[33mcommit 647ccacfc2038309602437c21f6c7e5de989aa57[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 30 15:36:33 2020 +0000
+
+    Byrja upp á nýtt með results
+
+[33mcommit 14a5477798308131f2bc5f19fba8bc4bd6a385c6[m
+Merge: 520ac0c f7ae480
+Author: gylfii <gylfii@users.noreply.github.com>
+Date:   Mon Mar 30 13:07:26 2020 +0000
+
+    Merge branch 'master' into Gylfi
+
+[33mcommit 9f2369918a3c36c940458fb31247654d384ef8c4[m
+Merge: a40f537 f7ae480
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 30 13:06:14 2020 +0000
+
+    Ekkert
+
+[33mcommit f7ae480b3413e60e9c88b76a3bb95a3ba7ed12ca[m
+Merge: 82d01fd 96937b4
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Mon Mar 30 13:01:37 2020 +0000
+
+    hotelcontroller
+
+[33mcommit f2331d02198e8e670fd2ae23ef1a430126b0352c[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 30 12:52:22 2020 +0000
+
+    Reyna að geta birt niðurstöður
+
+[33mcommit b0be6b5974a337e3c333c4f12a11258eb6ec4e96[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 30 11:34:33 2020 +0000
+
+    Smá lagfæringar, aeh25
+
+[33mcommit 82d01fd202a0f68a0879c18d07b3062910eb7278[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Fri Mar 27 15:22:19 2020 +0000
+
+    hotelcontroller virkar
+
+[33mcommit 3bc9faeb3d0bb5254a4b3f1f86ca329944da01ef[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Mar 26 09:45:40 2020 +0000
+
+    Setti venjulega initialize fallið frekar aeh25
+
+[33mcommit 591e4ac372a3e493da2d9e82d4ec6025982f53d8[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Mar 26 09:42:26 2020 +0000
+
+    Lét venjulega initialize fallið frekar aeh25
+
+[33mcommit 520ac0cbe47ceaf94a1475c3d0724d867188e0bd[m
+Author: gylfii <gylfii@users.noreply.github.com>
+Date:   Wed Mar 25 13:34:41 2020 +0000
+
+    Bætti við dagsetningu í initialize
+
+[33mcommit 6b70715062aaa046e85af44a457c568a2cff4661[m[33m ([m[1;32maeh25[m[33m)[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Fri Mar 20 19:04:57 2020 +0000
+
+    Byrjaður að vinna í að sýna niðurstöður, aeh25
+
+[33mcommit 497ffb9a3ea265918e900798f5cf748eedd73030[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 18 19:20:47 2020 +0000
+
+    FlightTabController tilbúinn að mestu, aeh25
+
+[33mcommit d6c8e0d0a772fcec76b46bf204fffab32e6f66cc[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 18 18:37:20 2020 +0000
+
+    Radio button handler kominn, aeh25
+
+[33mcommit e896193675d0a62981714a587c79c36f0b38bde9[m
+Author: gylfii <gylfii@users.noreply.github.com>
+Date:   Wed Mar 18 16:34:30 2020 +0000
+
+    Setti up initialize fyrir byrjunina
+
+[33mcommit 76feec8af7a4642f5e8919419f0fb0b19b626c58[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Wed Mar 18 15:53:40 2020 +0000
+
+    hotelController grunnvirkni komin
+
+[33mcommit 4dfe6ab129a100138151f60509b3d2cf7dd65f63[m
+Author: gylfii <gylfii@users.noreply.github.com>
+Date:   Wed Mar 18 15:28:20 2020 +0000
+
+    Setti inn Search fallið
+    
+    Byrjaði á Search fallinu, vantar samt ágætlega mikið af stikum í það
+
+[33mcommit a40f537945f4f7e92653d39e364c3a49cecb76b6[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 18 15:23:16 2020 +0000
+
+    Combobox sett í flightTab, aeh25
+
+[33mcommit adccdb13cd51ddb9b653c931b7198c4bf76db455[m
+Author: gylfii <gylfii@users.noreply.github.com>
+Date:   Wed Mar 18 13:51:50 2020 +0000
+
+    Bætti við "type" combobox fyrir hotel
+
+[33mcommit 96937b4b18f46116d768f146c4bfb5f3cbdbbac7[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Mar 12 10:54:14 2020 +0000
+
+    Setti inn skilgreiningu á search föll í List klasana
+
+[33mcommit 1f39c5f98231957369ad7212c61748e4e5085dc3[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 11 13:47:45 2020 +0000
+
+    Lista klasar komnir
+
+[33mcommit d52a731782916546003d9abe1c93197c70ebbce6[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 11 13:25:19 2020 +0000
+
+    commit
+
+[33mcommit a305554531444aa5c8e8ceba0ee249afe127cf65[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Mar 5 09:16:24 2020 +0000
+
+    Setti inn package Utlit í controllera og tengdi FXML skrár rétt við
+
+[33mcommit 4fc24adaea7a857d3be41486b0be1ba46c1ba3b4[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Thu Mar 5 09:09:25 2020 +0000
+
+    FlightList klasi til viðmiðunar
+
+[33mcommit 092ef037e4cd9b214e3781e67a85050b8da39934[m
+Merge: e32d57f 3e366f1
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:48:48 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit 3e366f11cc60432a9794850ad98c8e005d9389cb[m[33m ([m[1;32mhkh[m[33m, [m[1;32mcreate[m[33m)[m
+Merge: f5475bb 6b3715e
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 14:48:39 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit f5475bb4797053abe02576e0e9f09d87bfb778c7[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 14:48:27 2020 +0000
+
+    tenging milli frammenda og bakendda
+
+[33mcommit e32d57f10bfd667622218530dd2da3d3cac3fc79[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:48:15 2020 +0000
+
+    sma
+
+[33mcommit 6b3715e43bf2e3579a86f611e89848bd980d830e[m
+Merge: 310ff30 f44ce8c
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:40:05 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit f44ce8cd41c1d8ae730503aeca58fa50edae9525[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 14:39:50 2020 +0000
+
+    laga sma
+
+[33mcommit 310ff30135245c5f1b96227484e0ee255a33c9e5[m
+Merge: 0c74439 bf93008
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:39:02 2020 +0000
+
+    Breytti í LocalDate
+
+[33mcommit 0c7443921d7d9bfc98c78114a3df74ed287ab8a4[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:38:02 2020 +0000
+
+    Breytti í LocalDate
+
+[33mcommit bf9300886eebaa53ba4750f74e7eb8497186fcc2[m
+Merge: 1b01dcc bfe4668
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 14:36:26 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit bfe46682bb4a96bff7da0896153699371e61b956[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Wed Mar 4 14:36:53 2020 +0000
+
+    pakki params
+
+[33mcommit 1b01dccaed82e150e09009f6b7ee4dd1e34c399c[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 14:36:19 2020 +0000
+
+    orders
+
+[33mcommit 324ae0078a7856b4dcafda4b6adfa2f097fdb15c[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Wed Mar 4 14:35:18 2020 +0000
+
+    pakki klasi
+
+[33mcommit 9168d9cd7fb3cbb952d954187db964e435273225[m
+Merge: 586df15 bfe4668
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:34:55 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit 586df158ea2b3fdc5c431b016eaa88b72b02e288[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:34:51 2020 +0000
+
+    Breytti í LocalDate
+
+[33mcommit 38e25427d886c876d6aedcc1231644eaac64c1ba[m
+Merge: dcff615 2c44650
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:26:38 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit 2c4465080a190618d46ed30337710add51489d7e[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Wed Mar 4 14:30:27 2020 +0000
+
+    hótel klasi
+
+[33mcommit dcff6153cf2d38cbea9511a9fd5c9a8e207dd831[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:26:31 2020 +0000
+
+    DayTrip klasa bætt við
+
+[33mcommit 425438f21b2a97f87e6f0e16657caeeda030a735[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:16:50 2020 +0000
+
+    Smá breytingar
+
+[33mcommit 4b59607e0a7206b0e921a0440be416f473bd1c6f[m
+Merge: 239697f 74daaf5
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:15:53 2020 +0000
+
+    Smá breytingar
+
+[33mcommit 239697f318fb6d8e5e9beaa2a231cac1aecb647b[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:12:31 2020 +0000
+
+    Smá breytingar
+
+[33mcommit 74daaf5a8c5661da3258317eb078cbb776c91b98[m
+Merge: fa3487a e7507e4
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 14:12:03 2020 +0000
+
+    merge
+
+[33mcommit fa3487af0f57eebf3f70ecc10fba4318b989affa[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 14:10:25 2020 +0000
+
+    things
+
+[33mcommit e7507e4fba0ca5e341287d4f53c44446b3169218[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 14:07:54 2020 +0000
+
+    Public í private
+
+[33mcommit 99fe5324eb74a62ce1918d5ee9c160bf403a7260[m
+Merge: 364b346 550ffb5
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 13:55:56 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit 364b346fada2efe78b0c515ae690131f1b4eb99f[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 13:55:45 2020 +0000
+
+    public í private
+
+[33mcommit 550ffb568094d6cafb24462ed230759496cda292[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 13:53:32 2020 +0000
+
+    Flight
+
+[33mcommit 139d1cce609a3cb62202b7e98d867c884014a60c[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 13:37:47 2020 +0000
+
+    Flight
+
+[33mcommit 3f947d91bac9d1cda7db2ee904a74dc52ffd8718[m
+Merge: fc7e457 b550510
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 13:34:49 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit fc7e457017197a35caea88cc4748472203166b0d[m
+Author: Hallur Kristinn Hallsson <hkh32@hi.is>
+Date:   Wed Mar 4 13:34:25 2020 +0000
+
+    skjölun
+
+[33mcommit b550510329b75104fab6011c3c68506c113d4149[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Wed Mar 4 13:32:21 2020 +0000
+
+    Tengdi radio buttons
+
+[33mcommit d1295d2c1b40df146be4158ee835e6645e76cfca[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Tue Mar 3 09:41:23 2020 +0000
+
+    Setti upp í einn controller fyrir eitt tab, og stækkaði upphafsglugga
+
+[33mcommit d3bbf8889e7cc6f6d40da0ef484975e04f79412e[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 2 13:18:19 2020 +0000
+
+    Day trips
+
+[33mcommit 81e58696136019d419466cd1eb490c0b9aa3f83c[m
+Merge: 0753e96 1f643c9
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 2 13:16:54 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       out/production/SoftwareT1/Leit.fxml
+
+[33mcommit 1f643c9dc3e767bad984cc2d81a29431295d69ff[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Mon Mar 2 13:18:47 2020 +0000
+
+    packages viðmót
+
+[33mcommit 0753e96011a7c9cc9f3463e5157840d8534fbbf3[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 2 13:15:00 2020 +0000
+
+    Day trips
+
+[33mcommit 55d8c8ad916ccc892bfc731fb89c153e24a5537f[m
+Merge: 5b914fe f2a0f34
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 2 12:59:50 2020 +0000
+
+    Merge branch 'master' of https://github.com/arnielmar/SoftwareT1
+
+[33mcommit f2a0f3456c1981bc54af318ac8a1a4758ca14e15[m
+Author: Gudmundur Gardar Arnason <gga3@hi.is>
+Date:   Mon Mar 2 13:03:32 2020 +0000
+
+    hotel interface
+
+[33mcommit 5b914fe7fdc4789a07f6c44eddb8693371b7ce62[m
+Author: arnielmar <aeh25@hi.is>
+Date:   Mon Mar 2 12:59:46 2020 +0000
+
+    Flight
