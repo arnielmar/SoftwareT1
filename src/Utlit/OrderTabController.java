@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 
+import java.util.Arrays;
+
 public class OrderTabController {
     @FXML
     private ListView<Flight> ordersListViewFlights;

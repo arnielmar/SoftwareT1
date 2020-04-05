@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Controller klasi fyrir flug gluggann.

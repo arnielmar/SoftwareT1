@@ -6,9 +6,9 @@
 
 <Tab text="Flight" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.FlightTabController">
     <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@FlightTabCSS.css">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
-            <Button fx:id="pantaFlugHeimButton" layoutX="390.0" layoutY="270.0" mnemonicParsing="false" onAction="#pantaFlugHeimHandler" styleClass="pantaFlugHeimButton" text="Order" visible="false" />
+            <Button fx:id="pantaFlugHeimButton" layoutX="390.0" layoutY="270.0" mnemonicParsing="false" onAction="#pantaFlugHeimHandler" text="Order" visible="false" />
             <Button fx:id="pantaFlugUtButton" layoutX="110.0" layoutY="270.0" mnemonicParsing="false" onAction="#pantaFlugUtHandler" text="Order" visible="false" />
             <Label fx:id="flightBackLabel" layoutX="380.0" layoutY="40.0" text="Flight back" visible="false" />
             <ListView fx:id="flightListViewTwo" layoutX="290.0" layoutY="60.0" prefHeight="200.0" prefWidth="245.0" visible="false" />
@@ -31,7 +31,7 @@
                 <RadioButton id="2" fx:id="flightOneWay" layoutX="164.0" layoutY="54.0" mnemonicParsing="false" onAction="#radioButtonsHandler" text="One Way" toggleGroup="$radio" />
                 <Button fx:id="flightSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitaHandler" text="Search" />
                 <Spinner fx:id="flightPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
-                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" styleClass="searchLabel" text="Search for Flights">
+                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" text="Search for Flights">
                     <font>
                         <Font size="18.0" />
                     </font>

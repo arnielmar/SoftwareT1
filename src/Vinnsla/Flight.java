@@ -6,11 +6,12 @@ import java.time.LocalDate;
  * Mock Object af Flight hlutum.
  *
  */
-public class Flight {
+public class Flight implements Comparable<Flight> {
     private String departureLoc;
     private String arrivalLoc;
     private LocalDate flightDate;
     private int capacity;
+    private int price;
 
 
     /**
@@ -21,11 +22,12 @@ public class Flight {
      * @param date - Dagsetning flugs
      * @param nr - Fjöldi lausra sæta
      */
-    public Flight (String depart, String arrival, LocalDate date, int nr) {
+    public Flight (String depart, String arrival, LocalDate date, int nr, int price) {
         this.departureLoc = depart;
         this.arrivalLoc = arrival;
         this.flightDate = date;
         this.capacity = nr;
+        this.price = price;
     }
 
     public String getDepartureLoc() {
@@ -46,6 +48,11 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Frá " + departureLoc + " til " + arrivalLoc + " á " + flightDate;
+        return "Frá " + departureLoc + " til " + arrivalLoc + " á " + flightDate + ". Verð: " + price + "kr.";
+    }
+
+    @Override
+    public int compareTo(Flight that) {
+        return Integer.compare(this.price, that.price);
     }
 }

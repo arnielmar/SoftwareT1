@@ -26,7 +26,7 @@ public class Orders {
         Hotels.add(hotel);
     }
 
-    public void makeDummyFlights() {
+    /*public void makeDummyFlights() {
         String[] tmpstring = new String[1];
         int i;
         for ( i = 0; i < 10; i++ )
@@ -41,7 +41,7 @@ public class Orders {
             Flight tmpFlight = flights.get(i);
             System.out.println(tmpFlight.getArrivalLoc());
         }
-    }
+    }*/
 
     public void makeDummyHotels() {
         String[] tmpstring = new String[1];
