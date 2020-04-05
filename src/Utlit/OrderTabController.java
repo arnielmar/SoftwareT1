@@ -5,13 +5,9 @@ import Vinnsla.Flight;
 import Vinnsla.Hotel;
 import Vinnsla.Package;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Tab;
 
-import java.util.Arrays;
 
 public class OrderTabController {
     @FXML
