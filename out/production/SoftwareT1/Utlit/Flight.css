@@ -1,0 +1,6 @@
+.pane {
+}
+
+.button {
+    -fx-focus-traversible: none;
+}
