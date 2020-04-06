@@ -27,6 +27,7 @@ public class OrderTabController {
 
     public void setjaInnFlights(ObservableList<Flight> flights) {
         ordersListViewFlights.setItems(flights);
+        reiknaVerd();
     }
 
     public void setjaInnHotel(ObservableList<Hotel> hotel){
@@ -38,17 +39,33 @@ public class OrderTabController {
         ordersListViewDayTrips.setItems(dayTrip);
     }
 
-    public void reiknaVerd(){
+    /**
+     * Reiknar verð allra pantaðra hluta og sýnir verðið.
+     *
+     */
+    private void reiknaVerd(){
         int verd = 0;
         ObservableList<Hotel> theHotels = ordersListViewHotels.getItems();
         for(Hotel h: theHotels){
             verd += h.getPrice();
         }
+        ObservableList<Flight> theFlights = ordersListViewFlights.getItems();
+        for (Flight flight : theFlights) {
+            verd += flight.getPrice();
+        }
         verdLabel.setText(verd +" -kr.");
     }
 
-    public void radaFlightsHandler(ActionEvent actionEvent) {
-
+    /**
+     * Raðar lista með pöntuðum flugum eftir verði.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á raða eftir verði takka
+     */
+    @FXML
+    private void radaFlightsHandler(ActionEvent actionEvent) {
+        ObservableList<Flight> theFlights = ordersListViewFlights.getItems();
+        Collections.sort(theFlights);
+        ordersListViewFlights.setItems(theFlights);
     }
 
     public void radaHotelsHandler(ActionEvent actionEvent) {
