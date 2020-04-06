@@ -38,6 +38,10 @@ public class OrderTabController {
         ordersListViewDayTrips.setItems(dayTrip);
     }
 
+    public void setjaInnPackages(ObservableList<Package> packages){
+        ordersListViewPackages.setItems(packages);
+    }
+
     public void reiknaVerd(){
         int verd = 0;
         ObservableList<Hotel> theHotels = ordersListViewHotels.getItems();

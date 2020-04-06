@@ -3,6 +3,7 @@ package Utlit;
 import Vinnsla.DayTrip;
 import Vinnsla.Flight;
 import Vinnsla.Hotel;
+import Vinnsla.Package;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -50,5 +51,10 @@ public class LeitController {
     public void setjaDayTrips(ObservableList<DayTrip> dayTrips)
     {
         orderTabController.setjaInnDayTrips(dayTrips);
+    }
+
+    public void setjaPackage(ObservableList<Package> packages)
+    {
+        orderTabController.setjaInnPackages(packages);
     }
 }
