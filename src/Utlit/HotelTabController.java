@@ -106,10 +106,10 @@ public class HotelTabController {
      */
     private void setjaDagsetningar() {
         //hotelFromDate.setValue(LocalDate.now());
-        hotelFromDate.setValue(LocalDate.of(2020,4,17));
+        hotelFromDate.setValue(LocalDate.now());
         dateFrom = hotelToDate.getValue();
         //hotelToDate.setValue(LocalDate.now());
-        hotelToDate.setValue(LocalDate.of(2020,4,25));
+        hotelToDate.setValue(LocalDate.of(2020,4,28));
         dateTo = hotelFromDate.getValue();
     }
 
