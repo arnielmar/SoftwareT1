@@ -42,8 +42,11 @@ public class DayTripTabController {
     @FXML
     private Label dayTripHeader;
 
+    private LeitController parentController;
+
     private DayTripList daytripList;            // tenging við gögn með lista af day trip-um
     private ListOfDayTrips listOfDayTrips;      // tenging við mock gagnagrunn af day trip-um
+    private ArrayList<DayTrip> bookedDayTrips;  // Heldur utan um hvaða daytrip hafa verið bokuð
     private int virkurIndex = 0;                // heldur utan um hvaða stak í listanum er valið
 
     private String stadsetn;
@@ -61,6 +64,7 @@ public class DayTripTabController {
     {
         daytripList = new DayTripList();
         listOfDayTrips = new ListOfDayTrips();
+        bookedDayTrips = new ArrayList<DayTrip>();
         setjaStadi();
         setjaDagsetningu();
         setjaMannfjolda();
@@ -143,20 +147,11 @@ public class DayTripTabController {
     }
 
     public void bokunhandler(ActionEvent actionEvent) {
-       /* try {
-            System.out.println("1");
-            FXMLLoader loader = new FXMLLoader();
-            System.out.println("2");
-            Tab t = loader.load(getClass().getResource("./OrderTab.fxml").openStream());
-            System.out.println("3");
+       DayTrip orderedDayTrip = (DayTrip)dayTripListView.getSelectionModel().getSelectedItem();
+       System.out.println(orderedDayTrip.toString());
+       bookedDayTrips.add(orderedDayTrip);
+       parentController.setjaDayTrips(FXCollections.observableArrayList(bookedDayTrips));
 
-            OrderTabController orderController = (OrderTabController) loader.getController();
-            System.out.println("4");
-            orderController.printTest("It works!");
-            System.out.println("5");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     private void leitarVidmot(boolean b)
@@ -175,4 +170,7 @@ public class DayTripTabController {
     }
 
 
+    public void setParentController(LeitController parentController) {
+        this.parentController = parentController;
+    }
 }

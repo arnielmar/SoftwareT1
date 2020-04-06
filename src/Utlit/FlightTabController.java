@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Controller klasi fyrir flug gluggann.
@@ -29,6 +30,8 @@ public class FlightTabController {
     private Label flightBackLabel;
     @FXML
     private Button pantaFlugUtButton;
+    @FXML
+    private Button pantaFlugHeimButton;
     @FXML
     private Button flightBackButton;
     @FXML
@@ -66,17 +69,21 @@ public class FlightTabController {
     @FXML
     private Spinner flightPersons;
 
-    private FlightList flightList;          // tenging við gögn með lista af flugum
-    private ListOfFlights listOfFlights;    // tenging við mock gagnagrunn af flugum
-    private int virkurIndexOne = 0;         // heldur utan um hvaða stak í lista 1 er valið
-    private int virkurIndexTwo = 0;         // heldur utan um hvaða stak í lista 2 er valið
+    private LeitController parentController;    // tenging við LeitController
+    private FlightList flightList;              // tenging við gögn með lista af flugum
+    private ListOfFlights listOfFlights;        // tenging við mock gagnagrunn af flugum
+    private ArrayList<Flight> fromResults;      // heldur utan um niðurstöður leitar fyrir flug út
+    private ArrayList<Flight> toResults;        // heldur utan um niðurstöður leitar fyrir flug til baka
+    private ArrayList<Flight> orderedFlights;   // heldur utan um pöntuð flug
+    private int virkurIndexOne = -1;            // heldur utan um hvaða stak í lista 1 er valið
+    private int virkurIndexTwo = -1;            // heldur utan um hvaða stak í lista 2 er valið
 
-    private String depart;                  // brottfararstaður
-    private String destination;             // áfangastaður
-    private boolean oneWay;                 // oneway eða round trip
-    private LocalDate dateFrom;             // dagsetning frá
-    private LocalDate dateTo;               // dagsetning til
-    private int noOfPeople;                 // fjöldi manns
+    private String depart;                      // brottfararstaður
+    private String destination;                 // áfangastaður
+    private boolean oneWay;                     // oneway eða round trip
+    private LocalDate dateFrom;                 // dagsetning frá
+    private LocalDate dateTo;                   // dagsetning til
+    private int noOfPeople;                     // fjöldi manns
 
     /**
      * Upphafsstillir gluggann fyrir flugleit.
@@ -87,10 +94,20 @@ public class FlightTabController {
     public void initialize() {
         flightList = new FlightList();
         listOfFlights = new ListOfFlights();
+        orderedFlights = new ArrayList<>();
         setjaStadi();
         setjaSpinner();
         setjaDagsetningar();
         setjaLista();
+    }
+
+    /**
+     * Tenging í LeitController sem er aðal controller-inn.
+     *
+     * @param parentController - LeitController
+     */
+    public void setParentController(LeitController parentController) {
+        this.parentController = parentController;
     }
 
     /**
@@ -137,8 +154,7 @@ public class FlightTabController {
      *
      */
     private void setjaLista() {
-        ListOfFlights listOfFlights = new ListOfFlights();
-        ObservableList<Flight> listi = FXCollections.observableArrayList(listOfFlights.getListOfFlights());
+        ObservableList<Flight> listi = flightList.getAllFlights();
         flightListViewOne.setItems(listi);
         flightListViewTwo.setItems(listi);
         MultipleSelectionModel<Flight> lsr = flightListViewOne.getSelectionModel();
@@ -175,16 +191,16 @@ public class FlightTabController {
         noOfPeople = (int) flightPersons.getValue();
         System.out.println(noOfPeople);
         if (oneWay) {   // leit að einu flugi
-            ArrayList<Flight> results = flightList.searchFlights(depart, destination, dateFrom, noOfPeople);
-            ObservableList<Flight> listResults = FXCollections.observableArrayList(results);
+            fromResults = flightList.searchFlights(depart, destination, dateFrom, noOfPeople);
+            ObservableList<Flight> listResults = FXCollections.observableArrayList(fromResults);
             flightListViewOne.setItems(listResults);
             virkurIndexOne = 0;
             virkjaNidurstodur(true, false);
             System.out.println("Leitaði að oneway flugi");
         } else {    // leit að tveimur flugum
-            ArrayList<Flight> fromResults = flightList.searchFlights(depart, destination, dateFrom, noOfPeople);
+            fromResults = flightList.searchFlights(depart, destination, dateFrom, noOfPeople);
             ObservableList<Flight> fromListResults = FXCollections.observableArrayList(fromResults);
-            ArrayList<Flight> toResults = flightList.searchFlights(destination, depart, dateTo, noOfPeople);
+            toResults = flightList.searchFlights(destination, depart, dateTo, noOfPeople);
             ObservableList<Flight> toListResults = FXCollections.observableArrayList(toResults);
             flightListViewOne.setItems(fromListResults);
             flightListViewTwo.setItems(toListResults);
@@ -207,11 +223,31 @@ public class FlightTabController {
     }
 
     /**
-     * Pantar flug.
+     * Pantar flug út.
+     *
      * @param actionEvent - atburðurinn þegar klikkað er á panta takka
      */
     @FXML
     private void pantaFlugUtHandler(ActionEvent actionEvent) {
+        if (virkurIndexOne != -1) {
+            Flight orderedFlight = fromResults.get(virkurIndexOne);
+            orderedFlights.add(orderedFlight);
+            parentController.setjaFlights(FXCollections.observableArrayList(orderedFlights));
+        }
+    }
+
+    /**
+     * Pantar flug heim.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á panta takka
+     */
+    @FXML
+    private void pantaFlugHeimHandler(ActionEvent actionEvent) {
+        if (virkurIndexTwo != -1) {
+            Flight orderedFlight = toResults.get(virkurIndexTwo);
+            orderedFlights.add(orderedFlight);
+            parentController.setjaFlights(FXCollections.observableArrayList(orderedFlights));
+        }
     }
 
     /**
@@ -321,5 +357,6 @@ public class FlightTabController {
         resultLabel.setVisible(gildi);
         flightBackButton.setVisible(gildi);
         pantaFlugUtButton.setVisible(gildi);
+        pantaFlugHeimButton.setVisible(roundWay);
     }
 }
