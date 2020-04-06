@@ -1,0 +1,7 @@
+.pane {
+    -fx-background-image: url("FlightPhoto.jpg");
+}
+
+.button {
+    -fx-focus-traversible: none;
+}

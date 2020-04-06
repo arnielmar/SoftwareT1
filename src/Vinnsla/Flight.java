@@ -46,6 +46,10 @@ public class Flight implements Comparable<Flight> {
         return capacity;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
         return "Frá " + departureLoc + " til " + arrivalLoc + " á " + flightDate + ". Verð: " + price + "kr.";
