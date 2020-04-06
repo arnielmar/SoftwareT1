@@ -137,14 +137,16 @@ public class PackageTabController {
 
                 System.out.println("virkurIndexOne = " + virkurIndex);
 
-                ArrayList<String> theTypes = new ArrayList<String>();
-                Package p = (Package) packageListView.getItems().get(virkurIndex);
-                theTypes.add(""+ p.getFlightFrom());
-                theTypes.add(""+ p.getFlightTo());
-                theTypes.add(""+ p.getHotel());
-                theTypes.add(""+ p.getDayTrip());
-                ObservableList<String> typeList = FXCollections.observableArrayList(theTypes);
-                packageListView2.setItems(typeList);
+                if (virkurIndex>=0){
+                    ArrayList<String> theTypes = new ArrayList<String>();
+                    Package p = (Package) packageListView.getItems().get(virkurIndex);
+                    theTypes.add(""+ p.getFlightFrom());
+                    theTypes.add(""+ p.getFlightTo());
+                    theTypes.add(""+ p.getHotel());
+                    theTypes.add(""+ p.getDayTrip());
+                    ObservableList<String> typeList = FXCollections.observableArrayList(theTypes);
+                    packageListView2.setItems(typeList);
+                }
             }
         });
     }
@@ -163,6 +165,7 @@ public class PackageTabController {
     @FXML
     private void tilBakaHandler(javafx.event.ActionEvent actionEvent) {
         packagelist=new PackageList();
+        packageListView2.getItems().clear();
         virkjaNidurstodur(false);
         virkjaLeit(true);
     }

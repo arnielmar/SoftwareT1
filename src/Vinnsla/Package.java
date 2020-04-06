@@ -38,6 +38,6 @@ public class Package {
 
     @Override
     public String toString() {
-        return ""+flightTo+" til "+flightFrom.getFlightDate();
+        return "Frá " + flightTo.getDepartureLoc() + " til " + flightTo.getArrivalLoc() + " á " + flightTo.getFlightDate() +" til "+flightFrom.getFlightDate();
     }
 }

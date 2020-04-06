@@ -81,7 +81,12 @@ public class PackageList {
         HotelList Hotl= new HotelList();
         ArrayList<Hotel> hotelz=  Hotl.searchHotels(dest,from,to,noOfPeople);
         DayTripList Dagferd = new DayTripList();
-        ArrayList<DayTrip> dagferd = Dagferd.searchDayTrips(dest,from,noOfPeople);
+        ArrayList<DayTrip> dagferd = new ArrayList<DayTrip>();
+        for (LocalDate date= from; date.isBefore(to); date=date.plusDays(1)){
+            ArrayList<DayTrip> dagtemp = Dagferd.searchDayTrips(dest,date,noOfPeople);
+            dagferd.addAll(dagtemp);
+        }
+        //ArrayList<DayTrip> dagferd = Dagferd.searchDayTrips(dest,from,noOfPeople);
 
         // hér er svo sett up lengdina af öllum þremur listum og minnsta af þeim
         int Flugfjoldifrom = fromResults.size();
