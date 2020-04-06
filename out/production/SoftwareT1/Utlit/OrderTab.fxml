@@ -13,14 +13,25 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="55.0" layoutY="60.0" text="Flights" />
-            <ListView fx:id="ordersListViewFlights" layoutX="10.0" layoutY="80.0" prefHeight="250.0" prefWidth="125.0" />
-            <Label layoutX="190.0" layoutY="60.0" text="Hotels" />
-            <ListView fx:id="ordersListViewHotels" layoutX="145.0" layoutY="80.0" prefHeight="250.0" prefWidth="125.0" />
-            <Label layoutX="315.0" layoutY="60.0" text="Day Trips" />
-            <ListView fx:id="ordersListViewDayTrips" layoutX="280.0" layoutY="80.0" prefHeight="250.0" prefWidth="125.0" />
-            <Label layoutX="450.0" layoutY="60.0" text="Packages" />
-            <ListView fx:id="ordersListViewPackages" layoutX="415.0" layoutY="80.0" prefHeight="250.0" prefWidth="125.0" />
+            <Button fx:id="radaFlights" layoutX="480.0" layoutY="40.0" prefHeight="12" prefWidth="60" mnemonicParsing="false" onAction="#radaFlightsHandler" text="Raða" visible="true" />
+            <Label layoutX="15.0" layoutY="45.0" text="Flights" />
+            <ListView fx:id="ordersListViewFlights" layoutX="10.0" layoutY="65.0" prefHeight="40.0" prefWidth="530.0" />
+            <Button fx:id="radaHotels" layoutX="480.0" layoutY="110.0" prefHeight="12" prefWidth="60" mnemonicParsing="false" onAction="#radaHotelsHandler" text="Raða" visible="true" />
+            <Label layoutX="15.0" layoutY="115.0" text="Hotels" />
+            <ListView fx:id="ordersListViewHotels" layoutX="10.0" layoutY="135.0" prefHeight="40.0" prefWidth="530.0" />
+            <Button fx:id="radaDayTrips" layoutX="480.0" layoutY="180.0" prefHeight="12" prefWidth="60" mnemonicParsing="false" onAction="#radaDayTripsHandler" text="Raða" visible="true" />
+            <Label layoutX="15.0" layoutY="185.0" text="Day Trips" />
+            <ListView fx:id="ordersListViewDayTrips" layoutX="10.0" layoutY="205.0" prefHeight="40.0" prefWidth="530.0" />
+            <Button fx:id="radaPackages" layoutX="480.0" layoutY="250.0" prefHeight="12" prefWidth="60" mnemonicParsing="false" onAction="#radaPackagesHandler" text="Raða" visible="true" />
+            <Label layoutX="15.0" layoutY="255.0" text="Packages" />
+            <ListView fx:id="ordersListViewPackages" layoutX="10.0" layoutY="275.0" prefHeight="40.0" prefWidth="530.0" />
+            <Label fx:id="verdLabel" layoutX="350" layoutY="330" text="0 -kr.">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+            </Label>
+            <Button fx:id="stadfestaButton" layoutX="420.0" layoutY="330.0" prefHeight="25" prefWidth="80" mnemonicParsing="false" onAction="#radaPackagesHandler" text="Staðfesta" visible="false" />
+
          </children></AnchorPane>
   </content>
 </Tab>

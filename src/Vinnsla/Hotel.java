@@ -3,13 +3,14 @@ package Vinnsla;
 import java.time.LocalDate;
 
 
-public class Hotel {
+public class Hotel implements Comparable<Hotel>{
     private String hotelName;
     private String location;
     private LocalDate arrivalDate;
     private LocalDate departDate;
     private int customerNumber;
     private String[] roomType;
+    private int price;
 
     /**
      *
@@ -19,13 +20,14 @@ public class Hotel {
      * @param number
      * @param type
      */
-    public Hotel(String name, String loc, LocalDate arrive, LocalDate depart, int number, String[] type){
+    public Hotel(String name, String loc, LocalDate arrive, LocalDate depart, int number, String[] type, int price){
         this.hotelName = name;
         this.location = loc;
         this.arrivalDate = arrive;
         this.departDate = depart;
         this.customerNumber = number;
         this.roomType= type;
+        this.price = price;
     }
 
     public String getHotelName() {
@@ -52,6 +54,10 @@ public class Hotel {
         return roomType;
     }
 
+    public int getPrice(){
+        return price;
+    }
+
     public int getRoomTypeNumber(String room){
         if(room.equals("single")){
             return 1;
@@ -67,6 +73,12 @@ public class Hotel {
 
     @Override
     public String toString() {
-        return hotelName + " í " + location + " frá " + arrivalDate + " til " + departDate;
+        return hotelName + " í " + location + " frá " + arrivalDate + " til " + departDate + ". Verð. " + price + " -kr.";
     }
+
+    @Override
+    public int compareTo(Hotel that) {
+        return Integer.compare(this.price, that.price);
+    }
+
 }
