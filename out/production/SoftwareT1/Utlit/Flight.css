@@ -35,3 +35,10 @@
 .spinner {
     -fx-color: #e8fdff;
 }
+
+.list-view {
+    -fx-color: #e8fdff;
+}
+
+.list-view .list-cell {
+}
