@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Tab text="Flight" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.FlightTabController">
+<Tab styleClass="flightTab, tab" text="Flights" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.FlightTabController">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane" stylesheets="@Flight.css">
             <children>
@@ -13,7 +13,7 @@
             <Label fx:id="flightBackLabel" layoutX="380.0" layoutY="40.0" styleClass="smallLabel" stylesheets="@Flight.css" text="Flight back" visible="false" />
             <ListView fx:id="flightListViewTwo" layoutX="290.0" layoutY="60.0" prefHeight="200.0" prefWidth="245.0" styleClass="listView" stylesheets="@Flight.css" visible="false" />
             <Button fx:id="flightBackButton" layoutX="425.0" layoutY="320.0" mnemonicParsing="false" onAction="#tilBakaHandler" stylesheets="@Flight.css" text="Back" visible="false" />
-            <Label fx:id="resultLabel" layoutX="245.0" layoutY="15.0" styleClass="bigLabel" stylesheets="@Flight.css" text="Results" visible="false">
+            <Label fx:id="resultLabel" layoutX="235.0" layoutY="15.0" styleClass="bigLabel" stylesheets="@Flight.css" text="Results" visible="false">
                <font>
                   <Font size="18.0" />
                </font>
@@ -31,7 +31,7 @@
                 <RadioButton id="2" fx:id="flightOneWay" layoutX="164.0" layoutY="54.0" mnemonicParsing="false" onAction="#radioButtonsHandler" styleClass="radio" stylesheets="@Flight.css" text="One Way" toggleGroup="$radio" />
                 <Button fx:id="flightSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitaHandler" stylesheets="@Flight.css" text="Search" />
                 <Spinner fx:id="flightPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" stylesheets="@Flight.css" />
-                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" styleClass="bigLabel" stylesheets="@Flight.css" text="Search for Flights">
+                <Label fx:id="searchLabel" layoutX="180.0" layoutY="15.0" styleClass="bigLabel" stylesheets="@Flight.css" text="Search for Flights">
                     <font>
                         <Font size="18.0" />
                     </font>

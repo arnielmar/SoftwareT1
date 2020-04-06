@@ -1,0 +1,34 @@
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane {
+    -fx-tab-min-width: 90px;
+    -fx-font-family: 'sans-serif', 'serif';
+}
+
+.tab {
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #e6e6e6;
+}
+
+.tab:selected .tab-label {
+    -fx-font-weight: bold;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 5 2 0 0; /* overridden as 5 2 0 0 */
+}
+
+.tab-pane .tab {
+    -fx-focus-color: transparent;
+    -fx-focus-traversable: false;
+}
+
+.tab-pane .flightTab:selected {
+    -fx-background-color: #4e9fd9;
+}
