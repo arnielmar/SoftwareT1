@@ -42,6 +42,7 @@ public class OrderTabController {
 
     public void setjaInnPackages(ObservableList<Package> packages){
         ordersListViewPackages.setItems(packages);
+        reiknaVerd();
     }
 
 
@@ -59,6 +60,10 @@ public class OrderTabController {
         ObservableList<Flight> theFlights = ordersListViewFlights.getItems();
         for (Flight flight : theFlights) {
             verd += flight.getPrice();
+        }
+        ObservableList<Package> thePackages= ordersListViewPackages.getItems();
+        for (Package packages : thePackages){
+            verd += packages.getPrice();
         }
         verdLabel.setText(verd +" -kr.");
     }

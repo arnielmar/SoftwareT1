@@ -5,6 +5,7 @@ public class Package {
     private Flight flightFrom;
     private Hotel hotel;
     private DayTrip dayTrip;
+    private int price;
 
     /**
      *
@@ -18,6 +19,7 @@ public class Package {
         this.flightFrom = flightFrom;
         this.hotel = hotel;
         this.dayTrip = dayTrip;
+        this.price = (int)((flightTo.getPrice()+flightFrom.getPrice()+hotel.getPrice())*0.9);
     }
 
     public Flight getFlightTo() {
@@ -36,8 +38,10 @@ public class Package {
         return dayTrip;
     }
 
+    public int getPrice() {return price;}
+
     @Override
     public String toString() {
-        return "Frá " + flightTo.getDepartureLoc() + " til " + flightTo.getArrivalLoc() + " á " + flightTo.getFlightDate() +" til "+flightFrom.getFlightDate()+", á hótelinu "+ hotel.getHotelName()+ " með dagferðina "+dayTrip.getType()+" á deginum "+dayTrip.getDateAndTime()+", verð: ";
+        return "Frá " + flightTo.getDepartureLoc() + " til " + flightTo.getArrivalLoc() + " á " + flightTo.getFlightDate() +" til "+flightFrom.getFlightDate()+", á hótelinu "+ hotel.getHotelName()+ " með dagferðina "+dayTrip.getType()+" á deginum "+dayTrip.getDateAndTime()+", verð: "+price+"kr";
     }
 }
