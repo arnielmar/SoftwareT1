@@ -38,6 +38,7 @@ public class LeitController {
         flightTabController.setParentController(this);
         hotelTabController.setParentController(this);
         dayTripTabController.setParentController(this);
+        packageTabController.setParentController(this);
     }
 
     public void setjaFlights(ObservableList<Flight> flights) {

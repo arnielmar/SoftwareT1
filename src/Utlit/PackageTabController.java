@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.*;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -22,6 +23,8 @@ public class PackageTabController {
     //Viðmóts hlutirnir
     @FXML
     private Button packageBackButton;
+    @FXML
+    private Button packageOrderButton;
     @FXML
     private ListView packageListView;
     @FXML
@@ -57,6 +60,7 @@ public class PackageTabController {
 
     private PackageList packagelist;
     private ListOfFlights listOfFlights;
+    private LeitController parentController;
 
     private String depart;                  // brottfararstaður
     private String destination;             // áfangastaður
@@ -87,6 +91,10 @@ public class PackageTabController {
         setjaDagsetningar();
         setjaLista();
         virkjaNidurstodur(false);
+    }
+
+    public void setParentController(LeitController parentController) {
+        this.parentController = parentController;
     }
 
     /**
@@ -195,6 +203,12 @@ public class PackageTabController {
         dateTo = packageReturningDate.getValue();
         System.out.println(dateTo);
     }
+    @FXML
+    private void packageOrderHandler(javafx.event.ActionEvent actionEvent){
+        Package orderedPackage = packagelist.getPackage(virkurIndex);
+        packagelist.addOrderedPackage(orderedPackage);
+        parentController.setjaPackage(packagelist.getOrderedPackages());
+    }
 
     private void virkjaLeit(boolean gildi) {
         searchLabel.setVisible(gildi);
@@ -216,6 +230,7 @@ public class PackageTabController {
         nPakka.setVisible(gildi);
         InnihaldPakka.setVisible(gildi);
         packageBackButton.setVisible(gildi);
+        packageOrderButton.setVisible(gildi);
     }
 
 

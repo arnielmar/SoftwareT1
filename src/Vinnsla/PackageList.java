@@ -1,5 +1,6 @@
 package Vinnsla;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -10,12 +11,14 @@ import static java.lang.Integer.min;
 
 public class PackageList {
     private ObservableList<Package> packages;
+    private ArrayList<Package> orderedPackages;
 
     /**
      * Smíðar nýjan Observable List af Package hlutum.
      */
     public PackageList() {
         this.packages = FXCollections.observableArrayList();
+        this.orderedPackages= new ArrayList<Package>();
     }
 
     /**
@@ -104,13 +107,12 @@ public class PackageList {
             Package P = new Package(fromResults.get(fr1),toResults.get(fr2),hotelz.get(Hr),dagferd.get(Dr));
             packages.add(P);
         }
-
-
-
-                
-
-
-
         //TODO
     }
+
+    public void addOrderedPackage(Package p){
+        orderedPackages.add(p);
+    }
+
+    public ObservableList<Package> getOrderedPackages() { return FXCollections.observableArrayList(orderedPackages);}
 }

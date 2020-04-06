@@ -14,6 +14,7 @@
                 <ComboBox fx:id="packageToCombo" layoutX="288.0" layoutY="122.0" onAction="#packageToComboHandler" prefWidth="150.0" />
                 <DatePicker fx:id="packageDepartureDate" layoutX="56.0" layoutY="190.0" onAction="#packageDepartureDateHandler" prefHeight="25.0" prefWidth="150.0" />
                 <DatePicker fx:id="packageReturningDate" layoutX="288.0" layoutY="190.0" onAction="#packageReturningDateHandler" prefHeight="25.0" prefWidth="150.0" />
+            <Button fx:id="packageOrderButton" layoutX="321.0" layoutY="294.0" mnemonicParsing="false" onAction="#packageOrderHandler" text="Order" />
                 <Button fx:id="packageSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitHandler" text="Search" />
                 <Spinner fx:id="packagePersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
                 <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" text="Search for Packages">
