@@ -8,6 +8,8 @@
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
+            <Label fx:id="InnihaldPakka" layoutX="385.0" layoutY="50.0" text="Innihald Pakka" />
+            <Label fx:id="nPakka" layoutX="20.0" layoutY="50.0" text="Pakkar" />
                 <ComboBox fx:id="packageFromCombo" layoutX="56.0" layoutY="122.0" onAction="#packageFromComboHandler" prefWidth="150.0" />
                 <ComboBox fx:id="packageToCombo" layoutX="288.0" layoutY="122.0" onAction="#packageToComboHandler" prefWidth="150.0" />
                 <DatePicker fx:id="packageDepartureDate" layoutX="56.0" layoutY="190.0" onAction="#packageDepartureDateHandler" prefHeight="25.0" prefWidth="150.0" />

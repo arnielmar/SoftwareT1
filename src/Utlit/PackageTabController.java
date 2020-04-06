@@ -28,6 +28,10 @@ public class PackageTabController {
     private ListView packageListView2;
     @FXML
     private Label resultsLabel;
+    @FXML
+    private Label nPakka;
+    @FXML
+    private Label InnihaldPakka;
 
     //Leitar hlutirnir
     @FXML
@@ -206,6 +210,8 @@ public class PackageTabController {
         packageListView.setVisible(gildi);
         packageListView2.setVisible(gildi);
         resultsLabel.setVisible(gildi);
+        nPakka.setVisible(gildi);
+        InnihaldPakka.setVisible(gildi);
         packageBackButton.setVisible(gildi);
     }
 
