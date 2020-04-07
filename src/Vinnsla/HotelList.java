@@ -99,6 +99,10 @@ public class HotelList {
         return FXCollections.observableArrayList(orderedHotels);
     }
 
+    public void removeAllOrderedHotels() {
+        orderedHotels.clear();
+    }
+
     /**
      *
      * @return - lista af pöntuðum hótelherbergjum

@@ -114,5 +114,9 @@ public class PackageList {
         orderedPackages.add(p);
     }
 
+    public void removeAllOrderedPackages() {
+        orderedPackages.clear();
+    }
+
     public ObservableList<Package> getOrderedPackages() { return FXCollections.observableArrayList(orderedPackages);}
 }

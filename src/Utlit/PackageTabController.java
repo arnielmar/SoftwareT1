@@ -234,6 +234,10 @@ public class PackageTabController {
     }
 
 
+    public ObservableList<Package> removeAllOrderedPackages() {
+        packagelist.removeAllOrderedPackages();
+        return packagelist.getOrderedPackages();
+    }
 }
 
 

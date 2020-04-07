@@ -4,12 +4,11 @@ import Vinnsla.DayTrip;
 import Vinnsla.Flight;
 import Vinnsla.Hotel;
 import Vinnsla.Package;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.ArrayList;
 
 public class LeitController {
     @FXML
@@ -33,29 +32,69 @@ public class LeitController {
     @FXML
     private Tab orderTab;
 
-
+    /**
+     * Tengir alla controllera við LeitController.
+     *
+     */
     public void initialize() {
         flightTabController.setParentController(this);
         hotelTabController.setParentController(this);
         dayTripTabController.setParentController(this);
         packageTabController.setParentController(this);
+        orderTabController.setParentController(this);
     }
 
+    /**
+     * Milliliður fyrir að panta flug.
+     *
+     * @param flights - listi með pöntuðum flugum sem á að birta í OrderTabController
+     */
     public void setjaFlights(ObservableList<Flight> flights) {
         orderTabController.setjaInnFlights(flights);
     }
 
+    /**
+     * Milliliður fyrir að panta hótel.
+     *
+     * @param hotel - listi með pöntuðum hótelum sem á að birta í OrderTabController
+     */
     public void setjaHotel(ObservableList<Hotel> hotel){
         orderTabController.setjaInnHotel(hotel);
     }
 
+    /**
+     * Milliliður fyrir að panta day trips.
+     *
+     * @param dayTrips - listi með pöntuðum day trips sem á að birta í OrderTabController
+     */
     public void setjaDayTrips(ObservableList<DayTrip> dayTrips)
     {
         orderTabController.setjaInnDayTrips(dayTrips);
     }
 
+    /**
+     * Milliliður fyrir að panta pakka.
+     *
+     * @param packages - listi með pöntuðum pökkum sem á að birta í OrderTabController
+     */
     public void setjaPackage(ObservableList<Package> packages)
     {
         orderTabController.setjaInnPackages(packages);
+    }
+
+    /**
+     * Tæmir alla lista með pöntuðum hlutum og lætur OrderTabController
+     * sýna þessa tómu lista.
+     *
+     */
+    public void endurstillaLista() {
+        ArrayList<Flight> nyrFlight = flightTabController.removeAllOrderedFlights();
+        setjaFlights(FXCollections.observableArrayList(nyrFlight));
+        ObservableList<Hotel> nyrHotel = hotelTabController.removeAllOrderedHotels();
+        setjaHotel(nyrHotel);
+        ArrayList<DayTrip> nyrDayTrip = dayTripTabController.removeAllOrderedDayTrips();
+        setjaDayTrips(FXCollections.observableArrayList(nyrDayTrip));
+        ObservableList<Package> nyrPackage = packageTabController.removeAllOrderedPackages();
+        setjaPackage(nyrPackage);
     }
 }
