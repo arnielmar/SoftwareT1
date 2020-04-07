@@ -1,0 +1,32 @@
+.pane {
+    -fx-background-color: black;
+    -fx-focus-color: transparent;
+    -fx-font-family: 'serif', 'sans-serif';
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.bigLabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+}
+
+.smallLabel {
+    -fx-font-size: 14;
+}
+
+.mediumLabel {
+    -fx-font-size: 20;
+}
+
+.button {
+    -fx-color: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.list-view {
+    -fx-color: white;
+}

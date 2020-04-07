@@ -4,48 +4,48 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Tab fx:id="theTab" text="Orders" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.OrderTabController">
+<Tab fx:id="theTab" styleClass="orderTab" text="Orders" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.OrderTabController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane" stylesheets="@Order.css">
          <children>
-            <Label fx:id="orderLabel" layoutX="240.0" layoutY="15.0" text="Orders">
+            <Label fx:id="orderLabel" layoutX="240.0" layoutY="15.0" styleClass="bigLabel" text="Orders">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <Button fx:id="radaFlights" layoutX="480.0" layoutY="40.0" mnemonicParsing="false" onAction="#radaFlightsHandler" prefHeight="12" prefWidth="60" text="Raða" visible="true" />
-            <Label fx:id="flightsLabel" layoutX="15.0" layoutY="45.0" text="Flights" />
+            <Label fx:id="flightsLabel" layoutX="15.0" layoutY="45.0" styleClass="smallLabel" text="Flights" />
             <ListView fx:id="ordersListViewFlights" layoutX="10.0" layoutY="65.0" prefHeight="40.0" prefWidth="530.0" />
             <Button fx:id="radaHotels" layoutX="480.0" layoutY="110.0" mnemonicParsing="false" onAction="#radaHotelsHandler" prefHeight="12" prefWidth="60" text="Raða" visible="true" />
-            <Label fx:id="hotelsLabel" layoutX="15.0" layoutY="115.0" text="Hotels" />
+            <Label fx:id="hotelsLabel" layoutX="15.0" layoutY="115.0" styleClass="smallLabel" text="Hotels" />
             <ListView fx:id="ordersListViewHotels" layoutX="10.0" layoutY="135.0" prefHeight="40.0" prefWidth="530.0" />
             <Button fx:id="radaDayTrips" layoutX="480.0" layoutY="180.0" mnemonicParsing="false" onAction="#radaDayTripsHandler" prefHeight="12" prefWidth="60" text="Raða" visible="true" />
-            <Label fx:id="dayTripsLabel" layoutX="15.0" layoutY="185.0" text="Day Trips" />
+            <Label fx:id="dayTripsLabel" layoutX="15.0" layoutY="185.0" styleClass="smallLabel" text="Day Trips" />
             <ListView fx:id="ordersListViewDayTrips" layoutX="10.0" layoutY="205.0" prefHeight="40.0" prefWidth="530.0" />
             <Button fx:id="radaPackages" layoutX="480.0" layoutY="250.0" mnemonicParsing="false" onAction="#radaPackagesHandler" prefHeight="12" prefWidth="60" text="Raða" visible="true" />
-            <Label fx:id="packagesLabel" layoutX="15.0" layoutY="255.0" text="Packages" />
+            <Label fx:id="packagesLabel" layoutX="15.0" layoutY="255.0" styleClass="smallLabel" text="Packages" />
             <ListView fx:id="ordersListViewPackages" layoutX="10.0" layoutY="275.0" prefHeight="40.0" prefWidth="530.0" />
-            <Label fx:id="verdLabel" layoutX="300.0" layoutY="330" text="0 -kr.">
+            <Label fx:id="verdLabel" layoutX="300.0" layoutY="330" styleClass="mediumLabel" text="0 -kr.">
                     <font>
                         <Font size="20.0" />
                     </font>
             </Label>
             <Button fx:id="klaraPontunButton" layoutX="430.0" layoutY="330.0" mnemonicParsing="false" onAction="#klaraPontunHandler" prefHeight="25" prefWidth="80" text="Staðfesta" />
-            <Label fx:id="checkoutLabel" layoutX="235.0" layoutY="15.0" text="Checkout" visible="false">
+            <Label fx:id="checkoutLabel" layoutX="235.0" layoutY="15.0" styleClass="bigLabel" text="Checkout" visible="false">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="nafnLabel" layoutX="100.0" layoutY="80.0" text="Nafn:" visible="false" />
-            <Label fx:id="kennitalaLabel" layoutX="100.0" layoutY="130.0" text="Kennitala:" visible="false" />
-            <Label fx:id="heimilisfangLabel" layoutX="100.0" layoutY="180.0" text="Heimilisfang:" visible="false" />
-            <Label fx:id="kortLabel" layoutX="100.0" layoutY="230.0" text="Kortanúmer:" visible="false" />
+            <Label fx:id="nafnLabel" layoutX="100.0" layoutY="80.0" styleClass="smallLabel" text="Nafn:" visible="false" />
+            <Label fx:id="kennitalaLabel" layoutX="100.0" layoutY="130.0" styleClass="smallLabel" text="Kennitala:" visible="false" />
+            <Label fx:id="heimilisfangLabel" layoutX="100.0" layoutY="180.0" styleClass="smallLabel" text="Heimilisfang:" visible="false" />
+            <Label fx:id="kortLabel" layoutX="100.0" layoutY="230.0" styleClass="smallLabel" text="Kortanúmer:" visible="false" />
             <TextField fx:id="nafnTextField" layoutX="200.0" layoutY="80.0" visible="false" />
             <TextField fx:id="kennitalaTextField" layoutX="200.0" layoutY="130.0" visible="false" />
             <TextField fx:id="heimilisfangTextField" layoutX="200.0" layoutY="180.0" visible="false" />
             <TextField fx:id="kortTextField" layoutX="200.0" layoutY="230.0" visible="false" />
             <Button fx:id="stadfestaButton" layoutX="440.0" layoutY="320.0" mnemonicParsing="false" onAction="#stadfestaHandler" text="Staðfesta" visible="false" />
-            <Label fx:id="pontunKlarudLabel" layoutX="140.0" layoutY="130.0" visible="false">
+            <Label fx:id="pontunKlarudLabel" layoutX="100.0" layoutY="130.0" styleClass="bigLabel" visible="false">
                <font>
                   <Font size="18.0" />
                </font></Label>

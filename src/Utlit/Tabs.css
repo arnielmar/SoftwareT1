@@ -36,3 +36,8 @@
 .tab-pane .DayTripTab:selected {
     -fx-background-color: #b5c6e0;
 }
+
+.tab-pane .orderTab:selected {
+    -fx-background-color: black;
+    -fx-text-base-color: white;
+}
