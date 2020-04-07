@@ -4,21 +4,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Tab text="Day Trip" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.DayTripTabController">
+<Tab styleClass="DayTripTab" text="Day Trip" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.DayTripTabController">
     <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane" stylesheets="@DayTrip.css">
             <children>
                 <ComboBox fx:id="dayTripCombo" layoutX="56.0" layoutY="122.0" onAction="#dayTripComboHandler" prefWidth="150.0" />
-                <DatePicker fx:id="dayTripDate" layoutX="288.0" layoutY="122.0" onAction="#dayTripDateHandler" prefHeight="25.0" prefWidth="150.0" />
+                <DatePicker fx:id="dayTripDate" layoutX="288.0" layoutY="122.0" onAction="#dayTripDateHandler" prefHeight="25.0" prefWidth="150.0" styleClass="datePicker" stylesheets="@DayTrip.css" />
                 <Button fx:id="dayTripSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitHandler" text="Search" />
                 <Spinner fx:id="dayTripPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
-                <Label fx:id="dayTripHeader" layoutX="193.0" layoutY="15.0" text="Search for Day Trips">
+                <Label fx:id="dayTripHeader" layoutX="193.0" layoutY="15.0" styleClass="bigLabel" stylesheets="@DayTrip.css" text="Search for Day Trips">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label fx:id="dayTripPlaceLabel" layoutX="56.0" layoutY="93.0" text="Place" />
-                <Label fx:id="dayTripPerLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
+                <Label fx:id="dayTripPlaceLabel" layoutX="56.0" layoutY="93.0" styleClass="smallLabel" stylesheets="@DayTrip.css" text="Place" />
+                <Label fx:id="dayTripPerLabel" layoutX="56.0" layoutY="241.0" styleClass="smallLabel" stylesheets="@DayTrip.css" text="Persons" />
             <ListView fx:id="dayTripListView" layoutX="120.0" layoutY="50.0" prefHeight="200.0" prefWidth="300.0" visible="false" />
             <Button fx:id="dayTripBook" layoutX="320.0" layoutY="294.0" mnemonicParsing="false" onAction="#bokunhandler" text="Panta" visible="false" />
             </children></AnchorPane>

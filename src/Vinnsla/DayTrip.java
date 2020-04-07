@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
  * Mock object af DayTrip hlutum.
  *
  */
-public class DayTrip {
+public class DayTrip implements Comparable<DayTrip> {
     private String location;
     private LocalDateTime dateAndTime;
     private int length;
@@ -98,5 +98,11 @@ public class DayTrip {
             }
         }
         return "DayTrip not found";
+    }
+
+    @Override
+    public int compareTo(DayTrip that)
+    {
+        return Integer.compare(this.price, that.price);
     }
 }
