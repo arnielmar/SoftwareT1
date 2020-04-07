@@ -13,7 +13,6 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Controller klasi fyrir flug gluggann.
@@ -358,5 +357,10 @@ public class FlightTabController {
         flightBackButton.setVisible(gildi);
         pantaFlugUtButton.setVisible(gildi);
         pantaFlugHeimButton.setVisible(roundWay);
+    }
+
+    public ArrayList<Flight> removeAllOrderedFlights() {
+        orderedFlights.clear();
+        return orderedFlights;
     }
 }

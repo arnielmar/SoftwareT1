@@ -173,4 +173,9 @@ public class DayTripTabController {
     public void setParentController(LeitController parentController) {
         this.parentController = parentController;
     }
+
+    public ArrayList<DayTrip> removeAllOrderedDayTrips() {
+        bookedDayTrips.clear();
+        return bookedDayTrips;
+    }
 }

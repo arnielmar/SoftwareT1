@@ -4,6 +4,8 @@ import Vinnsla.DayTrip;
 import Vinnsla.Flight;
 import Vinnsla.Hotel;
 import Vinnsla.Package;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +19,8 @@ import java.util.Collections;
 
 public class OrderTabController {
     // viðmótshlutir fyrir checkout
+    @FXML
+    private Button haldaAframButton;
     @FXML
     private Button pontunButton;
     @FXML
@@ -70,6 +74,12 @@ public class OrderTabController {
     private Label packagesLabel;
 
     private LeitController parentController;    // tenging við LeitController
+
+    public void initialize() {
+        stadfestaButtonOvirkurRegla();
+        nafnTextFieldRegla();
+        kennitalaTextFieldRegla();
+    }
 
     public void setParentController(LeitController parentController) {
         this.parentController = parentController;
@@ -152,6 +162,12 @@ public class OrderTabController {
     }
 
     @FXML
+    private void tilBakaHandler(ActionEvent actionEvent) {
+        virkjaCheckout(false);
+        virkjaPantanir(true);
+    }
+
+    @FXML
     private void stadfestaHandler(ActionEvent actionEvent) {
         virkjaCheckout(false);
         String nafn = nafnTextField.getText();
@@ -159,12 +175,7 @@ public class OrderTabController {
         pontunKlarudLabel.setText("Takk fyrir " + nafn + ", " + kt + "\nPöntun þín hefur verið móttekin.");
         pontunKlarudLabel.setVisible(true);
         skodaPontunButton.setVisible(true);
-    }
-
-    @FXML
-    private void tilBakaHandler(ActionEvent actionEvent) {
-        virkjaCheckout(false);
-        virkjaPantanir(true);
+        haldaAframButton.setVisible(true);
     }
 
     @FXML
@@ -175,6 +186,7 @@ public class OrderTabController {
         skodaPontunButton.setVisible(false);
         stadfestaButton.setVisible(false);
         klaraPontunButton.setVisible(false);
+        haldaAframButton.setVisible(false);
         pontunButton.setVisible(true);
     }
 
@@ -183,7 +195,18 @@ public class OrderTabController {
         virkjaPantanir(false);
         pontunKlarudLabel.setVisible(true);
         skodaPontunButton.setVisible(true);
+        haldaAframButton.setVisible(true);
         pontunButton.setVisible(false);
+    }
+
+    @FXML
+    private void haldaAframHandler(ActionEvent actionEvent) {
+        parentController.endurstillaLista();
+        virkjaCheckout(false);
+        pontunKlarudLabel.setVisible(false);
+        skodaPontunButton.setVisible(false);
+        haldaAframButton.setVisible(false);
+        virkjaPantanir(true);
     }
 
     private void virkjaPantanir(boolean gildi) {
@@ -212,5 +235,28 @@ public class OrderTabController {
         kennitalaTextField.setVisible(gildi);
         stadfestaButton.setVisible(gildi);
         tilBakaButton.setVisible(gildi);
+    }
+
+    private void stadfestaButtonOvirkurRegla() {
+        stadfestaButton.disableProperty().bind(nafnTextField.textProperty().isEmpty().or(kennitalaTextField.textProperty().isEmpty()));
+    }
+
+    private void nafnTextFieldRegla() {
+        nafnTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\sa-zA-Z*")) {
+                nafnTextField.setText(newValue.replaceAll("[^\\sa-zA-Z]", ""));
+            }
+        });
+    }
+
+    private void kennitalaTextFieldRegla() {
+        kennitalaTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    kennitalaTextField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 }

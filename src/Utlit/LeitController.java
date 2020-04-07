@@ -4,12 +4,11 @@ import Vinnsla.DayTrip;
 import Vinnsla.Flight;
 import Vinnsla.Hotel;
 import Vinnsla.Package;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.ArrayList;
 
 public class LeitController {
     @FXML
@@ -58,5 +57,16 @@ public class LeitController {
     public void setjaPackage(ObservableList<Package> packages)
     {
         orderTabController.setjaInnPackages(packages);
+    }
+
+    public void endurstillaLista() {
+        ArrayList<Flight> nyrFlight = flightTabController.removeAllOrderedFlights();
+        setjaFlights(FXCollections.observableArrayList(nyrFlight));
+        ObservableList<Hotel> nyrHotel = hotelTabController.removeAllOrderedHotels();
+        setjaHotel(nyrHotel);
+        ArrayList<DayTrip> nyrDayTrip = dayTripTabController.removeAllOrderedDayTrips();
+        setjaDayTrips(FXCollections.observableArrayList(nyrDayTrip));
+        ObservableList<Package> nyrPackage = packageTabController.removeAllOrderedPackages();
+        setjaPackage(nyrPackage);
     }
 }

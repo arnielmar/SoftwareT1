@@ -226,4 +226,9 @@ public class HotelTabController {
         hotelList.addOrderedHotel(orderedHotel, types[virkur2]);
         parentController.setjaHotel(hotelList.getOrderedHotels());
     }
+
+    public ObservableList<Hotel> removeAllOrderedHotels() {
+        hotelList.removeAllOrderedHotels();
+        return hotelList.getOrderedHotels();
+    }
 }
