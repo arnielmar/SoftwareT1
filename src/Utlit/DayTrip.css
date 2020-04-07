@@ -1,5 +1,5 @@
 .pane {
-    -fx-background-image: url("FlightBackground.png");
+    -fx-background-image: url("DayTripBackground.jpg");
     -fx-focus-color: transparent;
     -fx-font-family: 'serif', 'sans-serif';
 }
@@ -15,27 +15,23 @@
 }
 
 .button {
-    -fx-color: #e8fdff;
+    -fx-color: #c4d4e4;
     -fx-font-weight: bold;
     -fx-background-radius: 10;
 }
 
-.radio-button:selected .dot {
-    -fx-background-color: #4e9fd9;
-}
-
 .combo-box {
-    -fx-color: #e8fdff;
+    -fx-color: #c4d4e4;
 }
 
 .datePicker {
-    -fx-color: #e8fdff;
+    -fx-color: #c4d4e4;
 }
 
 .spinner {
-    -fx-color: #e8fdff;
+    -fx-color: #c4d4e4;
 }
 
 .list-view {
-    -fx-color: #e8fdff;
+    -fx-color: #c4d4e4;
 }

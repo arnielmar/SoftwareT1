@@ -30,5 +30,9 @@
 }
 
 .tab-pane .flightTab:selected {
-    -fx-background-color: #4e9fd9;
+    -fx-background-color: #39a6d9;
+}
+
+.tab-pane .DayTripTab:selected {
+    -fx-background-color: #b5c6e0;
 }
