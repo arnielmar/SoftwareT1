@@ -82,6 +82,11 @@ public class OrderTabController {
 
     private LeitController parentController;    // tenging við LeitController
 
+    /**
+     * Upphafsstillir gluggann fyrir pantanir.
+     * Setur reglur á staðfesta takka og á textasviðin.
+     *
+     */
     public void initialize() {
         stadfestaButtonOvirkurRegla();
         nafnTextFieldRegla();
@@ -89,25 +94,49 @@ public class OrderTabController {
         kortTextFieldRegla();
     }
 
+    /**
+     * Tenging við aðal controller-inn.
+     *
+     * @param parentController - LeitController
+     */
     public void setParentController(LeitController parentController) {
         this.parentController = parentController;
     }
 
+    /**
+     * Setur lista með flugum í list view.
+     *
+     * @param flights - listi af flugum
+     */
     public void setjaInnFlights(ObservableList<Flight> flights) {
         ordersListViewFlights.setItems(flights);
         reiknaVerd();
     }
 
+    /**
+     * Setur lista með hótelum í list view.
+     *
+     * @param hotel - listi af hótelum
+     */
     public void setjaInnHotel(ObservableList<Hotel> hotel){
         ordersListViewHotels.setItems(hotel);
         reiknaVerd();
     }
 
+    /**
+     * Setur lista með day trips í list view.
+     *
+     * @param dayTrip - listi af day trips
+     */
     public void setjaInnDayTrips(ObservableList<DayTrip> dayTrip){
         ordersListViewDayTrips.setItems(dayTrip);
     }
 
-
+    /**
+     * Setur lista af pökkum í list view.
+     *
+     * @param packages - listi af pökkum
+     */
     public void setjaInnPackages(ObservableList<Package> packages){
         ordersListViewPackages.setItems(packages);
         reiknaVerd();
@@ -148,6 +177,11 @@ public class OrderTabController {
         ordersListViewFlights.setItems(theFlights);
     }
 
+    /**
+     * Raðar lista með pöntuðum hótelum eftir verði.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á raða eftir verði takka
+     */
     @FXML
     private void radaHotelsHandler(ActionEvent actionEvent) {
         ObservableList<Hotel> theHotels = ordersListViewHotels.getItems();
@@ -155,26 +189,51 @@ public class OrderTabController {
         ordersListViewHotels.setItems(theHotels);
     }
 
+    /**
+     * Raðar lista með pöntuðum day trips eftir verði.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á raða eftir verði takka
+     */
     @FXML
     private void radaDayTripsHandler(ActionEvent actionEvent) {
     }
 
+    /**
+     * Raðar lista með pöntuðum pökkum eftir verði.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á raða eftir verði takka
+     */
     @FXML
     private void radaPackagesHandler(ActionEvent actionEvent) {
     }
 
+    /**
+     * Fer yfir í viðmótsglugga fyrir checkout.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á klára pöntun takka
+     */
     @FXML
     private void klaraPontunHandler(ActionEvent actionEvent) {
         virkjaPantanir(false);
         virkjaCheckout(true);
     }
 
+    /**
+     * Fer yfir í viðmótsglugga fyrir pantanir.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á til baka takka
+     */
     @FXML
     private void tilBakaHandler(ActionEvent actionEvent) {
         virkjaCheckout(false);
         virkjaPantanir(true);
     }
 
+    /**
+     * Sýnir staðfestingarskilaboð á pöntun.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á staðfesta pöntun takka
+     */
     @FXML
     private void stadfestaHandler(ActionEvent actionEvent) {
         virkjaCheckout(false);
@@ -184,6 +243,11 @@ public class OrderTabController {
         haldaAframButton.setVisible(true);
     }
 
+    /**
+     * Sýnir viðmótsglugga til að skoða pantanir sem hafa verið staðfestar.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á skoða pöntun takka
+     */
     @FXML
     private void skodaPontunHandler(ActionEvent actionEvent) {
         virkjaCheckout(false);
@@ -196,6 +260,11 @@ public class OrderTabController {
         pontunButton.setVisible(true);
     }
 
+    /**
+     * Sýnir staðfestingarglugga á pöntun.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á til baka í pöntun takka
+     */
     @FXML
     private void tilBakaPontunHandler(ActionEvent actionEvent) {
         virkjaPantanir(false);
@@ -205,6 +274,12 @@ public class OrderTabController {
         pontunButton.setVisible(false);
     }
 
+    /**
+     * Leyfir notanda að halda áfram að versla.
+     * Eyðir út fyrri pöntun úr listum.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á halda áfram að versla takka
+     */
     @FXML
     private void haldaAframHandler(ActionEvent actionEvent) {
         parentController.endurstillaLista();
@@ -215,6 +290,12 @@ public class OrderTabController {
         virkjaPantanir(true);
     }
 
+    /**
+     * Gerir viðmótshluti fyrir pantanir sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     *
+     * @param gildi - true ef á að virkja, annars false
+     */
     private void virkjaPantanir(boolean gildi) {
         flightsLabel.setVisible(gildi);
         hotelsLabel.setVisible(gildi);
@@ -233,6 +314,12 @@ public class OrderTabController {
         radaPackages.setVisible(gildi);
     }
 
+    /**
+     * Gerir viðmótshluti fyrir checkout sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     *
+     * @param gildi - true ef á að virkja, annars false
+     */
     private void virkjaCheckout(boolean gildi) {
         checkoutLabel.setVisible(gildi);
         nafnLabel.setVisible(gildi);
@@ -247,6 +334,11 @@ public class OrderTabController {
         tilBakaButton.setVisible(gildi);
     }
 
+    /**
+     * Setur reglu á staðfesta pöntun takka.
+     * Ef eitthvert af textasviðunum er tómt þá er hann óvirkur.
+     *
+     */
     private void stadfestaButtonOvirkurRegla() {
         stadfestaButton.disableProperty()
                 .bind(nafnTextField.textProperty().isEmpty()
@@ -255,6 +347,11 @@ public class OrderTabController {
                                 .or(kortTextField.textProperty().isEmpty()));
     }
 
+    /**
+     * Setur reglu á textasvið fyrir nafn sem leyfir aðeins
+     * stafi úr enska stafrófinu.
+     *
+     */
     private void nafnTextFieldRegla() {
         nafnTextField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\sa-zA-Z*")) {
@@ -263,6 +360,11 @@ public class OrderTabController {
         });
     }
 
+    /**
+     * Setur reglu á textasvið fyrir kennitölu sem leyfir
+     * aðeins tölustafi.
+     *
+     */
     private void kennitalaTextFieldRegla() {
         kennitalaTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -274,6 +376,11 @@ public class OrderTabController {
         });
     }
 
+    /**
+     * Setur reglu á textasvið fyrir kortanúmer sem
+     * leyfir aðeins tölustafi.
+     *
+     */
     private void kortTextFieldRegla() {
         kortTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override

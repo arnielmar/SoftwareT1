@@ -359,6 +359,11 @@ public class FlightTabController {
         pantaFlugHeimButton.setVisible(roundWay);
     }
 
+    /**
+     * Eyðir öllum flugum úr lista með pöntuðum flugum.
+     *
+     * @return - tómur listi með pöntuðum flugum
+     */
     public ArrayList<Flight> removeAllOrderedFlights() {
         orderedFlights.clear();
         return orderedFlights;
