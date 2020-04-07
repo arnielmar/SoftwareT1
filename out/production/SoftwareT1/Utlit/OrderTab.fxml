@@ -36,14 +36,21 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="nafnLabel" layoutX="100.0" layoutY="100.0" text="Nafn:" visible="false" />
-            <Label fx:id="kennitalaLabel" layoutX="100.0" layoutY="150.0" text="Kennitala:" visible="false" />
-            <TextField fx:id="nafnTextField" layoutX="200.0" layoutY="100.0" visible="false" />
-            <TextField fx:id="kennitalaTextField" layoutX="200.0" layoutY="150.0" visible="false" />
+            <Label fx:id="nafnLabel" layoutX="100.0" layoutY="80.0" text="Nafn:" visible="false" />
+            <Label fx:id="kennitalaLabel" layoutX="100.0" layoutY="130.0" text="Kennitala:" visible="false" />
+            <Label fx:id="heimilisfangLabel" layoutX="100.0" layoutY="180.0" text="Heimilisfang:" visible="false" />
+            <Label fx:id="kortLabel" layoutX="100.0" layoutY="230.0" text="Kortanúmer:" visible="false" />
+            <TextField fx:id="nafnTextField" layoutX="200.0" layoutY="80.0" visible="false" />
+            <TextField fx:id="kennitalaTextField" layoutX="200.0" layoutY="130.0" visible="false" />
+            <TextField fx:id="heimilisfangTextField" layoutX="200.0" layoutY="180.0" visible="false" />
+            <TextField fx:id="kortTextField" layoutX="200.0" layoutY="230.0" visible="false" />
             <Button fx:id="stadfestaButton" layoutX="440.0" layoutY="320.0" mnemonicParsing="false" onAction="#stadfestaHandler" text="Staðfesta" visible="false" />
-            <Label fx:id="pontunKlarudLabel" layoutX="200.0" layoutY="150.0" visible="false" />
+            <Label fx:id="pontunKlarudLabel" layoutX="140.0" layoutY="130.0" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <Button fx:id="tilBakaButton" layoutX="30.0" layoutY="320.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Til baka" visible="false" />
-            <Button fx:id="skodaPontunButton" layoutX="440.0" layoutY="320.0" mnemonicParsing="false" onAction="#skodaPontunHandler" text="Skoða pöntun" visible="false" />
+            <Button fx:id="skodaPontunButton" layoutX="420.0" layoutY="320.0" mnemonicParsing="false" onAction="#skodaPontunHandler" text="Skoða pöntun" visible="false" />
             <Button fx:id="pontunButton" layoutX="430.0" layoutY="330.0" mnemonicParsing="false" onAction="#tilBakaPontunHandler" text="Til baka" visible="false" />
             <Button fx:id="haldaAframButton" layoutX="30.0" layoutY="320.0" mnemonicParsing="false" onAction="#haldaAframHandler" text="Halda áfram að versla" visible="false" />
 

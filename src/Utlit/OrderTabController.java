@@ -13,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-
 import java.util.Collections;
 
 
@@ -33,6 +32,14 @@ public class OrderTabController {
     private Label nafnLabel;
     @FXML
     private Label kennitalaLabel;
+    @FXML
+    private Label heimilisfangLabel;
+    @FXML
+    private Label kortLabel;
+    @FXML
+    private TextField heimilisfangTextField;
+    @FXML
+    private TextField kortTextField;
     @FXML
     private TextField nafnTextField;
     @FXML
@@ -79,6 +86,7 @@ public class OrderTabController {
         stadfestaButtonOvirkurRegla();
         nafnTextFieldRegla();
         kennitalaTextFieldRegla();
+        kortTextFieldRegla();
     }
 
     public void setParentController(LeitController parentController) {
@@ -170,9 +178,7 @@ public class OrderTabController {
     @FXML
     private void stadfestaHandler(ActionEvent actionEvent) {
         virkjaCheckout(false);
-        String nafn = nafnTextField.getText();
-        String kt = kennitalaTextField.getText();
-        pontunKlarudLabel.setText("Takk fyrir " + nafn + ", " + kt + "\nPöntun þín hefur verið móttekin.");
+        pontunKlarudLabel.setText("Takk fyrir! Pöntun þín hefur verið móttekin.");
         pontunKlarudLabel.setVisible(true);
         skodaPontunButton.setVisible(true);
         haldaAframButton.setVisible(true);
@@ -231,14 +237,22 @@ public class OrderTabController {
         checkoutLabel.setVisible(gildi);
         nafnLabel.setVisible(gildi);
         kennitalaLabel.setVisible(gildi);
+        heimilisfangLabel.setVisible(gildi);
+        kortLabel.setVisible(gildi);
         nafnTextField.setVisible(gildi);
         kennitalaTextField.setVisible(gildi);
+        heimilisfangTextField.setVisible(gildi);
+        kortTextField.setVisible(gildi);
         stadfestaButton.setVisible(gildi);
         tilBakaButton.setVisible(gildi);
     }
 
     private void stadfestaButtonOvirkurRegla() {
-        stadfestaButton.disableProperty().bind(nafnTextField.textProperty().isEmpty().or(kennitalaTextField.textProperty().isEmpty()));
+        stadfestaButton.disableProperty()
+                .bind(nafnTextField.textProperty().isEmpty()
+                        .or(kennitalaTextField.textProperty().isEmpty())
+                            .or(heimilisfangTextField.textProperty().isEmpty())
+                                .or(kortTextField.textProperty().isEmpty()));
     }
 
     private void nafnTextFieldRegla() {
@@ -255,6 +269,17 @@ public class OrderTabController {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d*")) {
                     kennitalaTextField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+    }
+
+    private void kortTextFieldRegla() {
+        kortTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    kortTextField.setText(newValue.replaceAll("[^\\d]", ""));
                 }
             }
         });
