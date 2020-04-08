@@ -6,26 +6,26 @@
 
 <Tab text="Package" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.PackageTabController">
     <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane" stylesheets="@Package.css">
             <children>
-            <Label fx:id="InnihaldPakka" layoutX="385.0" layoutY="50.0" text="Innihald Pakka" />
-            <Label fx:id="nPakka" layoutX="20.0" layoutY="50.0" text="Pakkar" />
-                <ComboBox fx:id="packageFromCombo" layoutX="56.0" layoutY="122.0" onAction="#packageFromComboHandler" prefWidth="150.0" />
-                <ComboBox fx:id="packageToCombo" layoutX="288.0" layoutY="122.0" onAction="#packageToComboHandler" prefWidth="150.0" />
-                <DatePicker fx:id="packageDepartureDate" layoutX="56.0" layoutY="190.0" onAction="#packageDepartureDateHandler" prefHeight="25.0" prefWidth="150.0" />
-                <DatePicker fx:id="packageReturningDate" layoutX="288.0" layoutY="190.0" onAction="#packageReturningDateHandler" prefHeight="25.0" prefWidth="150.0" />
+            <Label fx:id="InnihaldPakka" layoutX="385.0" layoutY="50.0" styleClass="smallLabel" text="Innihald Pakka" />
+            <Label fx:id="nPakka" layoutX="20.0" layoutY="50.0" styleClass="smallLabel" text="Pakkar" />
+                <ComboBox fx:id="packageFromCombo" layoutX="56.0" layoutY="122.0" onAction="#packageFromComboHandler" prefWidth="150.0" styleClass="combo-box" />
+                <ComboBox fx:id="packageToCombo" layoutX="288.0" layoutY="122.0" onAction="#packageToComboHandler" prefWidth="150.0" styleClass="combo-box" />
+                <DatePicker fx:id="packageDepartureDate" layoutX="56.0" layoutY="190.0" onAction="#packageDepartureDateHandler" prefHeight="25.0" prefWidth="150.0" styleClass="datePicker" />
+                <DatePicker fx:id="packageReturningDate" layoutX="288.0" layoutY="190.0" onAction="#packageReturningDateHandler" prefHeight="25.0" prefWidth="150.0" styleClass="datePicker" />
             <Button fx:id="packageOrderButton" layoutX="321.0" layoutY="294.0" mnemonicParsing="false" onAction="#packageOrderHandler" text="Order" />
                 <Button fx:id="packageSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitHandler" text="Search" />
                 <Spinner fx:id="packagePersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
-                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" text="Search for Packages">
+                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" styleClass="bigLabel" text="Search for Packages">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label fx:id="fromLabel" layoutX="56.0" layoutY="93.0" text="From" />
-                <Label fx:id="toLabel" layoutX="288.0" layoutY="93.0" text="To" />
-                <Label fx:id="personsLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
-            <Label fx:id="resultsLabel" layoutX="180.0" layoutY="15.0" text="Niðurstöður leitar af pökkum">
+                <Label fx:id="fromLabel" layoutX="56.0" layoutY="93.0" styleClass="smallLabel" text="From" />
+                <Label fx:id="toLabel" layoutX="288.0" layoutY="93.0" styleClass="smallLabel" text="To" />
+                <Label fx:id="personsLabel" layoutX="56.0" layoutY="241.0" styleClass="smallLabel" text="Persons" />
+            <Label fx:id="resultsLabel" layoutX="180.0" layoutY="15.0" styleClass="bigLabel" text="Niðurstöður leitar af pökkum">
                <font>
                   <Font size="18.0" />
                </font>
