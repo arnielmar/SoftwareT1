@@ -52,6 +52,7 @@ public class DayTrip implements Comparable<DayTrip> {
         return type;
     }
 
+
     @Override
     public String toString() {
         if (type.equals("Activity"))

@@ -172,7 +172,6 @@ public class PackageTabController {
 
     @FXML
     private void tilBakaHandler(javafx.event.ActionEvent actionEvent) {
-        packagelist=new PackageList();
         packageListView2.getItems().clear();
         virkjaNidurstodur(false);
         virkjaLeit(true);

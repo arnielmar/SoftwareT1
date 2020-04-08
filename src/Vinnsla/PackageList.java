@@ -72,6 +72,7 @@ public class PackageList {
     public void searchPackages(String depart, String dest, LocalDate from, LocalDate to, int noOfPeople) {
 
         //Passa að allt uppfyllist
+        packages = FXCollections.observableArrayList();
 
         // Byrja á því að leita af listum fyrir flug frá og til, daytrip og Hótel.
         //FlightList Flug= new FlightList();

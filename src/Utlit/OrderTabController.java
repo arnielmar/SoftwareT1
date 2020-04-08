@@ -205,6 +205,9 @@ public class OrderTabController {
      */
     @FXML
     private void radaPackagesHandler(ActionEvent actionEvent) {
+        ObservableList<Package> thePackages = ordersListViewPackages.getItems();
+        Collections.sort(thePackages);
+        ordersListViewPackages.setItems(thePackages);
     }
 
     /**
