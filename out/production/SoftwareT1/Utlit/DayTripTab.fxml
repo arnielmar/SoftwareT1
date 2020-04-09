@@ -19,7 +19,7 @@
                 </Label>
                 <Label fx:id="dayTripPlaceLabel" layoutX="56.0" layoutY="93.0" styleClass="smallLabel" stylesheets="@DayTrip.css" text="Place" />
                 <Label fx:id="dayTripPerLabel" layoutX="56.0" layoutY="241.0" styleClass="smallLabel" stylesheets="@DayTrip.css" text="Persons" />
-            <ListView fx:id="dayTripListView" layoutX="120.0" layoutY="50.0" prefHeight="200.0" prefWidth="300.0" visible="false" />
+            <ListView fx:id="dayTripListView" layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="450.0" visible="false" />
             <Button fx:id="dayTripBook" layoutX="320.0" layoutY="294.0" mnemonicParsing="false" onAction="#bokunhandler" text="Panta" visible="false" />
             </children></AnchorPane>
     </content>
