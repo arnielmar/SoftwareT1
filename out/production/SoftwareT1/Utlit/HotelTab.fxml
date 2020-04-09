@@ -6,43 +6,43 @@
 
 <Tab text="Hotel" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utlit.HotelTabController">
     <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="pane" stylesheets="@Hotel.css">
             <children>
 
-                <ListView fx:id="hotelListViewTwo" layoutX="380.0" layoutY="70.0" prefHeight="200.0" prefWidth="155.0" visible="false" />
-                <Button fx:id="hotelBackButton" layoutX="380.0" layoutY="294.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Back" visible="false" />
-                <Button fx:id="hotelBuyButton" layoutX="478.0" layoutY="294.0" mnemonicParsing="false" onAction="#pantaHandler" text="Order" visible="false" />
-                <Label fx:id="resultLabel" layoutX="230.0" layoutY="15.0" text="Results" visible="false">
+                <ListView fx:id="hotelListViewTwo" layoutX="380.0" layoutY="70.0" prefHeight="200.0" prefWidth="155.0" styleClass="listView" stylesheets="@Hotel.css" visible="false" />
+                <Button fx:id="hotelBackButton" layoutX="380.0" layoutY="294.0" mnemonicParsing="false" onAction="#tilBakaHandler" stylesheets="@Hotel.css" text="Back" visible="false" />
+                <Button fx:id="hotelBuyButton" layoutX="478.0" layoutY="294.0" mnemonicParsing="false" onAction="#pantaHandler" stylesheets="@Hotel.css" text="Order" visible="false" />
+                <Label fx:id="resultLabel" layoutX="230.0" layoutY="15.0" styleClass="bigLabel" stylesheets="@Hotel.css" text="Results" visible="false">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label fx:id="resultHotelLabel" layoutX="20.0" layoutY="50.0" text="Hotel" visible="false">
+                <Label fx:id="resultHotelLabel" layoutX="20.0" layoutY="50.0" styleClass="smallLabel" stylesheets="@Hotel.css" text="Hotel" visible="false">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Label>
-                <Label fx:id="resultRoomLabel" layoutX="385.0" layoutY="50.0" text="Available rooms" visible="false">
+                <Label fx:id="resultRoomLabel" layoutX="385.0" layoutY="50.0" styleClass="smallLabel" stylesheets="@Hotel.css" text="Available rooms" visible="false">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Label>
-                <ListView fx:id="hotelListViewOne" layoutX="15.0" layoutY="70.0" prefHeight="200.0" prefWidth="335.0" visible="false" />
-                <ComboBox fx:id="hotelCombo" layoutX="56.0" layoutY="122.0" prefWidth="150.0" />
-            <Label fx:id="fromLabel" layoutX="56.0" layoutY="161.0" styleClass="smallLabel" text="From" />
-                <DatePicker fx:id="hotelFromDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
-            <Label fx:id="toLabel" layoutX="288.0" layoutY="161.0" styleClass="smallLabel" text="To" />
-                <DatePicker fx:id="hotelToDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" />
-                <Button fx:id="hotelSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitaHandler" text="Search" />
-                <Spinner fx:id="hotelPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" />
-                <Label fx:id="searchLabel" layoutX="193.0" layoutY="15.0" text="Search for Hotels">
+                <ListView fx:id="hotelListViewOne" layoutX="15.0" layoutY="70.0" prefHeight="200.0" prefWidth="335.0" styleClass="listView" stylesheets="@Hotel.css" visible="false" />
+                <ComboBox fx:id="hotelCombo" layoutX="56.0" layoutY="122.0" prefWidth="150.0" styleClass="comboBox" stylesheets="@Hotel.css" />
+            <Label fx:id="fromLabel" layoutX="56.0" layoutY="161.0" styleClass="smallLabel" stylesheets="@Hotel.css" text="From" />
+                <DatePicker fx:id="hotelFromDate" layoutX="56.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" styleClass="datePicker" stylesheets="@Hotel.css" />
+            <Label fx:id="toLabel" layoutX="288.0" layoutY="161.0" styleClass="smallLabel" stylesheets="@Hotel.css" text="To" />
+                <DatePicker fx:id="hotelToDate" layoutX="288.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" styleClass="datePicker" stylesheets="@Hotel.css" />
+                <Button fx:id="hotelSearchButton" layoutX="381.0" layoutY="294.0" mnemonicParsing="false" onAction="#leitaHandler" stylesheets="@Hotel.css" text="Search" />
+                <Spinner fx:id="hotelPersons" layoutX="56.0" layoutY="267.0" prefHeight="25.0" prefWidth="150.0" stylesheets="@Hotel.css" />
+                <Label fx:id="searchLabel" layoutX="180.0" layoutY="15.0" styleClass="bigLabel" stylesheets="@Hotel.css" text="Search for Hotels">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Label>
 
-                <Label fx:id="locationLabel" layoutX="56.0" layoutY="93.0" text="Place" />
-                <Label fx:id="personLabel" layoutX="56.0" layoutY="241.0" text="Persons" />
+                <Label fx:id="locationLabel" layoutX="56.0" layoutY="93.0" styleClass="smallLabel" stylesheets="@Hotel.css" text="Place" />
+                <Label fx:id="personLabel" layoutX="56.0" layoutY="241.0" styleClass="smallLabel" stylesheets="@Hotel.css" text="Persons" />
             </children></AnchorPane>
     </content>
 </Tab>

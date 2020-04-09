@@ -1,0 +1,37 @@
+.pane {
+    -fx-background-image: url("HotelBackground.jpg");
+    -fx-focus-color: transparent;
+    -fx-font-family: 'serif', 'sans-serif';
+}
+
+.bigLabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+}
+
+.smallLabel {
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+}
+
+.button {
+    -fx-color: #c4d4e4;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+}
+
+.combo-box {
+    -fx-color: #c4d4e4;
+}
+
+.datePicker {
+    -fx-color: #c4d4e4;
+}
+
+.spinner {
+    -fx-color: #c4d4e4;
+}
+
+.list-view {
+    -fx-color: #c4d4e4;
+}
