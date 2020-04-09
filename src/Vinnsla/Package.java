@@ -19,7 +19,7 @@ public class Package implements Comparable<Package>{
         this.flightFrom = flightFrom;
         this.hotel = hotel;
         this.dayTrip = dayTrip;
-        this.price = (int)((flightTo.getPrice()+flightFrom.getPrice()+hotel.getPrice())*0.9);
+        this.price = (int)((flightTo.getPrice()+flightFrom.getPrice()+hotel.getPrice()+dayTrip.getPrice())*0.9);
     }
 
     public Flight getFlightTo() {
