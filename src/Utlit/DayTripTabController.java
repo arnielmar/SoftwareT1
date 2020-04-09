@@ -17,7 +17,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DayTripTabController {
-
     //viðmótshlutir fyrir niðurstöður
     @FXML
     private ListView dayTripListView;
@@ -25,6 +24,8 @@ public class DayTripTabController {
     private Button dayTripBook;
 
     // Viðmótshlutir fyrir leit
+    @FXML
+    private Label dayTripDateLabel;
     @FXML
     private Label dayTripPlaceLabel;
     @FXML
@@ -159,6 +160,7 @@ public class DayTripTabController {
         dayTripPlaceLabel.setVisible(b);
         dayTripPerLabel.setVisible(b);
         dayTripCombo.setVisible(b);
+        dayTripDateLabel.setVisible(b);
         dayTripDate.setVisible(b);
         dayTripPersons.setVisible(b);
     }

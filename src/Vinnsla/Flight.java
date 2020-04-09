@@ -52,7 +52,7 @@ public class Flight implements Comparable<Flight> {
 
     @Override
     public String toString() {
-        return "Frá " + departureLoc + " til " + arrivalLoc + " á " + flightDate + ". Verð: " + price + "kr.";
+        return "From " + departureLoc + " to " + arrivalLoc + " on " + flightDate + ". Price: " + price + "kr.";
     }
 
     @Override

@@ -42,7 +42,7 @@ public class Package implements Comparable<Package>{
 
     @Override
     public String toString() {
-        return "Frá " + flightTo.getDepartureLoc() + " til " + flightTo.getArrivalLoc() + " á " + flightTo.getFlightDate() +" til "+flightFrom.getFlightDate()+", á hótelinu "+ hotel.getHotelName()+ " með dagferðina "+dayTrip.getType()+" á deginum "+dayTrip.getDateAndTime()+", verð: "+price+"kr";
+        return "From " + flightTo.getDepartureLoc() + " to " + flightTo.getArrivalLoc() + " on " + flightTo.getFlightDate() +" back "+flightFrom.getFlightDate()+", at the hotel "+ hotel.getHotelName()+ " with daytrip "+dayTrip.getType()+" on "+dayTrip.getDateAndTime()+". Price: "+price+"kr";
     }
 
     @Override

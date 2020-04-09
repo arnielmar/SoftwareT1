@@ -73,7 +73,7 @@ public class Hotel implements Comparable<Hotel>{
 
     @Override
     public String toString() {
-        return hotelName + " í " + location + " frá " + arrivalDate + " til " + departDate + ". Verð. " + price + " -kr.";
+        return hotelName + " in " + location + " from " + arrivalDate + " to " + departDate + ". Price: " + price + " -kr.";
     }
 
     @Override

@@ -243,7 +243,7 @@ public class OrderTabController {
     @FXML
     private void stadfestaHandler(ActionEvent actionEvent) {
         virkjaCheckout(false);
-        pontunKlarudLabel.setText("Takk fyrir! Pöntun þín hefur verið móttekin.");
+        pontunKlarudLabel.setText("Thank you! Your order has been received.");
         pontunKlarudLabel.setVisible(true);
         skodaPontunButton.setVisible(true);
         haldaAframButton.setVisible(true);
