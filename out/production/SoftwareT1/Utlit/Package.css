@@ -1,12 +1,8 @@
 .pane {
-    -fx-background-image: url("ordersBackground2.jpg");
-    /*-fx-background-color: black;*/
+    -fx-background-image: url("PackageBackground.jpg");
     -fx-focus-color: transparent;
     -fx-font-family: 'serif', 'sans-serif';
-}
 
-.label {
-    /*-fx-text-fill: white;*/
 }
 
 .bigLabel {
@@ -19,17 +15,28 @@
     -fx-font-size: 14;
 }
 
-.mediumLabel {
-    -fx-font-weight: bold;
-    -fx-font-size: 20;
-}
-
 .button {
-    /*-fx-color: white;*/
+    -fx-color: #b4cfdc;
     -fx-font-weight: bold;
     -fx-background-radius: 10;
 }
 
+.radio-button:selected .dot {
+    -fx-background-color: #4e9fd9;
+}
+
+.combo-box {
+    -fx-color: #35d6f6;
+}
+
+.datePicker {
+    -fx-color: #bee0e1;
+}
+
+.spinner {
+    -fx-color: #b2cdd4;
+}
+
 .list-view {
-    /*-fx-color: white;*/
+    -fx-color: #e8fdff;
 }

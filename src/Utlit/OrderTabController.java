@@ -196,6 +196,9 @@ public class OrderTabController {
      */
     @FXML
     private void radaDayTripsHandler(ActionEvent actionEvent) {
+        ObservableList<DayTrip> theDayTrips = ordersListViewDayTrips.getItems();
+        Collections.sort(theDayTrips);
+        ordersListViewDayTrips.setItems(theDayTrips);
     }
 
     /**
@@ -205,6 +208,9 @@ public class OrderTabController {
      */
     @FXML
     private void radaPackagesHandler(ActionEvent actionEvent) {
+        ObservableList<Package> thePackages = ordersListViewPackages.getItems();
+        Collections.sort(thePackages);
+        ordersListViewPackages.setItems(thePackages);
     }
 
     /**

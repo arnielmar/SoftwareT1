@@ -38,6 +38,9 @@
 }
 
 .tab-pane .orderTab:selected {
-    -fx-background-color: black;
-    -fx-text-base-color: white;
+    -fx-background-color: #38d6bd;
+}
+
+.tab-pane .packageTab:selected {
+    -fx-background-color: #32c3fc;
 }

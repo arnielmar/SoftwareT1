@@ -1,6 +1,6 @@
 package Vinnsla;
 
-public class Package {
+public class Package implements Comparable<Package>{
     private Flight flightTo;
     private Flight flightFrom;
     private Hotel hotel;
@@ -19,7 +19,7 @@ public class Package {
         this.flightFrom = flightFrom;
         this.hotel = hotel;
         this.dayTrip = dayTrip;
-        this.price = (int)((flightTo.getPrice()+flightFrom.getPrice()+hotel.getPrice())*0.9);
+        this.price = (int)((flightTo.getPrice()+flightFrom.getPrice()+hotel.getPrice()+dayTrip.getPrice())*0.9);
     }
 
     public Flight getFlightTo() {
@@ -43,5 +43,11 @@ public class Package {
     @Override
     public String toString() {
         return "Frá " + flightTo.getDepartureLoc() + " til " + flightTo.getArrivalLoc() + " á " + flightTo.getFlightDate() +" til "+flightFrom.getFlightDate()+", á hótelinu "+ hotel.getHotelName()+ " með dagferðina "+dayTrip.getType()+" á deginum "+dayTrip.getDateAndTime()+", verð: "+price+"kr";
+    }
+
+    @Override
+    public int compareTo(Package that)
+    {
+        return Integer.compare(this.price, that.price);
     }
 }

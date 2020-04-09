@@ -45,7 +45,7 @@
             <TextField fx:id="heimilisfangTextField" layoutX="200.0" layoutY="180.0" visible="false" />
             <TextField fx:id="kortTextField" layoutX="200.0" layoutY="230.0" visible="false" />
             <Button fx:id="stadfestaButton" layoutX="440.0" layoutY="320.0" mnemonicParsing="false" onAction="#stadfestaHandler" text="Staðfesta" visible="false" />
-            <Label fx:id="pontunKlarudLabel" layoutX="140.0" layoutY="130.0" styleClass="bigLabel" visible="false">
+            <Label fx:id="pontunKlarudLabel" layoutX="100.0" layoutY="130.0" styleClass="bigLabel" visible="false">
                <font>
                   <Font size="18.0" />
                </font></Label>
