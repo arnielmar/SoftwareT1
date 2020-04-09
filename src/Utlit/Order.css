@@ -1,11 +1,12 @@
 .pane {
-    -fx-background-color: black;
+    -fx-background-image: url("ordersBackground2.jpg");
+    /*-fx-background-color: black;*/
     -fx-focus-color: transparent;
     -fx-font-family: 'serif', 'sans-serif';
 }
 
 .label {
-    -fx-text-fill: white;
+    /*-fx-text-fill: white;*/
 }
 
 .bigLabel {
@@ -14,19 +15,21 @@
 }
 
 .smallLabel {
+    -fx-font-weight: bold;
     -fx-font-size: 14;
 }
 
 .mediumLabel {
+    -fx-font-weight: bold;
     -fx-font-size: 20;
 }
 
 .button {
-    -fx-color: white;
+    /*-fx-color: white;*/
     -fx-font-weight: bold;
     -fx-background-radius: 10;
 }
 
 .list-view {
-    -fx-color: white;
+    /*-fx-color: white;*/
 }
