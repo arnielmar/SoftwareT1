@@ -44,3 +44,7 @@
 .tab-pane .packageTab:selected {
     -fx-background-color: #32c3fc;
 }
+
+.tab-pane .hotelTab:selected {
+    -fx-background-color: #ff9900;
+}
