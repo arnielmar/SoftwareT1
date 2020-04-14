@@ -4,6 +4,7 @@ import Vinnsla.DayTrip;
 import Vinnsla.Flight;
 import Vinnsla.Hotel;
 import Vinnsla.Package;
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -117,4 +118,6 @@ public class LeitController {
     public void deleteHotel(Hotel hotel) {
         hotelTabController.removeOrderedHotel(hotel);
     }
+
+    public void deletePackages(Package packages) {packageTabController.removeOrderedPackage(packages);}
 }
