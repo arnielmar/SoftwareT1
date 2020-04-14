@@ -3,20 +3,21 @@ package Utlit;
 import Vinnsla.Hotel;
 import Vinnsla.HotelList;
 import Vinnsla.ListOfHotels;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.scene.control.*;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ * Controller fyrir Hotel tab.
+ *
+ */
 public class HotelTabController {
     // viðmótshlutir fyrir niðurstöður
     @FXML
@@ -33,7 +34,6 @@ public class HotelTabController {
     private ListView hotelListViewOne;
     @FXML
     private ListView hotelListViewTwo;
-
     // viðmótshlutir fyrir leit
     @FXML
     private Label searchLabel;
@@ -71,7 +71,10 @@ public class HotelTabController {
 
 
     /**
-     * kallar í nauðsynleg föll til þess að frumstilla síðuna.
+     * Upphafsstillir gluggann fyrir hótelleit.
+     * Setur áfangastaði í comboboxin, upphafsstillir spinnerinn,
+     * upphafsstillir dagatölin og listana með niðurstöðum.
+     *
      */
     @FXML
     public void initialize() {
@@ -83,20 +86,28 @@ public class HotelTabController {
         setjaLista();
     }
 
+    /**
+     * Tenging í LeitController sem er aðal controller-inn.
+     *
+     * @param parentController - LeitController
+     */
     public void setParentController(LeitController parentController) {
         this.parentController = parentController;
     }
 
     /**
-     * frumstillir spinnerinn, max/min
+     * Stillir spinner-inn. Upphafsgildi er 1,
+     * min gildi er 1 og max gildi er 250.
+     *
      */
-    public void setjaSpinner(){
+    public void setjaSpinner() {
         SpinnerValueFactory.IntegerSpinnerValueFactory intSpin = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 250, 1, 1);
         hotelPersons.setValueFactory(intSpin);
     }
 
     /**
-     * frumstillir location combo-box
+     * Upphafsstillir comboboxin með áfangastöðum.
+     *
      */
     public void setjaStadi(){
         ObservableList<String> listDest = FXCollections.observableArrayList("Reykjavík", "París", "London", "Copenhagen");
@@ -105,13 +116,12 @@ public class HotelTabController {
     }
 
     /**
-     * frumstillir dagsetningarreitina
+     * Upphafsstillir dagsetningar á Date Pickers á daginn í dag og 28. apríl.
+     *
      */
     private void setjaDagsetningar() {
-        //hotelFromDate.setValue(LocalDate.now());
         hotelFromDate.setValue(LocalDate.now());
         dateFrom = hotelToDate.getValue();
-        //hotelToDate.setValue(LocalDate.now());
         hotelToDate.setValue(LocalDate.of(2020,4,28));
         dateTo = hotelFromDate.getValue();
     }
@@ -140,8 +150,10 @@ public class HotelTabController {
     }
 
     /**
-     * Setur upp listview listana í niðurstöðuskjánum og change listener á þá til þess að fylgjast með
-     * því hvaða hlutur er valinn að hverju sinni
+     * Setur upp listview listana í niðurstöðuskjánum og
+     * change listener á þá til þess að fylgjast með
+     * því hvaða hlutur er valinn að hverju sinni.
+     *
      */
     private void setjaLista() {
         MultipleSelectionModel<Hotel> lsr = hotelListViewOne.getSelectionModel();
@@ -178,8 +190,10 @@ public class HotelTabController {
     }
 
     /**
-     * Birtir eða felur leitarskjáinn
-     * @param gildi
+     * Gerir viðmótshluti fyrir leit sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     *
+     * @param gildi - true ef á að virkja, annars false
      */
     private void virkjaLeit(boolean gildi) {
         searchLabel.setVisible(gildi);
@@ -195,8 +209,11 @@ public class HotelTabController {
     }
 
     /**
-     * Birtir eða felur niðustöðuskjáinn
-     * @param gildi
+     * Gerir viðmótshluti fyrir niðurstöður sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     * Sýnir einnig lista fyrir heimkomu flug ef roundWay er true.
+     *
+     * @param gildi - true ef á að virkja, annars false
      */
     private void virkjaNidurstodur(boolean gildi) {
         hotelListViewOne.setVisible(gildi);
@@ -209,8 +226,10 @@ public class HotelTabController {
     }
 
     /**
-     * Þegar smellt er á "Til baka" þá lokast niðurstöðuskjárinn, og leitarskjárinn er birtur á ný
-     * @param actionEvent
+     * Þegar smellt er á "Til baka" þá lokast niðurstöðuskjárinn,
+     * og leitarskjárinn er birtur á ný.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á til baka takka
      */
     public void tilBakaHandler(ActionEvent actionEvent){
         virkjaLeit(true);
@@ -222,8 +241,9 @@ public class HotelTabController {
 
     /**
      * Þegar smellt er á panta, þá er völdu hóteli og herbergi bætt í pöntuð hótel.
-     * pöntuð hótel eru svo sett í listview í orders
-     * @param actionEvent
+     * pöntuð hótel eru svo sett í listview í orders.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á order takka
      */
     public void pantaHandler(ActionEvent actionEvent) throws IOException {
         Hotel orderedHotel = results.get(virkur1);

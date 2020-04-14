@@ -2,17 +2,23 @@ package Vinnsla;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Geymir lista af hótelum, pöntuðum hótelum og pöntuðum hótelherbergjum
+ * og hefur aðferð til að leita að hótelum í gagnagrunni.
+ *
+ */
 public class HotelList {
     private ObservableList<Hotel> hotels;
     private ArrayList<Hotel> orderedHotels;
     private ArrayList<String> orderedRoomTypes;
 
     /**
-     * Smíðar nýjan Observable List af Hotel hlutum.
+     * Smíðar nýjan Observable List af Hotel hlutum,
+     * ArrayList af Hotel hlutum og ArrayList af String hlutum.
+     *
      */
     public HotelList() {
         this.hotels = FXCollections.observableArrayList();

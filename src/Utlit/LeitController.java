@@ -119,5 +119,10 @@ public class LeitController {
         hotelTabController.removeOrderedHotel(hotel);
     }
 
+    /**
+     * Kallar á aðferð í PackageTabController til að eyða
+     * pöntuðum packagehlut
+     * @param packages - Package hlutur sem á að eyða
+     */
     public void deletePackages(Package packages) {packageTabController.removeOrderedPackage(packages);}
 }

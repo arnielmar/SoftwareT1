@@ -2,7 +2,10 @@ package Vinnsla;
 
 import java.time.LocalDate;
 
-
+/**
+ * Mock Object af Hotel hlutum.
+ *
+ */
 public class Hotel implements Comparable<Hotel>{
     private String hotelName;
     private String location;
@@ -13,12 +16,15 @@ public class Hotel implements Comparable<Hotel>{
     private int price;
 
     /**
+     * Smiður fyrir Hotel hlut.
      *
-     * @param loc
-     * @param arrive
-     * @param depart
-     * @param number
-     * @param type
+     * @param name - Nafn hótels
+     * @param loc - Áfangastaður
+     * @param arrive - Dagsetning komu
+     * @param depart - Dagsetning brottfarar
+     * @param number - Fjöldi lausra herbergja
+     * @param type - tegund herbergja
+     * @param price - verð
      */
     public Hotel(String name, String loc, LocalDate arrive, LocalDate depart, int number, String[] type, int price){
         this.hotelName = name;
