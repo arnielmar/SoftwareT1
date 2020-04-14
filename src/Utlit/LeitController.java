@@ -101,4 +101,8 @@ public class LeitController {
     public void deleteFlight(Flight flight) {
         flightTabController.removeOrderedFlight(flight);
     }
+
+    public void deleteHotel(Hotel hotel) {
+        hotelTabController.removeOrderedHotel(hotel);
+    }
 }

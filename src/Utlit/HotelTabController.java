@@ -235,4 +235,8 @@ public class HotelTabController {
         hotelList.removeAllOrderedHotels();
         return hotelList.getOrderedHotels();
     }
+
+    public void removeOrderedHotel(Hotel hotel) {
+        hotelList.removeOrderedHotel(hotel);
+    }
 }

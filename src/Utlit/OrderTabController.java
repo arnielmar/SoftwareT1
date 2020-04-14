@@ -407,6 +407,11 @@ public class OrderTabController {
     }
 
     public void removeHotelsHandler(ActionEvent actionEvent) {
+        Hotel hotel = ordersListViewHotels.getSelectionModel().getSelectedItem();
+        ObservableList<Hotel> listi = ordersListViewHotels.getItems();
+        listi.remove(hotel);
+        setjaInnHotel(listi);
+        parentController.deleteHotel(hotel);
     }
 
     public void removeDayTripsHandler(ActionEvent actionEvent) {

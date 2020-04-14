@@ -110,4 +110,8 @@ public class HotelList {
     public ObservableList<String> getOrderedRoomTypes(){
         return FXCollections.observableArrayList(orderedRoomTypes);
     }
+
+    public void removeOrderedHotel(Hotel hotel) {
+        orderedHotels.remove(hotel);
+    }
 }
