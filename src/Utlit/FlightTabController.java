@@ -369,6 +369,11 @@ public class FlightTabController {
         return orderedFlights;
     }
 
+    /**
+     * Eyðir flughlut úr lista sem geymir pöntuð flug.
+     *
+     * @param flight - Flight hlutur sem er eytt
+     */
     public void removeOrderedFlight(Flight flight) {
         orderedFlights.remove(flight);
     }

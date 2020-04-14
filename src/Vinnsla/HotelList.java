@@ -82,9 +82,10 @@ public class HotelList {
     }
 
     /**
-     * Bætir hóteli við
-     * @param h
-     * @param s
+     * Bætir hóteli við lista með pöntuðum hótelum.
+     *
+     * @param h - Hotel hlutur sem bæta skal við
+     * @param s - Tegund hótelherbergis
      */
     public void addOrderedHotel(Hotel h, String s){
         orderedHotels.add(h);
@@ -92,6 +93,7 @@ public class HotelList {
     }
 
     /**
+     * Skilar lista með öllum pöntuðum hótelum.
      *
      * @return - lista af pöntuðum hótelum
      */
@@ -99,11 +101,16 @@ public class HotelList {
         return FXCollections.observableArrayList(orderedHotels);
     }
 
+    /**
+     * Eyðir öllum pöntuðum hótelum úr lista.
+     *
+     */
     public void removeAllOrderedHotels() {
         orderedHotels.clear();
     }
 
     /**
+     * Skilar lista með öllum tegundum pantaðra hótelherbergja.
      *
      * @return - lista af pöntuðum hótelherbergjum
      */
@@ -111,6 +118,11 @@ public class HotelList {
         return FXCollections.observableArrayList(orderedRoomTypes);
     }
 
+    /**
+     * Eyðir hótelhlut úr lista með pöntuðum hótelum.
+     *
+     * @param hotel - Hotel hlutur sem skal eyða.
+     */
     public void removeOrderedHotel(Hotel hotel) {
         orderedHotels.remove(hotel);
     }

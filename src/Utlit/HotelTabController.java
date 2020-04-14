@@ -231,11 +231,21 @@ public class HotelTabController {
         parentController.setjaHotel(hotelList.getOrderedHotels());
     }
 
+    /**
+     * Eyðir öllum hótelum úr lista með pöntuðum hótelum.
+     *
+     * @return - tómur listi með pöntuðum flugum
+     */
     public ObservableList<Hotel> removeAllOrderedHotels() {
         hotelList.removeAllOrderedHotels();
         return hotelList.getOrderedHotels();
     }
 
+    /**
+     * Eyðir hótelhlut úr lista með pöntuðum hótelum.
+     *
+     * @param hotel - Hotel hlutur sem á að eyða
+     */
     public void removeOrderedHotel(Hotel hotel) {
         hotelList.removeOrderedHotel(hotel);
     }

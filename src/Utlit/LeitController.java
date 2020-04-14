@@ -98,10 +98,22 @@ public class LeitController {
         setjaPackage(nyrPackage);
     }
 
+    /**
+     * Kallar á aðferð í FlightTabController til að eyða
+     * pöntuðum flughlut.
+     *
+     * @param flight - Flight hlutur sem á að eyða
+     */
     public void deleteFlight(Flight flight) {
         flightTabController.removeOrderedFlight(flight);
     }
 
+    /**
+     * Kallar á aðferð í HotelTabController til að eyða
+     * pöntuðum hótelhlut.
+     *
+     * @param hotel - Hotel hlutur sem á að eyða
+     */
     public void deleteHotel(Hotel hotel) {
         hotelTabController.removeOrderedHotel(hotel);
     }
