@@ -19,7 +19,7 @@ public class Package implements Comparable<Package>{
         this.flightFrom = flightFrom;
         this.hotel = hotel;
         this.dayTrip = dayTrip;
-        this.price = (int)((flightTo.getPrice()+flightFrom.getPrice()+hotel.getPrice())*0.9);
+        this.price = (int)((flightTo.getPrice()+flightFrom.getPrice()+hotel.getPrice()+dayTrip.getPrice())*0.9);
     }
 
     public Flight getFlightTo() {
@@ -42,7 +42,7 @@ public class Package implements Comparable<Package>{
 
     @Override
     public String toString() {
-        return "Frá " + flightTo.getDepartureLoc() + " til " + flightTo.getArrivalLoc() + " á " + flightTo.getFlightDate() +" til "+flightFrom.getFlightDate()+", á hótelinu "+ hotel.getHotelName()+ " með dagferðina "+dayTrip.getType()+" á deginum "+dayTrip.getDateAndTime()+", verð: "+price+"kr";
+        return "From " + flightTo.getDepartureLoc() + " to " + flightTo.getArrivalLoc() + " on " + flightTo.getFlightDate() +" back "+flightFrom.getFlightDate()+", at the hotel "+ hotel.getHotelName()+ " with daytrip "+dayTrip.getType()+" on "+dayTrip.getDateAndTime()+". Price: "+price+"kr";
     }
 
     @Override

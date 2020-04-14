@@ -18,7 +18,6 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class HotelTabController {
-
     // viðmótshlutir fyrir niðurstöður
     @FXML
     private Button hotelBackButton;
@@ -40,6 +39,10 @@ public class HotelTabController {
     private Label searchLabel;
     @FXML
     private Label locationLabel;
+    @FXML
+    private Label fromLabel;
+    @FXML
+    private Label toLabel;
     @FXML
     private Label personLabel;
     @FXML
@@ -182,7 +185,8 @@ public class HotelTabController {
         searchLabel.setVisible(gildi);
         locationLabel.setVisible(gildi);
         personLabel.setVisible(gildi);
-
+        fromLabel.setVisible(gildi);
+        toLabel.setVisible(gildi);
         hotelCombo.setVisible(gildi);
         hotelFromDate.setVisible(gildi);
         hotelToDate.setVisible(gildi);

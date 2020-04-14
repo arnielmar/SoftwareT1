@@ -368,4 +368,8 @@ public class FlightTabController {
         orderedFlights.clear();
         return orderedFlights;
     }
+
+    public void removeOrderedFlight(Flight flight) {
+        orderedFlights.remove(flight);
+    }
 }

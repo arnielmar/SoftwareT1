@@ -148,8 +148,8 @@ public class PackageTabController {
                 if (virkurIndex>=0){
                     ArrayList<String> theTypes = new ArrayList<String>();
                     Package p = (Package) packageListView.getItems().get(virkurIndex);
-                    theTypes.add(""+ p.getFlightFrom());
                     theTypes.add(""+ p.getFlightTo());
+                    theTypes.add(""+ p.getFlightFrom());
                     theTypes.add(""+ p.getHotel());
                     theTypes.add(""+ p.getDayTrip());
                     ObservableList<String> typeList = FXCollections.observableArrayList(theTypes);

@@ -243,7 +243,7 @@ public class OrderTabController {
     @FXML
     private void stadfestaHandler(ActionEvent actionEvent) {
         virkjaCheckout(false);
-        pontunKlarudLabel.setText("Takk fyrir! Pöntun þín hefur verið móttekin.");
+        pontunKlarudLabel.setText("Thank you! Your order has been received.");
         pontunKlarudLabel.setVisible(true);
         skodaPontunButton.setVisible(true);
         haldaAframButton.setVisible(true);
@@ -396,5 +396,22 @@ public class OrderTabController {
                 }
             }
         });
+    }
+
+    public void removeFlightsHandler(ActionEvent actionEvent) {
+        Flight flug = ordersListViewFlights.getSelectionModel().getSelectedItem();
+        ObservableList<Flight> listi = ordersListViewFlights.getItems();
+        listi.remove(flug);
+        setjaInnFlights(listi);
+        parentController.deleteFlight(flug);
+    }
+
+    public void removeHotelsHandler(ActionEvent actionEvent) {
+    }
+
+    public void removeDayTripsHandler(ActionEvent actionEvent) {
+    }
+
+    public void removePackagesHandler(ActionEvent actionEvent) {
     }
 }

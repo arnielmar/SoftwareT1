@@ -97,4 +97,8 @@ public class LeitController {
         ObservableList<Package> nyrPackage = packageTabController.removeAllOrderedPackages();
         setjaPackage(nyrPackage);
     }
+
+    public void deleteFlight(Flight flight) {
+        flightTabController.removeOrderedFlight(flight);
+    }
 }
