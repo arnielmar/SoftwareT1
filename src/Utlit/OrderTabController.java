@@ -418,5 +418,10 @@ public class OrderTabController {
     }
 
     public void removePackagesHandler(ActionEvent actionEvent) {
+        Package packages = ordersListViewPackages.getSelectionModel().getSelectedItem();
+        ObservableList<Package> listi = ordersListViewPackages.getItems();
+        listi.remove(packages);
+        setjaInnPackages(listi);
+        parentController.deletePackages(packages);
     }
 }

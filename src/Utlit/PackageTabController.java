@@ -237,6 +237,10 @@ public class PackageTabController {
         packagelist.removeAllOrderedPackages();
         return packagelist.getOrderedPackages();
     }
+
+    public void removeOrderedPackage(Package packages) {
+        packagelist.removeOrderedPackage(packages);
+    }
 }
 
 
