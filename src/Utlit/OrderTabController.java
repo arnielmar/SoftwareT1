@@ -15,7 +15,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import java.util.Collections;
 
-
+/**
+ * Controller fyrir Order tab.
+ *
+ */
 public class OrderTabController {
     // viðmótshlutir fyrir checkout
     @FXML
@@ -79,6 +82,14 @@ public class OrderTabController {
     private Label dayTripsLabel;
     @FXML
     private Label packagesLabel;
+    @FXML
+    private Button removeFlights;
+    @FXML
+    private Button removeHotels;
+    @FXML
+    private Button removeDayTrips;
+    @FXML
+    private Button removePackages;
 
     private LeitController parentController;    // tenging við LeitController
 
@@ -265,6 +276,10 @@ public class OrderTabController {
         klaraPontunButton.setVisible(false);
         haldaAframButton.setVisible(false);
         pontunButton.setVisible(true);
+        removeFlights.setVisible(false);
+        removeHotels.setVisible(false);
+        removeDayTrips.setVisible(false);
+        removePackages.setVisible(false);
     }
 
     /**
@@ -319,6 +334,10 @@ public class OrderTabController {
         radaHotels.setVisible(gildi);
         radaDayTrips.setVisible(gildi);
         radaPackages.setVisible(gildi);
+        removeFlights.setVisible(gildi);
+        removeHotels.setVisible(gildi);
+        removeDayTrips.setVisible(gildi);
+        removePackages.setVisible(gildi);
     }
 
     /**
@@ -399,6 +418,11 @@ public class OrderTabController {
         });
     }
 
+    /**
+     * Eyðir flughlut úr pöntuðum flugum.
+     *
+     * @param actionEvent - Atburðurinn þegar klikkað er á remove
+     */
     public void removeFlightsHandler(ActionEvent actionEvent) {
         Flight flug = ordersListViewFlights.getSelectionModel().getSelectedItem();
         ObservableList<Flight> listi = ordersListViewFlights.getItems();
@@ -407,7 +431,17 @@ public class OrderTabController {
         parentController.deleteFlight(flug);
     }
 
+    /**
+     * Eyðir hótelhlut úr pöntuðum hótelum.
+     *
+     * @param actionEvent - Atburðurinn þegar klikkað er á remove
+     */
     public void removeHotelsHandler(ActionEvent actionEvent) {
+        Hotel hotel = ordersListViewHotels.getSelectionModel().getSelectedItem();
+        ObservableList<Hotel> listi = ordersListViewHotels.getItems();
+        listi.remove(hotel);
+        setjaInnHotel(listi);
+        parentController.deleteHotel(hotel);
     }
 
     public void removeDayTripsHandler(ActionEvent actionEvent) {
@@ -418,6 +452,16 @@ public class OrderTabController {
         parentController.deleteDayTrip(dt);
     }
 
+    /**
+     * Eyðir packagehlut úr pöntuðum pökkum.
+     *
+     * @param actionEvent - Atburðurinn þegar klikkað er á remove
+     */
     public void removePackagesHandler(ActionEvent actionEvent) {
+        Package packages = ordersListViewPackages.getSelectionModel().getSelectedItem();
+        ObservableList<Package> listi = ordersListViewPackages.getItems();
+        listi.remove(packages);
+        setjaInnPackages(listi);
+        parentController.deletePackages(packages);
     }
 }

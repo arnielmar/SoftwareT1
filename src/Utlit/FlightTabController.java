@@ -15,10 +15,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- * Controller klasi fyrir flug gluggann.
- * Birtir leitarglugga og leyfir notanda að leita.
- * Birtir niðurstöður þegar notandi er búinn að leita og
- * leyfir notanda að fara til baka í leit.
+ * Controller fyrir Flight tab.
  *
  */
 public class FlightTabController {
@@ -369,6 +366,11 @@ public class FlightTabController {
         return orderedFlights;
     }
 
+    /**
+     * Eyðir flughlut úr lista sem geymir pöntuð flug.
+     *
+     * @param flight - Flight hlutur sem er eytt
+     */
     public void removeOrderedFlight(Flight flight) {
         orderedFlights.remove(flight);
     }

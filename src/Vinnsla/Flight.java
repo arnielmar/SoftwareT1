@@ -21,6 +21,7 @@ public class Flight implements Comparable<Flight> {
      * @param arrival - Áfangastaður
      * @param date - Dagsetning flugs
      * @param nr - Fjöldi lausra sæta
+     * @param price - Verð flugs
      */
     public Flight (String depart, String arrival, LocalDate date, int nr, int price) {
         this.departureLoc = depart;

@@ -1,7 +1,5 @@
 package Utlit;
 
-import Vinnsla.Flight;
-import Vinnsla.FlightList;
 import Vinnsla.ListOfFlights;
 import Vinnsla.Package;
 import Vinnsla.PackageList;
@@ -9,17 +7,17 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.scene.control.*;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Controller fyrir Package tab.
+ *
+ */
 public class PackageTabController {
-
     //Viðmóts hlutirnir
     @FXML
     private Button packageBackButton;
@@ -35,7 +33,6 @@ public class PackageTabController {
     private Label nPakka;
     @FXML
     private Label InnihaldPakka;
-
     //Leitar hlutirnir
     @FXML
     private ComboBox<String> packageFromCombo;
@@ -69,20 +66,12 @@ public class PackageTabController {
     private int noOfPeople;                 // fjöldi manns
     private int virkurIndex = 0;
 
-    @FXML
-    //public void initialize(){
-     //   ObservableList<String> listDest = FXCollections.observableArrayList("Reykjavík","Danmörk","Akureyri");
-     //   packageFromCombo.setItems(listDest);
-     //   packageFromCombo.getSelectionModel().selectFirst();
-     //   packageToCombo.setItems(listDest);
-     //   packageToCombo.getSelectionModel().selectFirst();
-
-//        SpinnerValueFactory.IntegerSpinnerValueFactory intSpin;
-//        intSpin = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 250, 1, 1);
-//        packagePersons.setValueFactory(intSpin);
-//        packageDepartureDate.setValue(LocalDate.now());
-//        packageReturningDate.setValue(LocalDate.now());
-//    }
+    /**
+     * Upphafsstillir gluggann fyrir pakkaleit.
+     * Setur áfangastaði í comboboxin, upphafsstillir spinnerinn,
+     * upphafsstillir dagatölin og listana með niðurstöðum.
+     *
+     */
     public void initialize() {
         packagelist = new PackageList();
         listOfFlights = new ListOfFlights();
@@ -93,6 +82,11 @@ public class PackageTabController {
         virkjaNidurstodur(false);
     }
 
+    /**
+     * Tenging í LeitController sem er aðal controller-inn.
+     *
+     * @param parentController - LeitController
+     */
     public void setParentController(LeitController parentController) {
         this.parentController = parentController;
     }
@@ -134,6 +128,12 @@ public class PackageTabController {
         dateTo = packageReturningDate.getValue();
     }
 
+    /**
+     * Upphafsstillir listana fyrir niðurstöður og setur
+     * change-listener á þá til að halda utan um hvaða stak
+     * í listunum er valið.
+     *
+     */
     private void setjaLista() {
         ObservableList<Package> listi = packagelist.getAllPackages();
         packageListView.setItems(listi);
@@ -148,8 +148,8 @@ public class PackageTabController {
                 if (virkurIndex>=0){
                     ArrayList<String> theTypes = new ArrayList<String>();
                     Package p = (Package) packageListView.getItems().get(virkurIndex);
-                    theTypes.add(""+ p.getFlightTo());
                     theTypes.add(""+ p.getFlightFrom());
+                    theTypes.add(""+ p.getFlightTo());
                     theTypes.add(""+ p.getHotel());
                     theTypes.add(""+ p.getDayTrip());
                     ObservableList<String> typeList = FXCollections.observableArrayList(theTypes);
@@ -159,8 +159,17 @@ public class PackageTabController {
         });
     }
 
+    /**
+     * Bregst við því þegar leitað er að flugi.
+     * Nær í fjölda manns úr spinnernum og kallar á leitaraðferð
+     * í PackageList sem leitar að flugum, hótelum og day trips.
+     * Afvirkjar leitarglugga og virkjar glugga fyrir niðurstöður og
+     * setur svo niðurstöður í ListView.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á leitartakka
+     */
     @FXML
-    private void leitHandler(javafx.event.ActionEvent actionEvent){
+    private void leitHandler(ActionEvent actionEvent){
         virkjaLeit(false);
         noOfPeople = (int) packagePersons.getValue();
         packagelist.searchPackages(depart,destination,dateFrom,dateTo,noOfPeople);
@@ -170,45 +179,84 @@ public class PackageTabController {
         virkjaNidurstodur(true);
     }
 
+    /**
+     * Felur niðurstöður og sýnir leitarglugga aftur.
+     *
+     * @param actionEvent - atburðurinn þegar klikkað er á til baka takka
+     */
     @FXML
-    private void tilBakaHandler(javafx.event.ActionEvent actionEvent) {
+    private void tilBakaHandler(ActionEvent actionEvent) {
         packageListView2.getItems().clear();
         virkjaNidurstodur(false);
         virkjaLeit(true);
     }
 
+    /**
+     * Atburðahandler fyrir package from combobox.
+     * Finnur hvaða staður er valinn í comboboxi.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að velja stak í comboboxi
+     */
     @FXML
-    private void packageFromComboHandler(javafx.event.ActionEvent actionEvent) {
+    private void packageFromComboHandler(ActionEvent actionEvent) {
         ComboBox cb = (ComboBox) actionEvent.getSource();
         depart = (String)cb.getSelectionModel().getSelectedItem();
         System.out.println(depart);
     }
 
+    /**
+     * Atburðahandler fyrir package to combobox.
+     * Finnur hvaða staður er valinn í comboboxi.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að velja stak í comboboxi
+     */
     @FXML
-    private void packageToComboHandler(javafx.event.ActionEvent actionEvent) {
+    private void packageToComboHandler(ActionEvent actionEvent) {
         ComboBox cb = (ComboBox)actionEvent.getSource();
         destination = (String)cb.getSelectionModel().getSelectedItem();
         System.out.println(destination);
     }
 
+    /**
+     * Atburðahandler fyrir dagsetningu brottfarar.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að velja dagsetningu
+     */
     @FXML
-    private void packageDepartureDateHandler(javafx.event.ActionEvent actionEvent) {
+    private void packageDepartureDateHandler(ActionEvent actionEvent) {
         dateFrom = packageDepartureDate.getValue();
         System.out.println(dateFrom);
     }
 
+    /**
+     * Atburðahandler fyrir dagsetningu heimkomu.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að velja dagsetningu
+     */
     @FXML
-    private void packageReturningDateHandler(javafx.event.ActionEvent actionEvent) {
+    private void packageReturningDateHandler(ActionEvent actionEvent) {
         dateTo = packageReturningDate.getValue();
         System.out.println(dateTo);
     }
+
+    /**
+     * Pantar pakka.
+     *
+     * @param actionEvent - atburðurinn sem varð til við að ýta á order
+     */
     @FXML
-    private void packageOrderHandler(javafx.event.ActionEvent actionEvent){
+    private void packageOrderHandler(ActionEvent actionEvent){
         Package orderedPackage = packagelist.getPackage(virkurIndex);
         packagelist.addOrderedPackage(orderedPackage);
         parentController.setjaPackage(packagelist.getOrderedPackages());
     }
 
+    /**
+     * Gerir viðmótshluti fyrir leit sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     *
+     * @param gildi - true ef á að virkja, annars false
+     */
     private void virkjaLeit(boolean gildi) {
         searchLabel.setVisible(gildi);
         fromLabel.setVisible(gildi);
@@ -222,6 +270,13 @@ public class PackageTabController {
         packageSearchButton.setVisible(gildi);
     }
 
+    /**
+     * Gerir viðmótshluti fyrir niðurstöður sýnilega ef gildi er true,
+     * en felur viðmótshluti annars.
+     * Sýnir einnig lista fyrir heimkomu flug ef roundWay er true.
+     *
+     * @param gildi - true ef á að virkja, annars false
+     */
     private void virkjaNidurstodur(boolean gildi) {
         packageListView.setVisible(gildi);
         packageListView2.setVisible(gildi);
@@ -232,10 +287,23 @@ public class PackageTabController {
         packageOrderButton.setVisible(gildi);
     }
 
-
+    /**
+     * Eyðir öllum pökkum úr lista með pöntuðum pökkum.
+     *
+     * @return - tómur listi með pöntuðum pökkum
+     */
     public ObservableList<Package> removeAllOrderedPackages() {
         packagelist.removeAllOrderedPackages();
         return packagelist.getOrderedPackages();
+    }
+
+    /**
+     * Eyðir pakkahlut úr lista sem geymir pantaða pakka.
+     *
+     * @param packages - Package hlutur sem er eytt
+     */
+    public void removeOrderedPackage(Package packages) {
+        packagelist.removeOrderedPackage(packages);
     }
 }
 

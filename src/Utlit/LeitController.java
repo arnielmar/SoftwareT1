@@ -4,6 +4,7 @@ import Vinnsla.DayTrip;
 import Vinnsla.Flight;
 import Vinnsla.Hotel;
 import Vinnsla.Package;
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -98,6 +99,12 @@ public class LeitController {
         setjaPackage(nyrPackage);
     }
 
+    /**
+     * Kallar á aðferð í FlightTabController til að eyða
+     * pöntuðum flughlut.
+     *
+     * @param flight - Flight hlutur sem á að eyða
+     */
     public void deleteFlight(Flight flight) {
         flightTabController.removeOrderedFlight(flight);
     }
@@ -105,4 +112,22 @@ public class LeitController {
     public void deleteDayTrip(DayTrip dt) {
         dayTripTabController.removeOrderedDayTrip(dt);
     }
+
+    /**
+     * Kallar á aðferð í HotelTabController til að eyða
+     * pöntuðum hótelhlut.
+     *
+     * @param hotel - Hotel hlutur sem á að eyða
+     */
+    public void deleteHotel(Hotel hotel) {
+        hotelTabController.removeOrderedHotel(hotel);
+    }
+
+    /**
+     * Kallar á aðferð í PackageTabController til að eyða
+     * pöntuðum packagehlut
+     * @param packages - Package hlutur sem á að eyða
+     */
+    public void deletePackages(Package packages) {packageTabController.removeOrderedPackage(packages);}
+
 }

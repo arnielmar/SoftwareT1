@@ -8,7 +8,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
- * Geymir lista af DayTrips og hefur aðferð til að leita í gangagrunni að DayTrip.
+ * Geymir lista af DayTrips og hefur aðferð til að leita í gagnagrunni að DayTrip.
+ *
  */
 public class DayTripList {
     private ObservableList<DayTrip> dayTrips;
@@ -16,6 +17,7 @@ public class DayTripList {
 
     /**
      * Smíðar nýjan Observable List af DayTrip hlutum.
+     *
      */
     public DayTripList() {
         this.dayTrips = FXCollections.observableArrayList();
@@ -94,10 +96,8 @@ public class DayTripList {
      * @param D     LocalDate
      * @return  true if same date false else
      */
-    private boolean compareDaTandD(LocalDateTime DaT, LocalDate D)
-    {
-        if (DaT.getYear() == D.getYear() && DaT.getDayOfYear() == D.getDayOfYear())
-        {
+    private boolean compareDaTandD(LocalDateTime DaT, LocalDate D) {
+        if (DaT.getYear() == D.getYear() && DaT.getDayOfYear() == D.getDayOfYear()) {
             return true;
         }
         return false;

@@ -1,23 +1,22 @@
 package Vinnsla;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 /**
  * Mock object af DayTrip gangagrunni.
+ *
  */
 public class ListOfDayTrips {
 
     ArrayList<DayTrip> listofDayTrips;
 
     /**
-     * Smíðar 10 Daytrip mock object til að setjaí listann.
+     * Smíðar 10 Daytrip mock object til að setja í listann.
+     *
      */
-    public ListOfDayTrips()
-    {
+    public ListOfDayTrips() {
             listofDayTrips = new ArrayList<DayTrip>();
 
             DayTrip dt1 = new DayTrip("Reykjavík", LocalDateTime.now(), 3, 4, "History", 30000);
@@ -44,17 +43,18 @@ public class ListOfDayTrips {
     }
 
     /**
-     * getter sem skilar öllum gagnagrunninum.
-     * @return
+     * Getter sem skilar öllum gagnagrunninum.
+     *
+     * @return - ArrayList<DayTrip> - listi af öllum gagnagrunninum
      */
-    public ArrayList<DayTrip> getListofDayTrips()
-    {
+    public ArrayList<DayTrip> getListofDayTrips() {
         return listofDayTrips;
     }
 
     /**
-     * Getter sem skilar öllum stadsetningum.
-     * @return - ArrayList<String> - listi með öllum stadsetningum
+     * Getter sem skilar öllum staðsetningum.
+     *
+     * @return - ArrayList<String> - listi með öllum staðsetningum
      */
     public ArrayList<String> getPlaces() {
         ArrayList<String> places = new ArrayList<String>(Arrays.asList("Reykjavík", "París", "London", "Copenhagen"));

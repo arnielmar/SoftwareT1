@@ -1,20 +1,24 @@
 package Vinnsla;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static java.lang.Integer.min;
 
+/**
+ * Geymir lista af Package og hefur aðferð til að leita í gagnagrunni
+ * að flugum, hótelum og day trips.
+ *
+ */
 public class PackageList {
     private ObservableList<Package> packages;
     private ArrayList<Package> orderedPackages;
 
     /**
-     * Smíðar nýjan Observable List af Package hlutum.
+     * Smíðar nýjan Observable List af Package hlutum
+     * og nýjan ArrayList af Package hlutum.
      */
     public PackageList() {
         this.packages = FXCollections.observableArrayList();
@@ -111,13 +115,34 @@ public class PackageList {
         //TODO
     }
 
+    /**
+     * Bætir við Package hlut í pantaða pakka.
+     *
+     * @param p - Package hlutur sem bæta skal við
+     */
     public void addOrderedPackage(Package p){
         orderedPackages.add(p);
     }
 
+    /**
+     * Eyðir öllum pökkum úr pöntuðum pökkum.
+     *
+     */
     public void removeAllOrderedPackages() {
         orderedPackages.clear();
     }
 
+    /**
+     * Eyðir Package hlut úr pöntuðum pökkum.
+     *
+     * @param packagess - Package hlutur sem á að eyða
+     */
+    public void removeOrderedPackage(Package packagess) {orderedPackages.remove(packagess);}
+
+    /**
+     * Skilar lista með öllum pöntuðum pökkum.
+     *
+     * @return - listi með öllum pöntuðum pökkum
+     */
     public ObservableList<Package> getOrderedPackages() { return FXCollections.observableArrayList(orderedPackages);}
 }

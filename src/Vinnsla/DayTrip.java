@@ -1,7 +1,7 @@
 package Vinnsla;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 /**
  * Mock object af DayTrip hlutum.
  *
@@ -58,44 +58,32 @@ public class DayTrip implements Comparable<DayTrip> {
 
     @Override
     public String toString() {
-        if (type.equals("Activity"))
-        {
-            if (location.equals("Reykjavík"))
-            {
+        if (type.equals("Activity")) {
+            if (location.equals("Reykjavík")) {
                 return "Whale watching in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
-            } else if (location.equals("London"))
-            {
+            } else if (location.equals("London")) {
                 return "The Zoo in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
-            } else if (location.equals("París"))
-            {
+            } else if (location.equals("París")) {
                 return "The Eiffel Tower in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
             } else if (location.equals("Copenhagen")) {
                 return "Tívoli in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
             }
-        } else if (type.equals("Gourmet"))
-        {
-            if (location.equals("Reykjavík"))
-            {
+        } else if (type.equals("Gourmet")) {
+            if (location.equals("Reykjavík")) {
                 return "Traditonal 3 course Icelandic meal in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
-            } else if (location.equals("London"))
-            {
+            } else if (location.equals("London")) {
                 return "The fish'N'chip experience in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
-            } else if (location.equals("París"))
-            {
+            } else if (location.equals("París")) {
                 return "Wine tasting in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
             } else if (location.equals("Copenhagen")) {
                 return "Beer bananza! in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
             }
-        } else if (type.equals("History"))
-        {
-            if (location.equals("Reykjavík"))
-            {
+        } else if (type.equals("History")) {
+            if (location.equals("Reykjavík")) {
                 return "Aarbaejarmuseum (Árbæjarsafn) in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
-            } else if (location.equals("London"))
-            {
+            } else if (location.equals("London")) {
                 return "The British museum in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
-            } else if (location.equals("París"))
-            {
+            } else if (location.equals("París")) {
                 return "Mime History museum in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
             } else if (location.equals("Copenhagen")) {
                 return "The history of Legos museum in " + location + " at " + dateAndTime.toLocalDate().toString() + " Price: " + price;
@@ -105,8 +93,7 @@ public class DayTrip implements Comparable<DayTrip> {
     }
 
     @Override
-    public int compareTo(DayTrip that)
-    {
+    public int compareTo(DayTrip that) {
         return Integer.compare(this.price, that.price);
     }
 }

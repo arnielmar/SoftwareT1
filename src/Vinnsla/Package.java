@@ -1,5 +1,9 @@
 package Vinnsla;
 
+/**
+ * Klasi fyrir Package hluti.
+ *
+ */
 public class Package implements Comparable<Package>{
     private Flight flightTo;
     private Flight flightFrom;
@@ -8,11 +12,12 @@ public class Package implements Comparable<Package>{
     private int price;
 
     /**
+     * Smiður fyrir Package hlut.
      *
-     * @param flightTo
-     * @param flightFrom
-     * @param hotel
-     * @param dayTrip
+     * @param flightTo - Flight hlutur til
+     * @param flightFrom - Flight hlutur frá
+     * @param hotel - Hotel hlutur
+     * @param dayTrip - DayTrip hlutur
      */
     public Package(Flight flightTo, Flight flightFrom, Hotel hotel, DayTrip dayTrip) {
         this.flightTo = flightTo;

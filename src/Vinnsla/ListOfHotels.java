@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Mock Object af gagnagrunni fyrir flug.
+ * Mock Object af gagnagrunni fyrir hótel.
  *
  */
 public class ListOfHotels {
     public static ArrayList<Hotel> listOfHotels;
 
     /**
-     * Smíðar mock gagnagrunn með 10 Flight hlutum.
+     * Smíðar mock gagnagrunn með 10 Hotel hlutum.
      *
      */
     public ListOfHotels() {
@@ -45,9 +45,9 @@ public class ListOfHotels {
     }
 
     /**
-     * Getter sem skilar öllum gagngagrunni af flugum.
+     * Getter sem skilar öllum gagnagrunni af hótelum.
      *
-     * @return - ArrayList<Flight> - listi með gagnagrunninum af flugum
+     * @return - ArrayList<Hotel> - listi með gagnagrunninum af hótelum
      */
     public static ArrayList<Hotel> getListOfHotels() {
         return listOfHotels;

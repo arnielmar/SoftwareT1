@@ -2,17 +2,23 @@ package Vinnsla;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Geymir lista af hótelum, pöntuðum hótelum og pöntuðum hótelherbergjum
+ * og hefur aðferð til að leita að hótelum í gagnagrunni.
+ *
+ */
 public class HotelList {
     private ObservableList<Hotel> hotels;
     private ArrayList<Hotel> orderedHotels;
     private ArrayList<String> orderedRoomTypes;
 
     /**
-     * Smíðar nýjan Observable List af Hotel hlutum.
+     * Smíðar nýjan Observable List af Hotel hlutum,
+     * ArrayList af Hotel hlutum og ArrayList af String hlutum.
+     *
      */
     public HotelList() {
         this.hotels = FXCollections.observableArrayList();
@@ -82,9 +88,10 @@ public class HotelList {
     }
 
     /**
-     * Bætir hóteli við
-     * @param h
-     * @param s
+     * Bætir hóteli við lista með pöntuðum hótelum.
+     *
+     * @param h - Hotel hlutur sem bæta skal við
+     * @param s - Tegund hótelherbergis
      */
     public void addOrderedHotel(Hotel h, String s){
         orderedHotels.add(h);
@@ -92,6 +99,7 @@ public class HotelList {
     }
 
     /**
+     * Skilar lista með öllum pöntuðum hótelum.
      *
      * @return - lista af pöntuðum hótelum
      */
@@ -99,15 +107,29 @@ public class HotelList {
         return FXCollections.observableArrayList(orderedHotels);
     }
 
+    /**
+     * Eyðir öllum pöntuðum hótelum úr lista.
+     *
+     */
     public void removeAllOrderedHotels() {
         orderedHotels.clear();
     }
 
     /**
+     * Skilar lista með öllum tegundum pantaðra hótelherbergja.
      *
      * @return - lista af pöntuðum hótelherbergjum
      */
     public ObservableList<String> getOrderedRoomTypes(){
         return FXCollections.observableArrayList(orderedRoomTypes);
+    }
+
+    /**
+     * Eyðir hótelhlut úr lista með pöntuðum hótelum.
+     *
+     * @param hotel - Hotel hlutur sem skal eyða.
+     */
+    public void removeOrderedHotel(Hotel hotel) {
+        orderedHotels.remove(hotel);
     }
 }
