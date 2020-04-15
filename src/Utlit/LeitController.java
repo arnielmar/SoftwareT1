@@ -11,6 +11,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import java.util.ArrayList;
 
+/**
+ * Aðal controller klasinn fyrir leitargluggann.
+ *
+ */
 public class LeitController {
     @FXML
     private FlightTabController flightTabController;
@@ -109,6 +113,12 @@ public class LeitController {
         flightTabController.removeOrderedFlight(flight);
     }
 
+    /**
+     * Kallar á aðferð í DayTripTabController til að eyða
+     * pöntuðu dayTrip hlut.
+     *
+     * @param dt - Day Trip hlutur sem á að eyða
+     */
     public void deleteDayTrip(DayTrip dt) {
         dayTripTabController.removeOrderedDayTrip(dt);
     }

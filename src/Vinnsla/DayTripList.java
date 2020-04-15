@@ -71,8 +71,6 @@ public class DayTripList {
      * @param noOfPeople - Fjöldi manns
      */
     public ArrayList<DayTrip> searchDayTrips(String dest, LocalDate date, int noOfPeople) {
-        // TODO
-        // Láta gylfa vita þegar búinn
         ArrayList<DayTrip> allDT = listOfDayTrips.getListofDayTrips();
         ArrayList<DayTrip> results = new ArrayList<DayTrip>();
 

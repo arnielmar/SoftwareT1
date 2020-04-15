@@ -79,9 +79,6 @@ public class PackageList {
         packages = FXCollections.observableArrayList();
 
         // Byrja á því að leita af listum fyrir flug frá og til, daytrip og Hótel.
-        //FlightList Flug= new FlightList();
-        //Flug.searchFlightsRoundWay(dest,depart,from,to,noOfPeople);
-
 
         FlightList flightList= new FlightList();
         ArrayList<Flight> fromResults = flightList.searchFlights(depart, dest, from, noOfPeople);
@@ -94,7 +91,6 @@ public class PackageList {
             ArrayList<DayTrip> dagtemp = Dagferd.searchDayTrips(dest,date,noOfPeople);
             dagferd.addAll(dagtemp);
         }
-        //ArrayList<DayTrip> dagferd = Dagferd.searchDayTrips(dest,from,noOfPeople);
 
         // hér er svo sett up lengdina af öllum þremur listum og minnsta af þeim
         int Flugfjoldifrom = fromResults.size();

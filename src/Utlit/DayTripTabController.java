@@ -237,6 +237,11 @@ public class DayTripTabController {
         return bookedDayTrips;
     }
 
+    /**
+     * Eyðir Day Trip hlut úr lista með pöntuðum day trips.
+     *
+     * @param dt - DayTrip hlutur sem á að eyða
+     */
     public void removeOrderedDayTrip(DayTrip dt) {
         bookedDayTrips.remove(dt);
     }
