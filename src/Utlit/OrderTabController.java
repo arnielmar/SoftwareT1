@@ -130,6 +130,7 @@ public class OrderTabController {
      */
     public void setjaInnDayTrips(ObservableList<DayTrip> dayTrip){
         ordersListViewDayTrips.setItems(dayTrip);
+        reiknaVerd();
     }
 
     /**
@@ -410,6 +411,11 @@ public class OrderTabController {
     }
 
     public void removeDayTripsHandler(ActionEvent actionEvent) {
+        DayTrip dt = ordersListViewDayTrips.getSelectionModel().getSelectedItem();
+        ObservableList<DayTrip> listi = ordersListViewDayTrips.getItems();
+        listi.remove(dt);
+        setjaInnDayTrips(listi);
+        parentController.deleteDayTrip(dt);
     }
 
     public void removePackagesHandler(ActionEvent actionEvent) {

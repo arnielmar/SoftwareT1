@@ -180,4 +180,8 @@ public class DayTripTabController {
         bookedDayTrips.clear();
         return bookedDayTrips;
     }
+
+    public void removeOrderedDayTrip(DayTrip dt) {
+        bookedDayTrips.remove(dt);
+    }
 }
